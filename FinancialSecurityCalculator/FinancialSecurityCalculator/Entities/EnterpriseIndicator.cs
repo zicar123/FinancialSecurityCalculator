@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace FinancialSecurityCalculator.Context
+namespace FinancialSecurityCalculator.Entities
 {
     public class EnterpriseIndicator
     {
@@ -15,7 +15,6 @@ namespace FinancialSecurityCalculator.Context
         public string IndicatorName { get; set; }
         public double IndicatorValue { get; set; }
 
-        public virtual Enterprise Enterprise { get; set; }
-
+        public virtual Record Record { get; set; }
     }
 }

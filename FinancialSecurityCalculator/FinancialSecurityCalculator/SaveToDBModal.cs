@@ -27,11 +27,17 @@ namespace FinancialSecurityCalculator
             comboBox2.Text = null;
         }
 
-        public ArrayList EnterpriseData
+        public Dictionary<string, object> EnterpriseData
         {
             get
             {
-                return new ArrayList { textBox1.Text, comboBox1.SelectedItem, comboBox2.SelectedItem };
+                return new Dictionary<string, object>
+                {
+                    { "EnterpriseName", textBox1.Text },
+                    { "Region", comboBox1.SelectedItem },
+                    { "Branch", comboBox2.SelectedItem },
+                    { "Year", numericUpDown1.Value }
+                };
             }
         }
 

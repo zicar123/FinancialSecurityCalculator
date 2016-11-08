@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-//using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FinancialSecurityCalculator.Context
+namespace FinancialSecurityCalculator.Entities
 {
     public class Enterprise
     {
@@ -17,8 +17,7 @@ namespace FinancialSecurityCalculator.Context
         public string EnterpriseName { get; set; }
         public string Region { get; set; }
         public string Branch { get; set; }
-        public string Date { get; set; }
 
-        public virtual List<EnterpriseIndicator> EnterpriseIndicators { get; set; }
+        public virtual List<Record> Records { get; set; }
     }
 }

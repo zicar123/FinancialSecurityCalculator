@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using FinancialSecurityCalculator.Entities;
 
 namespace FinancialSecurityCalculator.Context
 {
@@ -11,10 +12,8 @@ namespace FinancialSecurityCalculator.Context
     {
         public DbSet<Enterprise> Enterprise { get; set; }
         public DbSet<EnterpriseIndicator> EnterpriseIndicator { get; set; }
-        public DbSet<Nation> Nation { get; set; }
-        public DbSet<NationIndicator> NationIndicator { get; set; }
+        public DbSet<Record> Record { get; set; }
         public DbSet<EnterpriseLimitIndicator> EnterpriseLimitIndicators { get; set; }
-        public DbSet<NationLimitIndicator> NationLimitIndicators { get; set; }
 
         public FSCContext() : base()
         {

@@ -16,3 +16,21 @@ c:\users\zicar\documents\visual studio 2015\Projects\FinancialSecurityCalculator
 c:\users\zicar\documents\visual studio 2015\Projects\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.Form1.resources
 c:\users\zicar\documents\visual studio 2015\Projects\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.SaveToDBModal.resources
 c:\users\zicar\documents\visual studio 2015\Projects\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.Sortings.resources
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\bin\Debug\FinancialSecurityCalculator.exe.config
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.exe
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.pdb
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\bin\Debug\FinancialSecurityCalculator.exe
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\bin\Debug\FinancialSecurityCalculator.pdb
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\bin\Debug\EntityFramework.dll
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\bin\Debug\EntityFramework.xml
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.csprojResolveAssemblyReference.cache
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.Compare.resources
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.CompareModal1.resources
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.CompareModal2.resources
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.Form1.resources
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.Properties.Resources.resources
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.SaveToDBModal.resources
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.Sortings.resources
+C:\Users\Zicar\Desktop\FinancialSecurityCalculator\FinancialSecurityCalculator\obj\Debug\FinancialSecurityCalculator.csproj.GenerateResource.Cache

@@ -7,12 +7,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FinancialSecurityCalculator.Entities
 {
-    public class EnterpriseLimitIndicator
+    public class Record
     {
         [Key, Required]
-        public int EnterpriseLimitIndicatorId { get; set; }
+        public int RecordId { get; set; }
 
-        public string EnterpriseLimitIndicatorName { get; set; }
-        public string EnterpriseLimitIndicatorValue { get; set; }
+        public int Year { get; set; }
+
+        public virtual Enterprise Enterprise { get; set; }
+
+        public virtual List<EnterpriseIndicator> EnterpriseIndicators { get; set; }
     }
 }
