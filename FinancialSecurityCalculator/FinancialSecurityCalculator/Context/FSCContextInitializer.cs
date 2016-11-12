@@ -12,8 +12,8 @@ namespace FinancialSecurityCalculator.Context
     {
         protected override void Seed(FSCContext context)
         {
-            context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт фінансової незалежності", EnterpriseLimitIndicatorValue = "0.5" });
-            context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт фінансової стабільності", EnterpriseLimitIndicatorValue = "0.8" });
+            context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт фінансової незалежності", EnterpriseLimitIndicatorValue = ">0.5" });
+            context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт фінансової стабільності", EnterpriseLimitIndicatorValue = ">0.8" });
             context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт фінансової стійкості", EnterpriseLimitIndicatorValue = "0.75-0.9" });
             context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт маневреності власних засобів", EnterpriseLimitIndicatorValue = "0.3-0.5" });
             context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт забезпечення власними оборотними засобами", EnterpriseLimitIndicatorValue = ">0.1" });

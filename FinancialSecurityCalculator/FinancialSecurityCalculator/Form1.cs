@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using FinancialSecurityCalculator.Context;
 using FinancialSecurityCalculator.Services;
 using FinancialSecurityCalculator.Model;
+using FinancialSecurityCalculator.Entities;
 using System.Collections;
 
 namespace FinancialSecurityCalculator
@@ -85,7 +86,7 @@ namespace FinancialSecurityCalculator
         //TODO: add possibility to open datagridviews in Analysis on seperate windows
         private void button4_Click(object sender, EventArgs e)
         {
-            services.Calculate(tabControl2);   
+            services.Calculate(tabControl2);
         }
         #region It works. I dont know why or how. Dont touch this.
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -94,7 +95,6 @@ namespace FinancialSecurityCalculator
 
             if (checkBox1.Checked)
             {
-
                 var querry = from c in context.Enterprise
                              where c.Branch == "Виробнича галузь"
                              select c;
@@ -223,5 +223,58 @@ namespace FinancialSecurityCalculator
             //context?.Dispose();
         }
         #endregion
+
+        private void label118_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label117_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (var context = new FSCContext())
+            {
+                //var querry = (from c in context.EnterpriseIndicator
+                //              from l in context.EnterpriseLimitIndicators
+                //              select new
+                //              {
+                //                  ID = c.EnterpriseIndicatorId,
+                //                  NameOfIndicator = c.IndicatorName,
+                //                  CurrentValue = c.IndicatorValue,
+                //                  //Сonclusion = (c.EnterpriseIndicatorId < 5 ? (c.IndicatorValue > l.EnterpriseLimitIndicatorValue ? "Ok" : "Bad")) : 
+                //              });
+
+
+                List<EnterpriseConclusion> conclusionsList = new List<EnterpriseConclusion>();
+                foreach (var item in context.EnterpriseIndicator.ToList())
+                {
+                    conclusionsList.Add(new EnterpriseConclusion()
+                    {
+                        ID = item.EnterpriseIndicatorId,
+                        NameOfIndicator = item.IndicatorName,
+                        CurrentValue = item.IndicatorValue,
+                        Conclusion = services.DecisionMaking(item)
+                    });
+                } 
+                //TODO: make sure nothing will crash if there is no calculated value of custom indicator
+                dataGridView1.DataSource = conclusionsList; //using LINQ is dead end                 
+                
+                //dataGridView1.DataSource = querry.Select(x=> new { d = x.CurrentValue}).ToList();// рабочий вариант вывода одного столбца
+                //dataGridView1.DataSource = querry.ToList();
+            
+            }
+        }
+
+        private class EnterpriseConclusion
+        {
+            public int ID { get; set; }
+            public string NameOfIndicator { get; set; }
+            public double CurrentValue { get; set; }
+            public string Conclusion { get; set; }
+        }
     }
 }
