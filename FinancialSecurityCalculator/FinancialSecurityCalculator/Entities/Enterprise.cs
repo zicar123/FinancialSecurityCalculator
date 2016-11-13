@@ -12,8 +12,9 @@ namespace FinancialSecurityCalculator.Entities
     {
         [Key, Required]
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int EnterpriseId { get; set; }
+        public int Id { get; set; }
 
+        public int  EnterpriseId { get; set; }
         public string EnterpriseName { get; set; }
         public string Region { get; set; }
         public string Branch { get; set; }

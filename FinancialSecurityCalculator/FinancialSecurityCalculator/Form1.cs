@@ -217,64 +217,50 @@ namespace FinancialSecurityCalculator
                 enterpriseBindingSource.ResetBindings(false);
                 recordsBindingSource.ResetBindings(false);
                 enterpriseIndicatorsBindingSource.ResetBindings(false);// somewhy it didnt help. MastedDetail - detail table dont refresh
-                enterpriseBindingSource.Filter = comboBox1.SelectedItem.ToString();
+                enterpriseBindingSource.Filter = comboBox1.SelectedItem.ToString();//dont know whether i need this line
                 enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString());
             }
+            enterpriseBindingSource.ResumeBinding(); // this one works just fine(Not tested at this line!)
+
             //context?.Dispose();
         }
         #endregion
 
-        private void label118_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label117_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            using (var context = new FSCContext())
-            {
-                //var querry = (from c in context.EnterpriseIndicator
-                //              from l in context.EnterpriseLimitIndicators
-                //              select new
-                //              {
-                //                  ID = c.EnterpriseIndicatorId,
-                //                  NameOfIndicator = c.IndicatorName,
-                //                  CurrentValue = c.IndicatorValue,
-                //                  //Сonclusion = (c.EnterpriseIndicatorId < 5 ? (c.IndicatorValue > l.EnterpriseLimitIndicatorValue ? "Ok" : "Bad")) : 
-                //              });
-
-
-                List<EnterpriseConclusion> conclusionsList = new List<EnterpriseConclusion>();
-                foreach (var item in context.EnterpriseIndicator.ToList())
-                {
-                    conclusionsList.Add(new EnterpriseConclusion()
-                    {
-                        ID = item.EnterpriseIndicatorId,
-                        NameOfIndicator = item.IndicatorName,
-                        CurrentValue = item.IndicatorValue,
-                        Conclusion = services.DecisionMaking(item)
-                    });
-                } 
-                //TODO: make sure nothing will crash if there is no calculated value of custom indicator
-                dataGridView1.DataSource = conclusionsList; //using LINQ is dead end                 
-                
-                //dataGridView1.DataSource = querry.Select(x=> new { d = x.CurrentValue}).ToList();// рабочий вариант вывода одного столбца
-                //dataGridView1.DataSource = querry.ToList();
-            
-            }
+            services.ShowDetails();
         }
-
-        private class EnterpriseConclusion
+       
+        private void textBox42_TextChanged(object sender, EventArgs e)
         {
-            public int ID { get; set; }
-            public string NameOfIndicator { get; set; }
-            public double CurrentValue { get; set; }
-            public string Conclusion { get; set; }
+            if (this.context == null) context = new FSCContext();
+
+            enterpriseBindingSource.ResetBindings(false);
+            recordsBindingSource.ResetBindings(false);
+            enterpriseIndicatorsBindingSource.ResetBindings(false);// somewhy it didnt help. MastedDetail - detail table dont refresh
+            if (!string.IsNullOrEmpty(textBox42.Text))
+                enterpriseBindingSource.DataSource = dataModel.TotalList?.Where(n => n.EnterpriseName.ToLower().Contains(textBox42.Text.ToLower()));
+            else
+            { enterpriseBindingSource.DataSource = dataModel.TotalList; }
+            enterpriseBindingSource.ResumeBinding(); // this one works just fine
+
+
         }
-    }
+
+        private void textBox45_TextChanged(object sender, EventArgs e)
+        {
+            if (this.context == null) context = new FSCContext();
+
+            enterpriseBindingSource.ResetBindings(false);
+            recordsBindingSource.ResetBindings(false);
+            enterpriseIndicatorsBindingSource.ResetBindings(false);// somewhy it didnt help. MastedDetail - detail table dont refresh. Use ResumeBindings Instead
+            if (!string.IsNullOrEmpty(textBox45.Text))
+                enterpriseBindingSource.DataSource = dataModel.TotalList?.Where(n => n.EnterpriseId.ToString().Contains(textBox45.Text));
+            else
+            { enterpriseBindingSource.DataSource = dataModel.TotalList; }
+
+            enterpriseBindingSource.ResumeBinding(); // this one works just fine
+
+        }        
+    }//TODO: use FluentAPI to adjust column names
 }

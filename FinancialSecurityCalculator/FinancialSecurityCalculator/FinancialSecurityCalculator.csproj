@@ -75,6 +75,12 @@
     </Compile>
     <Compile Include="Context\FSCContext.cs" />
     <Compile Include="Context\FSCContextInitializer.cs" />
+    <Compile Include="Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details.Designer.cs">
+      <DependentUpon>Details.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Record.cs" />
     <Compile Include="Entities\Enterprise.cs" />
     <Compile Include="Entities\EnterpriseIndicator.cs" />
@@ -95,6 +101,7 @@
       <DependentUpon>SaveToDBModal.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\Formulas.cs" />
+    <Compile Include="Services\IServices.cs" />
     <Compile Include="Services\Services.cs" />
     <Compile Include="Sortings.cs">
       <SubType>Form</SubType>
@@ -110,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CompareModal2.resx">
       <DependentUpon>CompareModal2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details.resx">
+      <DependentUpon>Details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

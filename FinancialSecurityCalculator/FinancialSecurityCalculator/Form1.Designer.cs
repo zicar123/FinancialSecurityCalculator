@@ -317,7 +317,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.enterpriseIndicatorsDataGridView = new System.Windows.Forms.DataGridView();
-            this.LimitIndicator = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterpriseIndicatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recordsDataGridView = new System.Windows.Forms.DataGridView();
@@ -352,14 +351,16 @@
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.label156 = new System.Windows.Forms.Label();
+            this.label157 = new System.Windows.Forms.Label();
+            this.label158 = new System.Windows.Forms.Label();
+            this.textBox45 = new System.Windows.Forms.TextBox();
+            this.EnterpriseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterpriseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -395,7 +396,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -2290,7 +2290,6 @@
             this.label117.Size = new System.Drawing.Size(64, 15);
             this.label117.TabIndex = 110;
             this.label117.Text = "реалізації";
-            this.label117.Click += new System.EventHandler(this.label117_Click);
             // 
             // label118
             // 
@@ -2301,7 +2300,6 @@
             this.label118.Size = new System.Drawing.Size(55, 13);
             this.label118.TabIndex = 109;
             this.label118.Text = "(ряд. 035)";
-            this.label118.Click += new System.EventHandler(this.label118_Click);
             // 
             // label127
             // 
@@ -2909,7 +2907,11 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.textBox45);
+            this.tabPage2.Controls.Add(this.label158);
+            this.tabPage2.Controls.Add(this.label157);
+            this.tabPage2.Controls.Add(this.label156);
+            this.tabPage2.Controls.Add(this.textBox42);
             this.tabPage2.Controls.Add(this.enterpriseIndicatorsDataGridView);
             this.tabPage2.Controls.Add(this.recordsDataGridView);
             this.tabPage2.Controls.Add(this.enterpriseDataGridView);
@@ -2930,18 +2932,12 @@
             this.enterpriseIndicatorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.enterpriseIndicatorsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.LimitIndicator});
+            this.dataGridViewTextBoxColumn14});
             this.enterpriseIndicatorsDataGridView.DataSource = this.enterpriseIndicatorsBindingSource;
-            this.enterpriseIndicatorsDataGridView.Location = new System.Drawing.Point(520, 6);
+            this.enterpriseIndicatorsDataGridView.Location = new System.Drawing.Point(585, 6);
             this.enterpriseIndicatorsDataGridView.Name = "enterpriseIndicatorsDataGridView";
-            this.enterpriseIndicatorsDataGridView.Size = new System.Drawing.Size(310, 220);
+            this.enterpriseIndicatorsDataGridView.Size = new System.Drawing.Size(245, 220);
             this.enterpriseIndicatorsDataGridView.TabIndex = 7;
-            // 
-            // LimitIndicator
-            // 
-            this.LimitIndicator.HeaderText = "LimitIndicator";
-            this.LimitIndicator.Name = "LimitIndicator";
             // 
             // enterpriseIndicatorsBindingSource
             // 
@@ -2958,13 +2954,11 @@
             this.recordsDataGridView.AutoGenerateColumns = false;
             this.recordsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.recordsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
+            this.dataGridViewTextBoxColumn10});
             this.recordsDataGridView.DataSource = this.recordsBindingSource;
-            this.recordsDataGridView.Location = new System.Drawing.Point(404, 6);
+            this.recordsDataGridView.Location = new System.Drawing.Point(483, 6);
             this.recordsDataGridView.Name = "recordsDataGridView";
-            this.recordsDataGridView.Size = new System.Drawing.Size(110, 220);
+            this.recordsDataGridView.Size = new System.Drawing.Size(96, 220);
             this.recordsDataGridView.TabIndex = 7;
             // 
             // enterpriseDataGridView
@@ -2972,23 +2966,23 @@
             this.enterpriseDataGridView.AutoGenerateColumns = false;
             this.enterpriseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.enterpriseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.EnterpriseId,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.enterpriseDataGridView.DataSource = this.enterpriseBindingSource;
             this.enterpriseDataGridView.Location = new System.Drawing.Point(199, 6);
             this.enterpriseDataGridView.Name = "enterpriseDataGridView";
-            this.enterpriseDataGridView.Size = new System.Drawing.Size(199, 220);
+            this.enterpriseDataGridView.Size = new System.Drawing.Size(278, 220);
             this.enterpriseDataGridView.TabIndex = 7;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(586, 332);
+            this.button2.Location = new System.Drawing.Point(548, 256);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 21);
             this.button2.TabIndex = 7;
-            this.button2.Text = "Show details";
+            this.button2.Text = "Details";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -2998,7 +2992,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 21);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Порівняння";
+            this.button1.Text = "Compares";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -3238,71 +3232,102 @@
             this.donationsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.donationsToolStripMenuItem.Text = "Donations";
             // 
-            // dataGridView1
+            // textBox42
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(199, 232);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(315, 118);
-            this.dataGridView1.TabIndex = 8;
+            this.textBox42.Location = new System.Drawing.Point(293, 256);
+            this.textBox42.Name = "textBox42";
+            this.textBox42.Size = new System.Drawing.Size(100, 20);
+            this.textBox42.TabIndex = 8;
+            this.textBox42.TextChanged += new System.EventHandler(this.textBox42_TextChanged);
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Location = new System.Drawing.Point(225, 259);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(62, 13);
+            this.label156.TabIndex = 9;
+            this.label156.Text = "Live search";
+            // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.Location = new System.Drawing.Point(311, 240);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(51, 13);
+            this.label157.TabIndex = 10;
+            this.label157.Text = "Via name";
+            // 
+            // label158
+            // 
+            this.label158.AutoSize = true;
+            this.label158.Location = new System.Drawing.Point(428, 240);
+            this.label158.Name = "label158";
+            this.label158.Size = new System.Drawing.Size(36, 13);
+            this.label158.TabIndex = 11;
+            this.label158.Text = "Via ID";
+            // 
+            // textBox45
+            // 
+            this.textBox45.Location = new System.Drawing.Point(399, 256);
+            this.textBox45.Name = "textBox45";
+            this.textBox45.Size = new System.Drawing.Size(100, 20);
+            this.textBox45.TabIndex = 12;
+            this.textBox45.TextChanged += new System.EventHandler(this.textBox45_TextChanged);
+            // 
+            // EnterpriseId
+            // 
+            this.EnterpriseId.DataPropertyName = "EnterpriseId";
+            this.EnterpriseId.HeaderText = "EnterpriseId";
+            this.EnterpriseId.Name = "EnterpriseId";
+            this.EnterpriseId.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
             this.dataGridViewTextBoxColumn13.HeaderText = "IndicatorName";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "IndicatorValue";
             this.dataGridViewTextBoxColumn14.HeaderText = "IndicatorValue";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
             // enterpriseBindingSource
             // 
             this.enterpriseBindingSource.DataSource = typeof(FinancialSecurityCalculator.Entities.Enterprise);
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "RecordId";
-            this.dataGridViewTextBoxColumn9.HeaderText = "RecordId";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Year";
             this.dataGridViewTextBoxColumn10.HeaderText = "Year";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Enterprise";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Enterprise";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "EnterpriseId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "EnterpriseId";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 50;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "EnterpriseName";
             this.dataGridViewTextBoxColumn6.HeaderText = "EnterpriseName";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Region";
             this.dataGridViewTextBoxColumn7.HeaderText = "Region";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Branch";
             this.dataGridViewTextBoxColumn8.HeaderText = "Branch";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // Form1
             // 
@@ -3363,6 +3388,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).EndInit();
@@ -3372,7 +3398,6 @@
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -3502,17 +3527,7 @@
         private System.Windows.Forms.BindingSource enterpriseIndicatorsBindingSource;
         private System.Windows.Forms.DataGridView enterpriseIndicatorsDataGridView;
         private System.Windows.Forms.DataGridView recordsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridView enterpriseDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LimitIndicator;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
@@ -3674,7 +3689,18 @@
         private System.Windows.Forms.Label label147;
         private System.Windows.Forms.TextBox resultBox19;
         private System.Windows.Forms.Label label148;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label156;
+        private System.Windows.Forms.TextBox textBox42;
+        private System.Windows.Forms.TextBox textBox45;
+        private System.Windows.Forms.Label label158;
+        private System.Windows.Forms.Label label157;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EnterpriseId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }
 

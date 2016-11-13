@@ -10,7 +10,7 @@ using System.Collections;
 
 namespace FinancialSecurityCalculator.Services
 {
-    public class Services
+    public class Services : IServices
     {
         public void ResetTextBoxes(ControlCollection controls)
         {
@@ -68,25 +68,33 @@ namespace FinancialSecurityCalculator.Services
                 else
                 {
                     if (context.Enterprise.ToList().FirstOrDefault(x => x.EnterpriseName == dataModel.EnterpriseData["EnterpriseName"].ToString()) != null) //if enterprise with this name already exists
-                    {
-                        for (int i = 0; i < dataModel.TextBoxes.Count; ++i)
+                    {//TODO: better to search via Id, not via name. (Can be 2 enterprises with the same name in different regions(filials)).
+                        if (MessageBox.Show("Дані будуть збережені в уже існуюче підприємство.", "Увага!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                         {
-                            try
+                            for (int i = 0; i < dataModel.TextBoxes.Count; ++i)
                             {
-                                dataModel.Indicators.Add(new EnterpriseIndicator() { IndicatorName = dataModel.Nodes[i].Text, IndicatorValue = double.Parse(dataModel.TextBoxes[i].Text) });
+                                try
+                                {
+                                    dataModel.Indicators.Add(new EnterpriseIndicator() { IndicatorName = dataModel.Nodes[i].Text, IndicatorValue = double.Parse(dataModel.TextBoxes[i].Text) });
+                                }
+                                catch (Exception) { }
                             }
-                            catch (Exception) { }
+                            context.Record.Add(new Record()
+                            {
+                                Enterprise = context.Enterprise.ToList().FirstOrDefault(x => x.EnterpriseName == dataModel.EnterpriseData["EnterpriseName"].ToString()), //TODO: Lower case maybe? or via ID(not primary key) better
+                                Year = Convert.ToInt32(dataModel.EnterpriseData["Year"]),
+                                EnterpriseIndicators = dataModel.Indicators
+                            });
+                            context.SaveChanges();
+                            dataModel.Indicators.Clear();
+                            MessageBox.Show("Дані успішно збережені.");
+                            //TODO: clear dataModel.EnterpriseData now? What next
                         }
-                        context.Record.Add(new Record()
+                        else
                         {
-                            Enterprise = context.Enterprise.ToList().FirstOrDefault(x => x.EnterpriseName == dataModel.EnterpriseData["EnterpriseName"].ToString()),
-                            Year = Convert.ToInt32(dataModel.EnterpriseData["Year"]),
-                            EnterpriseIndicators = dataModel.Indicators
-                        });
-                        context.SaveChanges();
-                        dataModel.Indicators.Clear();
-                        MessageBox.Show("Дані збережено в уже існуюче підприємство."); //TODO: modify messageBox. Add OK cancel
-                    }
+                            dataModel.EnterpriseData.Clear();
+                        }
+                    }//TODO: add logics to find out whether Record with same Year already exists
 
                     else
                     {
@@ -102,6 +110,7 @@ namespace FinancialSecurityCalculator.Services
 
                         context.Enterprise.Add(new Enterprise()
                         {
+                            EnterpriseId = (int)dataModel.EnterpriseData["EnterpriseID"],
                             EnterpriseName = dataModel.EnterpriseData["EnterpriseName"].ToString(),
                             Region = dataModel.EnterpriseData["Region"].ToString(),
                             Branch = dataModel.EnterpriseData["Branch"].ToString(),
@@ -113,7 +122,6 @@ namespace FinancialSecurityCalculator.Services
                     }
                 }
             }
-
         }
 
         public string DecisionMaking(EnterpriseIndicator entity)
@@ -185,29 +193,7 @@ namespace FinancialSecurityCalculator.Services
                 //}
                 //else return "Everything is BAD!";
             }
-            return "lol";
-        }
-
-        private abstract class Types
-        {
-
-        }
-
-        private class TypeA : Types
-        {
-            public double Value { get; set; }
-            public bool Below { get; set; }
-        }
-
-        private class TypeB : Types
-        {
-            public double FirstValue { get; set; }
-            public double SecondValue { get; set; }
-        }
-
-        private class TypeC : Types
-        {
-            public string Title { get; set; }
+            return "lolThiswould never happen";
         }
 
         public void Calculate(TabControl tabControl)
@@ -252,6 +238,61 @@ namespace FinancialSecurityCalculator.Services
                     }
                 }
             }
+        }
+
+        public void ShowDetails()
+        {
+            using (var context = new FSCContext())
+            {
+                List<EnterpriseConclusion> conclusionsList = new List<EnterpriseConclusion>();
+                foreach (var item in context.EnterpriseIndicator.ToList())
+                {
+                    conclusionsList.Add(new EnterpriseConclusion()
+                    {
+                        ID = item.EnterpriseIndicatorId,
+                        NameOfIndicator = item.IndicatorName,
+                        CurrentValue = item.IndicatorValue,
+                        Conclusion = this.DecisionMaking(item)
+                    });
+                }
+
+                //TODO: this doesnt work right
+
+                //dataGridView1.DataSource = querry.Select(x=> new { d = x.CurrentValue}).ToList();// рабочий вариант вывода одного столбца
+                //dataGridView1.DataSource = querry.ToList();
+                Details detailsForm = new Details(conclusionsList);
+                detailsForm.Show();
+            }
+        }
+
+        private abstract class Types
+        {
+
+        } //TODO: join everything in a single Class
+
+        private class TypeA : Types
+        {
+            public double Value { get; set; }
+            public bool Below { get; set; }
+        }
+
+        private class TypeB : Types
+        {
+            public double FirstValue { get; set; }
+            public double SecondValue { get; set; }
+        }
+
+        private class TypeC : Types
+        {
+            public string Title { get; set; }
+        }
+
+        public class EnterpriseConclusion
+        {
+            public int ID { get; set; }
+            public string NameOfIndicator { get; set; }
+            public double CurrentValue { get; set; }
+            public string Conclusion { get; set; }
         }
     }
 }

@@ -13,6 +13,8 @@ namespace FinancialSecurityCalculator
 {
     public partial class SaveToDBModal : Form
     {
+        private int enterpriseIdTemp;
+
         public SaveToDBModal(List<string> regions, List<string> branches)
         {
             InitializeComponent();
@@ -23,6 +25,7 @@ namespace FinancialSecurityCalculator
         public void ClearFields()
         {
             textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
             comboBox1.Text = null;
             comboBox2.Text = null;
         }
@@ -33,6 +36,7 @@ namespace FinancialSecurityCalculator
             {
                 return new Dictionary<string, object>
                 {
+                    { "EnterpriseID", enterpriseIdTemp },
                     { "EnterpriseName", textBox1.Text },
                     { "Region", comboBox1.SelectedItem },
                     { "Branch", comboBox2.SelectedItem },
@@ -48,7 +52,15 @@ namespace FinancialSecurityCalculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            if (int.TryParse(textBox2.Text, out enterpriseIdTemp))
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Помилка. Невірний формат у полі 'ID'.");
+                textBox2.Text = string.Empty;
+            }
         }
     }
 }
