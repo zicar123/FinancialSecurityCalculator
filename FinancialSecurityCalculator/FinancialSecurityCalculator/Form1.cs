@@ -16,7 +16,6 @@ namespace FinancialSecurityCalculator
         Services.Services services;
         DataModel dataModel;
         FSCContext context;// = new FSCContext(); //TODO: get rid of this
-        SaveToDBModal dialogForm;
 
         public Form1()
         {
@@ -34,7 +33,6 @@ namespace FinancialSecurityCalculator
 
             label22.BringToFront();
             this.button4.BringToFront();
-            dialogForm = new SaveToDBModal(dataModel.Regions, dataModel.Branches);
             List<TreeNode> tempNodes = new List<TreeNode>();
             tempNodes.Add(treeView1.Nodes[0]);
             tempNodes.Add(treeView1.Nodes[1]);
@@ -178,16 +176,7 @@ namespace FinancialSecurityCalculator
         #endregion
         private void newEnterpriseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dialogForm.ShowDialog();
-            if (dialogForm.DialogResult == DialogResult.Cancel)
-            {
-                dialogForm.ClearFields();
-            }
-            else
-            {
-                dataModel.EnterpriseData = dialogForm.EnterpriseData;
-                dialogForm.ClearFields();
-            }
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -220,7 +209,7 @@ namespace FinancialSecurityCalculator
                 enterpriseBindingSource.Filter = comboBox1.SelectedItem.ToString();//dont know whether i need this line
                 enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString());
             }
-            enterpriseBindingSource.ResumeBinding(); // this one works just fine(Not tested at this line!)
+            // enterpriseBindingSource.ResumeBinding(); // this one works just fine(Not tested at this line!)
 
             //context?.Dispose();
         }
@@ -228,9 +217,12 @@ namespace FinancialSecurityCalculator
 
         private void button2_Click(object sender, EventArgs e)
         {
-            services.ShowDetails();
+            using (var context = new FSCContext())
+            {
+                services.ShowDetails(context.Enterprise.ToList().FirstOrDefault(en => en.EnterpriseId == Convert.ToInt32(enterpriseDataGridView.CurrentCell.Value)).Records.ToList().FirstOrDefault(r => r.Year == Convert.ToInt32(recordsDataGridView.CurrentCell.Value)).EnterpriseIndicators.ToList());
+            }//make it better
         }
-       
+
         private void textBox42_TextChanged(object sender, EventArgs e)
         {
             if (this.context == null) context = new FSCContext();
@@ -240,11 +232,11 @@ namespace FinancialSecurityCalculator
             enterpriseIndicatorsBindingSource.ResetBindings(false);// somewhy it didnt help. MastedDetail - detail table dont refresh
             if (!string.IsNullOrEmpty(textBox42.Text))
                 enterpriseBindingSource.DataSource = dataModel.TotalList?.Where(n => n.EnterpriseName.ToLower().Contains(textBox42.Text.ToLower()));
-            else
+            else if (string.IsNullOrEmpty(textBox42.Text))//TODO: fix(looks like fixed)
             { enterpriseBindingSource.DataSource = dataModel.TotalList; }
+
             enterpriseBindingSource.ResumeBinding(); // this one works just fine
-
-
+            recordsBindingSource.ResumeBinding();
         }
 
         private void textBox45_TextChanged(object sender, EventArgs e)
@@ -260,7 +252,49 @@ namespace FinancialSecurityCalculator
             { enterpriseBindingSource.DataSource = dataModel.TotalList; }
 
             enterpriseBindingSource.ResumeBinding(); // this one works just fine
+            recordsBindingSource.ResumeBinding();
+        }
 
-        }        
-    }//TODO: use FluentAPI to adjust column names
+        private void зареєструватиНовеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterEnterprise dialogFormRegister = new RegisterEnterprise(dataModel.Regions, dataModel.Branches);
+            dialogFormRegister.ShowDialog();
+            if (dialogFormRegister.DialogResult == DialogResult.OK)
+            {
+                dataModel.EnterpriseData = dialogFormRegister.EnterpriseData;
+                label159.Text = dataModel.EnterpriseData["EnterpriseName"].ToString();
+                comboBox2.SelectedItem = default(ComboBox);
+            }
+        }
+
+        private void обратиІснуючеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SelectEnterprise dialogFormSelect;
+            using (var context = new FSCContext())
+            {
+                dialogFormSelect = new SelectEnterprise(context.Enterprise.ToList());
+            }
+            dialogFormSelect.ShowDialog();
+            if (dialogFormSelect.DialogResult == DialogResult.OK)
+            {
+                dataModel.EnterpriseData = dialogFormSelect.EnterpriseData;
+                label159.Text = dataModel.EnterpriseData["EnterpriseName"].ToString();
+                comboBox2.SelectedItem = default(ComboBox);
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            object temp;
+            if (dataModel.EnterpriseData.TryGetValue("Year", out temp))
+            {
+                dataModel.EnterpriseData["Year"] = comboBox2.SelectedItem;
+            }
+            else
+            {
+                dataModel.EnterpriseData.Add("Year", comboBox2.SelectedItem);
+            }
+
+        }
+    }
 }

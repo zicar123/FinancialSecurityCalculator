@@ -16,6 +16,7 @@ namespace FinancialSecurityCalculator
         public Details(List<Services.Services.EnterpriseConclusion> conclusionsList)
         {
             InitializeComponent();
+            dataGridView1.ReadOnly = true;
             dataGridView1.DataSource = conclusionsList; //using LINQ is dead end                 
         }
     }

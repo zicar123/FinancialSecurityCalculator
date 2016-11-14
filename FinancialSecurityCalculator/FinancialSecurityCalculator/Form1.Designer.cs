@@ -29,52 +29,53 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Коефіцієнт фінансової незалежності");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Коефіцієнт фінансової стабільності");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Коефіцієнт фінансової стійкості");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Коефіцієнт маневреності власних засобів");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Коефіцієнт забезпечення власними оборотними засобами");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Фінансова стійкість", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Коефіцієнт грошової платоспроможності");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Коефіцієнт розрахункової платоспроможності");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Коефіцієнт критичної ліквідності");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Коефіцієнт співвідношення дебіторської та кредиторської заборгованостей");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Коефіцієнт мобільності активів");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Ліквідність та платоспроможність", new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode8,
-            treeNode9,
-            treeNode10,
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності активів");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності дебіторської заборгованості ");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності кредиторської заборгованості");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності матеріальних запасів");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності основних засобів");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності власного капіталу");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Ділова активність", new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14,
-            treeNode15,
-            treeNode16,
-            treeNode17,
-            treeNode18});
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Рентабельність витрат");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Рентабельність продажів");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Рентабельність всіх активів");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Рентабельність власного капіталу ");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Прибутковість", new System.Windows.Forms.TreeNode[] {
-            treeNode20,
-            treeNode21,
-            treeNode22,
-            treeNode23});
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Коефіцієнт фінансової незалежності");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Коефіцієнт фінансової стабільності");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Коефіцієнт фінансової стійкості");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Коефіцієнт маневреності власних засобів");
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Коефіцієнт забезпечення власними оборотними засобами");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Фінансова стійкість", new System.Windows.Forms.TreeNode[] {
+            treeNode25,
+            treeNode26,
+            treeNode27,
+            treeNode28,
+            treeNode29});
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Коефіцієнт грошової платоспроможності");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Коефіцієнт розрахункової платоспроможності");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Коефіцієнт критичної ліквідності");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Коефіцієнт співвідношення дебіторської та кредиторської заборгованостей");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Коефіцієнт мобільності активів");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Ліквідність та платоспроможність", new System.Windows.Forms.TreeNode[] {
+            treeNode31,
+            treeNode32,
+            treeNode33,
+            treeNode34,
+            treeNode35});
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності активів");
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності дебіторської заборгованості ");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності кредиторської заборгованості");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності матеріальних запасів");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності основних засобів");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності власного капіталу");
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Ділова активність", new System.Windows.Forms.TreeNode[] {
+            treeNode37,
+            treeNode38,
+            treeNode39,
+            treeNode40,
+            treeNode41,
+            treeNode42});
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Рентабельність витрат");
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Рентабельність продажів");
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Рентабельність всіх активів");
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Рентабельність власного капіталу ");
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Прибутковість", new System.Windows.Forms.TreeNode[] {
+            treeNode44,
+            treeNode45,
+            treeNode46,
+            treeNode47});
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label160 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.x0 = new System.Windows.Forms.TabPage();
             this.label34 = new System.Windows.Forms.Label();
@@ -309,13 +310,20 @@
             this.label147 = new System.Windows.Forms.Label();
             this.resultBox19 = new System.Windows.Forms.TextBox();
             this.label148 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.label159 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox45 = new System.Windows.Forms.TextBox();
+            this.label158 = new System.Windows.Forms.Label();
+            this.label157 = new System.Windows.Forms.Label();
+            this.label156 = new System.Windows.Forms.Label();
+            this.textBox42 = new System.Windows.Forms.TextBox();
             this.enterpriseIndicatorsDataGridView = new System.Windows.Forms.DataGridView();
             this.enterpriseIndicatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -334,6 +342,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newEnterpriseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.зареєструватиНовеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.обратиІснуючеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -341,7 +351,6 @@
             this.fromJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeToNationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeToEnterpriseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearWorkspaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -351,19 +360,14 @@
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox42 = new System.Windows.Forms.TextBox();
-            this.label156 = new System.Windows.Forms.Label();
-            this.label157 = new System.Windows.Forms.Label();
-            this.label158 = new System.Windows.Forms.Label();
-            this.textBox45 = new System.Windows.Forms.TextBox();
-            this.EnterpriseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterpriseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EnterpriseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -413,8 +417,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label160);
             this.tabPage1.Controls.Add(this.tabControl2);
+            this.tabPage1.Controls.Add(this.comboBox2);
             this.tabPage1.Controls.Add(this.button4);
+            this.tabPage1.Controls.Add(this.label159);
             this.tabPage1.Controls.Add(this.label22);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.panel2);
@@ -425,6 +432,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Обчислення";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label160
+            // 
+            this.label160.AutoSize = true;
+            this.label160.Location = new System.Drawing.Point(727, 4);
+            this.label160.Name = "label160";
+            this.label160.Size = new System.Drawing.Size(25, 13);
+            this.label160.TabIndex = 4;
+            this.label160.Text = "Рік:";
             // 
             // tabControl2
             // 
@@ -448,7 +464,7 @@
             this.tabControl2.Controls.Add(this.x17);
             this.tabControl2.Controls.Add(this.x18);
             this.tabControl2.Controls.Add(this.x19);
-            this.tabControl2.Location = new System.Drawing.Point(497, 6);
+            this.tabControl2.Location = new System.Drawing.Point(500, 20);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(333, 311);
@@ -2790,22 +2806,164 @@
             this.label148.TabIndex = 108;
             this.label148.Text = "Розрахунок рентабельності власного капіталу";
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownHeight = 146;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.IntegralHeight = false;
+            this.comboBox2.Items.AddRange(new object[] {
+            "1930",
+            "1931",
+            "1932",
+            "1933",
+            "1934",
+            "1935",
+            "1936",
+            "1937",
+            "1938",
+            "1939",
+            "1940",
+            "1941",
+            "1942",
+            "1943",
+            "1944",
+            "1945",
+            "1946",
+            "1947",
+            "1948",
+            "1949",
+            "1950",
+            "1951",
+            "1952",
+            "1953",
+            "1954",
+            "1955",
+            "1956",
+            "1957",
+            "1958",
+            "1959",
+            "1960",
+            "1961",
+            "1962",
+            "1963",
+            "1964",
+            "1965",
+            "1966",
+            "1967",
+            "1968",
+            "1969",
+            "1970",
+            "1971",
+            "1972",
+            "1973",
+            "1974",
+            "1975",
+            "1976",
+            "1977",
+            "1978",
+            "1979",
+            "1980",
+            "1981",
+            "1982",
+            "1983",
+            "1984",
+            "1985",
+            "1986",
+            "1987",
+            "1988",
+            "1989",
+            "1990",
+            "1991",
+            "1992",
+            "1993",
+            "1994",
+            "1995",
+            "1996",
+            "1997",
+            "1998",
+            "1999",
+            "2000",
+            "2001",
+            "2002",
+            "2003",
+            "2004",
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031",
+            "2032",
+            "2033",
+            "2034",
+            "2035",
+            "2036",
+            "2037",
+            "2038",
+            "2039",
+            "2040",
+            "2041",
+            "2042",
+            "2043",
+            "2044",
+            "2045",
+            "2046",
+            "2047",
+            "2048",
+            "2049",
+            "2050"});
+            this.comboBox2.Location = new System.Drawing.Point(758, 1);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(72, 21);
+            this.comboBox2.TabIndex = 3;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(602, 240);
+            this.button4.Location = new System.Drawing.Point(605, 255);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(206, 24);
+            this.button4.Size = new System.Drawing.Size(207, 24);
             this.button4.TabIndex = 13;
             this.button4.Text = "Розрахувати";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // label159
+            // 
+            this.label159.AutoSize = true;
+            this.label159.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label159.Location = new System.Drawing.Point(497, 3);
+            this.label159.Name = "label159";
+            this.label159.Size = new System.Drawing.Size(0, 14);
+            this.label159.TabIndex = 2;
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.Location = new System.Drawing.Point(506, 80);
+            this.label22.Location = new System.Drawing.Point(506, 95);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(81, 18);
             this.label22.TabIndex = 18;
@@ -2814,9 +2972,9 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(497, 323);
+            this.button3.Location = new System.Drawing.Point(497, 335);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(336, 44);
+            this.button3.Size = new System.Drawing.Size(336, 32);
             this.button3.TabIndex = 2;
             this.button3.Text = "Зберегти в базу даних";
             this.button3.UseVisualStyleBackColor = true;
@@ -2837,59 +2995,59 @@
             this.treeView1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.treeView1.Location = new System.Drawing.Point(4, 50);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "Коефіцієнт фінансової незалежності";
-            treeNode2.Name = "Node1";
-            treeNode2.Text = "Коефіцієнт фінансової стабільності";
-            treeNode3.Name = "Node2";
-            treeNode3.Text = "Коефіцієнт фінансової стійкості";
-            treeNode4.Name = "Node3";
-            treeNode4.Text = "Коефіцієнт маневреності власних засобів";
-            treeNode5.Name = "Node4";
-            treeNode5.Text = "Коефіцієнт забезпечення власними оборотними засобами";
-            treeNode6.Name = "ParentNode0";
-            treeNode6.Text = "Фінансова стійкість";
-            treeNode7.Name = "Node5";
-            treeNode7.Text = "Коефіцієнт грошової платоспроможності";
-            treeNode8.Name = "Node6";
-            treeNode8.Text = "Коефіцієнт розрахункової платоспроможності";
-            treeNode9.Name = "Node7";
-            treeNode9.Text = "Коефіцієнт критичної ліквідності";
-            treeNode10.Name = "Node8";
-            treeNode10.Text = "Коефіцієнт співвідношення дебіторської та кредиторської заборгованостей";
-            treeNode11.Name = "Node9";
-            treeNode11.Text = "Коефіцієнт мобільності активів";
-            treeNode12.Name = "ParentNode1";
-            treeNode12.Text = "Ліквідність та платоспроможність";
-            treeNode13.Name = "Node10";
-            treeNode13.Text = "Коефіцієнт оборотності активів";
-            treeNode14.Name = "Node11";
-            treeNode14.Text = "Коефіцієнт оборотності дебіторської заборгованості ";
-            treeNode15.Name = "Node12";
-            treeNode15.Text = "Коефіцієнт оборотності кредиторської заборгованості";
-            treeNode16.Name = "Node13";
-            treeNode16.Text = "Коефіцієнт оборотності матеріальних запасів";
-            treeNode17.Name = "Node14";
-            treeNode17.Text = "Коефіцієнт оборотності основних засобів";
-            treeNode18.Name = "Node15";
-            treeNode18.Text = "Коефіцієнт оборотності власного капіталу";
-            treeNode19.Name = "ParentNode2";
-            treeNode19.Text = "Ділова активність";
-            treeNode20.Name = "Node16";
-            treeNode20.Text = "Рентабельність витрат";
-            treeNode21.Name = "Node17";
-            treeNode21.Text = "Рентабельність продажів";
-            treeNode22.Name = "Node18";
-            treeNode22.Text = "Рентабельність всіх активів";
-            treeNode23.Name = "Node19";
-            treeNode23.Text = "Рентабельність власного капіталу ";
-            treeNode24.Name = "ParentNode3";
-            treeNode24.Text = "Прибутковість";
+            treeNode25.Name = "Node0";
+            treeNode25.Text = "Коефіцієнт фінансової незалежності";
+            treeNode26.Name = "Node1";
+            treeNode26.Text = "Коефіцієнт фінансової стабільності";
+            treeNode27.Name = "Node2";
+            treeNode27.Text = "Коефіцієнт фінансової стійкості";
+            treeNode28.Name = "Node3";
+            treeNode28.Text = "Коефіцієнт маневреності власних засобів";
+            treeNode29.Name = "Node4";
+            treeNode29.Text = "Коефіцієнт забезпечення власними оборотними засобами";
+            treeNode30.Name = "ParentNode0";
+            treeNode30.Text = "Фінансова стійкість";
+            treeNode31.Name = "Node5";
+            treeNode31.Text = "Коефіцієнт грошової платоспроможності";
+            treeNode32.Name = "Node6";
+            treeNode32.Text = "Коефіцієнт розрахункової платоспроможності";
+            treeNode33.Name = "Node7";
+            treeNode33.Text = "Коефіцієнт критичної ліквідності";
+            treeNode34.Name = "Node8";
+            treeNode34.Text = "Коефіцієнт співвідношення дебіторської та кредиторської заборгованостей";
+            treeNode35.Name = "Node9";
+            treeNode35.Text = "Коефіцієнт мобільності активів";
+            treeNode36.Name = "ParentNode1";
+            treeNode36.Text = "Ліквідність та платоспроможність";
+            treeNode37.Name = "Node10";
+            treeNode37.Text = "Коефіцієнт оборотності активів";
+            treeNode38.Name = "Node11";
+            treeNode38.Text = "Коефіцієнт оборотності дебіторської заборгованості ";
+            treeNode39.Name = "Node12";
+            treeNode39.Text = "Коефіцієнт оборотності кредиторської заборгованості";
+            treeNode40.Name = "Node13";
+            treeNode40.Text = "Коефіцієнт оборотності матеріальних запасів";
+            treeNode41.Name = "Node14";
+            treeNode41.Text = "Коефіцієнт оборотності основних засобів";
+            treeNode42.Name = "Node15";
+            treeNode42.Text = "Коефіцієнт оборотності власного капіталу";
+            treeNode43.Name = "ParentNode2";
+            treeNode43.Text = "Ділова активність";
+            treeNode44.Name = "Node16";
+            treeNode44.Text = "Рентабельність витрат";
+            treeNode45.Name = "Node17";
+            treeNode45.Text = "Рентабельність продажів";
+            treeNode46.Name = "Node18";
+            treeNode46.Text = "Рентабельність всіх активів";
+            treeNode47.Name = "Node19";
+            treeNode47.Text = "Рентабельність власного капіталу ";
+            treeNode48.Name = "ParentNode3";
+            treeNode48.Text = "Прибутковість";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode12,
-            treeNode19,
-            treeNode24});
+            treeNode30,
+            treeNode36,
+            treeNode43,
+            treeNode48});
             this.treeView1.Size = new System.Drawing.Size(476, 305);
             this.treeView1.TabIndex = 6;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -2925,6 +3083,49 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Аналіз";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox45
+            // 
+            this.textBox45.Location = new System.Drawing.Point(399, 256);
+            this.textBox45.Name = "textBox45";
+            this.textBox45.Size = new System.Drawing.Size(100, 20);
+            this.textBox45.TabIndex = 12;
+            this.textBox45.TextChanged += new System.EventHandler(this.textBox45_TextChanged);
+            // 
+            // label158
+            // 
+            this.label158.AutoSize = true;
+            this.label158.Location = new System.Drawing.Point(428, 240);
+            this.label158.Name = "label158";
+            this.label158.Size = new System.Drawing.Size(36, 13);
+            this.label158.TabIndex = 11;
+            this.label158.Text = "Via ID";
+            // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.Location = new System.Drawing.Point(311, 240);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(51, 13);
+            this.label157.TabIndex = 10;
+            this.label157.Text = "Via name";
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Location = new System.Drawing.Point(225, 259);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(62, 13);
+            this.label156.TabIndex = 9;
+            this.label156.Text = "Live search";
+            // 
+            // textBox42
+            // 
+            this.textBox42.Location = new System.Drawing.Point(293, 256);
+            this.textBox42.Name = "textBox42";
+            this.textBox42.Size = new System.Drawing.Size(100, 20);
+            this.textBox42.TabIndex = 8;
+            this.textBox42.TextChanged += new System.EventHandler(this.textBox42_TextChanged);
             // 
             // enterpriseIndicatorsDataGridView
             // 
@@ -3090,7 +3291,7 @@
             this.informationToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(881, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(867, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -3101,19 +3302,34 @@
             this.exportToolStripMenuItem,
             this.importToolStripMenuItem,
             this.changeToNationToolStripMenuItem,
-            this.changeToEnterpriseToolStripMenuItem,
-            this.exitToolStripMenuItem,
-            this.clearWorkspaceToolStripMenuItem});
+            this.clearWorkspaceToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // newEnterpriseToolStripMenuItem
             // 
+            this.newEnterpriseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.зареєструватиНовеToolStripMenuItem,
+            this.обратиІснуючеToolStripMenuItem});
             this.newEnterpriseToolStripMenuItem.Name = "newEnterpriseToolStripMenuItem";
-            this.newEnterpriseToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
-            this.newEnterpriseToolStripMenuItem.Text = "Зареєструвати підприємтсво";
-            this.newEnterpriseToolStripMenuItem.Click += new System.EventHandler(this.newEnterpriseToolStripMenuItem_Click);
+            this.newEnterpriseToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.newEnterpriseToolStripMenuItem.Text = "Підприємство";
+            // 
+            // зареєструватиНовеToolStripMenuItem
+            // 
+            this.зареєструватиНовеToolStripMenuItem.Name = "зареєструватиНовеToolStripMenuItem";
+            this.зареєструватиНовеToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.зареєструватиНовеToolStripMenuItem.Text = "Зареєструвати нове";
+            this.зареєструватиНовеToolStripMenuItem.Click += new System.EventHandler(this.зареєструватиНовеToolStripMenuItem_Click);
+            // 
+            // обратиІснуючеToolStripMenuItem
+            // 
+            this.обратиІснуючеToolStripMenuItem.Name = "обратиІснуючеToolStripMenuItem";
+            this.обратиІснуючеToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.обратиІснуючеToolStripMenuItem.Text = "Обрати існуюче";
+            this.обратиІснуючеToolStripMenuItem.Click += new System.EventHandler(this.обратиІснуючеToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
@@ -3121,7 +3337,7 @@
             this.toJSONToolStripMenuItem,
             this.toXMLToolStripMenuItem});
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.exportToolStripMenuItem.Text = "Export";
             // 
             // toJSONToolStripMenuItem
@@ -3142,7 +3358,7 @@
             this.fromJSONToolStripMenuItem,
             this.fromXMLToolStripMenuItem});
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.importToolStripMenuItem.Text = "Import";
             // 
             // fromJSONToolStripMenuItem
@@ -3160,26 +3376,20 @@
             // changeToNationToolStripMenuItem
             // 
             this.changeToNationToolStripMenuItem.Name = "changeToNationToolStripMenuItem";
-            this.changeToNationToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.changeToNationToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.changeToNationToolStripMenuItem.Text = "Change to Nation";
-            // 
-            // changeToEnterpriseToolStripMenuItem
-            // 
-            this.changeToEnterpriseToolStripMenuItem.Name = "changeToEnterpriseToolStripMenuItem";
-            this.changeToEnterpriseToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
-            this.changeToEnterpriseToolStripMenuItem.Text = "Change to Enterprise";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.exitToolStripMenuItem.Text = "Вихід";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // clearWorkspaceToolStripMenuItem
             // 
             this.clearWorkspaceToolStripMenuItem.Name = "clearWorkspaceToolStripMenuItem";
-            this.clearWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.clearWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.clearWorkspaceToolStripMenuItem.Text = "Очистити роб. простір";
             this.clearWorkspaceToolStripMenuItem.Click += new System.EventHandler(this.clearWorkspaceToolStripMenuItem_Click);
             // 
@@ -3232,108 +3442,65 @@
             this.donationsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.donationsToolStripMenuItem.Text = "Donations";
             // 
-            // textBox42
-            // 
-            this.textBox42.Location = new System.Drawing.Point(293, 256);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(100, 20);
-            this.textBox42.TabIndex = 8;
-            this.textBox42.TextChanged += new System.EventHandler(this.textBox42_TextChanged);
-            // 
-            // label156
-            // 
-            this.label156.AutoSize = true;
-            this.label156.Location = new System.Drawing.Point(225, 259);
-            this.label156.Name = "label156";
-            this.label156.Size = new System.Drawing.Size(62, 13);
-            this.label156.TabIndex = 9;
-            this.label156.Text = "Live search";
-            // 
-            // label157
-            // 
-            this.label157.AutoSize = true;
-            this.label157.Location = new System.Drawing.Point(311, 240);
-            this.label157.Name = "label157";
-            this.label157.Size = new System.Drawing.Size(51, 13);
-            this.label157.TabIndex = 10;
-            this.label157.Text = "Via name";
-            // 
-            // label158
-            // 
-            this.label158.AutoSize = true;
-            this.label158.Location = new System.Drawing.Point(428, 240);
-            this.label158.Name = "label158";
-            this.label158.Size = new System.Drawing.Size(36, 13);
-            this.label158.TabIndex = 11;
-            this.label158.Text = "Via ID";
-            // 
-            // textBox45
-            // 
-            this.textBox45.Location = new System.Drawing.Point(399, 256);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(100, 20);
-            this.textBox45.TabIndex = 12;
-            this.textBox45.TextChanged += new System.EventHandler(this.textBox45_TextChanged);
-            // 
-            // EnterpriseId
-            // 
-            this.EnterpriseId.DataPropertyName = "EnterpriseId";
-            this.EnterpriseId.HeaderText = "EnterpriseId";
-            this.EnterpriseId.Name = "EnterpriseId";
-            this.EnterpriseId.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
-            this.dataGridViewTextBoxColumn13.HeaderText = "IndicatorName";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "IndicatorValue";
-            this.dataGridViewTextBoxColumn14.HeaderText = "IndicatorValue";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
             // enterpriseBindingSource
             // 
             this.enterpriseBindingSource.DataSource = typeof(FinancialSecurityCalculator.Entities.Enterprise);
             // 
-            // dataGridViewTextBoxColumn10
+            // EnterpriseId
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Year";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Year";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 50;
+            this.EnterpriseId.DataPropertyName = "EnterpriseId";
+            this.EnterpriseId.HeaderText = "IDпідприємства";
+            this.EnterpriseId.Name = "EnterpriseId";
+            this.EnterpriseId.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "EnterpriseName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "EnterpriseName";
+            this.dataGridViewTextBoxColumn6.HeaderText = "НазваПідприємства";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Region";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Region";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Область";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Branch";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Branch";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Галузь";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Year";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Рік";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
+            this.dataGridViewTextBoxColumn13.HeaderText = "НазваПоказника";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "IndicatorValue";
+            this.dataGridViewTextBoxColumn14.HeaderText = "ЗначенняПоказника";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 417);
+            this.ClientSize = new System.Drawing.Size(867, 407);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -3431,7 +3598,6 @@
         private System.Windows.Forms.ToolStripMenuItem fromJSONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fromXMLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeToNationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeToEnterpriseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manualToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enterpriseTheoryToolStripMenuItem;
@@ -3694,6 +3860,11 @@
         private System.Windows.Forms.TextBox textBox45;
         private System.Windows.Forms.Label label158;
         private System.Windows.Forms.Label label157;
+        private System.Windows.Forms.ToolStripMenuItem зареєструватиНовеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem обратиІснуючеToolStripMenuItem;
+        private System.Windows.Forms.Label label159;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label160;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;

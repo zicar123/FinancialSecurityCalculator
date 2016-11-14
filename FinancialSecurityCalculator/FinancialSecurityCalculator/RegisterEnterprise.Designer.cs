@@ -1,6 +1,6 @@
 ﻿namespace FinancialSecurityCalculator
 {
-    partial class SaveToDBModal
+    partial class RegisterEnterprise
     {
         /// <summary>
         /// Required designer variable.
@@ -36,9 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -102,9 +100,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(12, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(226, 16);
+            this.label3.Size = new System.Drawing.Size(107, 16);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Оберіть галузь та рік розрахунку";
+            this.label3.Text = "Оберіть галузь";
             // 
             // comboBox2
             // 
@@ -114,28 +112,6 @@
             this.comboBox2.Size = new System.Drawing.Size(132, 21);
             this.comboBox2.TabIndex = 6;
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(152, 150);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            2200,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1900,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(72, 20);
-            this.numericUpDown1.TabIndex = 8;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            2016,
-            0,
-            0,
-            0});
-            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(172, 30);
@@ -143,13 +119,12 @@
             this.textBox2.Size = new System.Drawing.Size(65, 20);
             this.textBox2.TabIndex = 9;
             // 
-            // SaveToDBModal
+            // RegisterEnterprise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(249, 231);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
@@ -161,9 +136,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SaveToDBModal";
-            this.Text = "Створення запису";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Name = "RegisterEnterprise";
+            this.Text = "Реєстрація нового підприємства";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +153,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.TextBox textBox2;
     }
 }

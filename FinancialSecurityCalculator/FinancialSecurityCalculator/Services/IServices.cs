@@ -15,6 +15,6 @@ namespace FinancialSecurityCalculator.Services
         void SaveToDB(DataModel dataModel);
         string DecisionMaking(EnterpriseIndicator entity);
         void Calculate(TabControl tabControl);
-        void ShowDetails();
+        void ShowDetails(List<EnterpriseIndicator> indicators);
     }
 }

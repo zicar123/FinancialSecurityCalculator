@@ -11,11 +11,11 @@ using System.Collections;
 
 namespace FinancialSecurityCalculator
 {
-    public partial class SaveToDBModal : Form
+    public partial class RegisterEnterprise : Form
     {
         private int enterpriseIdTemp;
 
-        public SaveToDBModal(List<string> regions, List<string> branches)
+        public RegisterEnterprise(List<string> regions, List<string> branches)
         {
             InitializeComponent();
             comboBox1.Items.AddRange(regions.ToArray());
@@ -40,7 +40,6 @@ namespace FinancialSecurityCalculator
                     { "EnterpriseName", textBox1.Text },
                     { "Region", comboBox1.SelectedItem },
                     { "Branch", comboBox2.SelectedItem },
-                    { "Year", numericUpDown1.Value }
                 };
             }
         }
@@ -52,14 +51,38 @@ namespace FinancialSecurityCalculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(textBox2.Text, out enterpriseIdTemp))
+            if (!string.IsNullOrEmpty(textBox1.Text))
             {
-                this.DialogResult = DialogResult.OK;
+                if (comboBox1.SelectedItem != null)
+                {
+                    if (comboBox2.SelectedItem != null)
+                    {
+                        if (int.TryParse(textBox2.Text, out enterpriseIdTemp))
+                        {
+                            this.DialogResult = DialogResult.OK;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Помилка. Невірний формат у полі 'ID'.");
+                            textBox2.Text = string.Empty;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Помилка. Оберіть галузь підприємства.");
+                        comboBox2.Text = null;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Помилка. Оберіть область.");
+                    comboBox1.Text = null;
+                }
             }
             else
             {
-                MessageBox.Show("Помилка. Невірний формат у полі 'ID'.");
-                textBox2.Text = string.Empty;
+                MessageBox.Show("Помилка. Введіть назву підприємства");
+                textBox1.Text = string.Empty;
             }
         }
     }
