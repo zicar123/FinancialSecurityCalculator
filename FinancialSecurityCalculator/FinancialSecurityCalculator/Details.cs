@@ -13,11 +13,11 @@ namespace FinancialSecurityCalculator
 {
     public partial class Details : Form
     {
-        public Details(List<Services.Services.EnterpriseConclusion> conclusionsList)
+        public Details(object conclusionsList)
         {
             InitializeComponent();
             dataGridView1.ReadOnly = true;
-            dataGridView1.DataSource = conclusionsList; //using LINQ is dead end                 
+            dataGridView1.DataSource = conclusionsList;             
         }
     }
 }

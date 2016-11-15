@@ -7,6 +7,7 @@ using FinancialSecurityCalculator.Context;
 using FinancialSecurityCalculator.Entities;
 using System.Linq;
 using System.Collections;
+using System.Reflection;
 
 namespace FinancialSecurityCalculator.Services
 {
@@ -109,7 +110,7 @@ namespace FinancialSecurityCalculator.Services
                         {
                             try
                             {
-                                dataModel.Indicators.Add(new EnterpriseIndicator() { IndicatorName = dataModel.Nodes[i].Text, IndicatorValue = double.Parse(dataModel.TextBoxes[i].Text) });
+                                dataModel.Indicators.Add(new EnterpriseIndicator() { IndicatorID = i, IndicatorName = dataModel.Nodes[i].Text, IndicatorValue = double.Parse(dataModel.TextBoxes[i].Text) });
                             }
                             catch (Exception) { }
                         }
@@ -129,7 +130,7 @@ namespace FinancialSecurityCalculator.Services
                         {
                             try
                             {
-                                dataModel.Indicators.Add(new EnterpriseIndicator() { IndicatorName = dataModel.Nodes[i].Text, IndicatorValue = double.Parse(dataModel.TextBoxes[i].Text) });
+                                dataModel.Indicators.Add(new EnterpriseIndicator() { IndicatorID = i, IndicatorName = dataModel.Nodes[i].Text, IndicatorValue = double.Parse(dataModel.TextBoxes[i].Text) });
                             }
                             catch (Exception) { }
                         }
@@ -152,7 +153,7 @@ namespace FinancialSecurityCalculator.Services
                     {
                         try
                         {
-                            dataModel.Indicators.Add(new EnterpriseIndicator() { IndicatorName = dataModel.Nodes[i].Text, IndicatorValue = double.Parse(dataModel.TextBoxes[i].Text) });
+                            dataModel.Indicators.Add(new EnterpriseIndicator() { IndicatorID = i, IndicatorName = dataModel.Nodes[i].Text, IndicatorValue = double.Parse(dataModel.TextBoxes[i].Text) });
                         }
                         catch (Exception) { }
                     }
@@ -175,20 +176,17 @@ namespace FinancialSecurityCalculator.Services
 
         public string DecisionMaking(EnterpriseIndicator entity)
         {
-
-
-
             //switch (limitValues[entity.EnterpriseIndicatorId].GetType().ToString())
             //{
             //    default:
             //        break;
             //}
 
-            if (limitValues[entity.EnterpriseIndicatorId].GetType() == typeof(TypeA))//TODO: fix (throws exception)
+            if (limitValues[entity.IndicatorID].GetType() == typeof(TypeA))//TODO: fix (throws exception)
             {
-                if ((limitValues[entity.EnterpriseIndicatorId] as TypeA).Below == false)
+                if ((limitValues[entity.IndicatorID] as TypeA).Below == false)
                 {
-                    if (entity.IndicatorValue > (limitValues[entity.EnterpriseIndicatorId] as TypeA).Value)
+                    if (entity.IndicatorValue > (limitValues[entity.IndicatorID] as TypeA).Value)
                     {
                         return "Everything is Ok!";
                     }
@@ -196,7 +194,7 @@ namespace FinancialSecurityCalculator.Services
                 }
                 else
                 {
-                    if (entity.IndicatorValue > (limitValues[entity.EnterpriseIndicatorId] as TypeA).Value)
+                    if (entity.IndicatorValue > (limitValues[entity.IndicatorID] as TypeA).Value)
                     {
                         return "Everything is BAD!";
                     }
@@ -204,23 +202,68 @@ namespace FinancialSecurityCalculator.Services
                 }
 
             }
-            else if (limitValues[entity.EnterpriseIndicatorId].GetType() == typeof(TypeB))
+            else if (limitValues[entity.IndicatorID].GetType() == typeof(TypeB))
             {
-                if (entity.IndicatorValue > (limitValues[entity.EnterpriseIndicatorId] as TypeB).FirstValue && entity.IndicatorValue < (limitValues[entity.EnterpriseIndicatorId] as TypeB).SecondValue)
+                if (entity.IndicatorValue > (limitValues[entity.IndicatorID] as TypeB).FirstValue && entity.IndicatorValue < (limitValues[entity.IndicatorID] as TypeB).SecondValue)
                 {
                     return "Everything is Ok!";
                 }
                 else return "Everything is BAD!";
             }
-            else if (limitValues[entity.EnterpriseIndicatorId].GetType() == typeof(TypeC))
+            else if (limitValues[entity.IndicatorID].GetType() == typeof(TypeC))
             {
                 //if (entity.IndicatorValue > с предідущего года)
                 //{
                 //    return "Everything is Ok!";
                 //}
                 //else return "Everything is BAD!";
+                return "maybe better";
             }
             return "lolThiswould never happen";
+        }
+
+
+        public void ShowDetails(List<EnterpriseIndicator> indicators)
+        {
+            new Details((from item in indicators                            //will not recognize this.DecisionMaking if make querry directly from context
+                         select new
+                         {
+                             indicatorID = item.EnterpriseIndicatorId,
+                             NameOfIndicator = item.IndicatorName,
+                             CurrentValue = item.IndicatorValue,
+                             Conclusion = this.DecisionMaking(item)
+                         }).ToList()).Show();
+
+            //var listAnons = (new[] { new
+            //{
+            //    indicatorID = default(int),
+            //    NameOfIndicator = default(string),
+            //    CurrentValue = default(double),
+            //    Conclusion = default(string)
+            //} }).ToList();
+
+            //listAnons.Clear();
+
+
+
+            //List < EnterpriseConclusion > conclusionsList = new List<EnterpriseConclusion>(); //old-fashioned way
+            //foreach (var item in indicators)
+            //{
+            //    conclusionsList.Add(new EnterpriseConclusion()
+            //    {
+            //        indicatorID = item.EnterpriseIndicatorId,
+            //        NameOfIndicator = item.IndicatorName,
+            //        CurrentValue = item.IndicatorValue,
+            //        Conclusion = this.DecisionMaking(item)
+            //    });
+            //}
+
+            //TODO: this doesnt work right
+
+            //dataGridView1.DataSource = querry.Select(x=> new { d = x.CurrentValue}).ToList();// рабочий вариант вывода одного столбца
+            //dataGridView1.DataSource = querry.ToList();
+
+
         }
 
         public void Calculate(TabControl tabControl)
@@ -267,28 +310,6 @@ namespace FinancialSecurityCalculator.Services
             }
         }
 
-        public void ShowDetails(List<EnterpriseIndicator> indicators)
-        {
-                List<EnterpriseConclusion> conclusionsList = new List<EnterpriseConclusion>();
-                foreach (var item in indicators)
-                {
-                    conclusionsList.Add(new EnterpriseConclusion()
-                    {
-                        NameOfIndicator = item.IndicatorName,
-                        CurrentValue = item.IndicatorValue,
-                        Conclusion = this.DecisionMaking(item)
-                    });
-                }
-                Details detailsForm = new Details(conclusionsList);
-                detailsForm.Show();
-                //TODO: this doesnt work right
-
-                //dataGridView1.DataSource = querry.Select(x=> new { d = x.CurrentValue}).ToList();// рабочий вариант вывода одного столбца
-                //dataGridView1.DataSource = querry.ToList();
-
-            
-        }
-
         private abstract class Types
         {
 
@@ -311,11 +332,106 @@ namespace FinancialSecurityCalculator.Services
             public string Title { get; set; }
         }
 
-        public class EnterpriseConclusion
+        //public class EnterpriseConclusion
+        //{
+        //    public int indicatorID { get; set; }
+        //    public string NameOfIndicator { get; set; }
+        //    public double CurrentValue { get; set; }
+        //    public string Conclusion { get; set; }
+        //}
+
+
+        private List<DecisionData> decisionData = new List<DecisionData>()
         {
-            public string NameOfIndicator { get; set; }
-            public double CurrentValue { get; set; }
-            public string Conclusion { get; set; }
+                new DecisionData() { Value = 0.5, Below = false },
+                new DecisionData() { Value = 0.8, Below = false },
+                new DecisionData() { FirstValue = 0.75, SecondValue = 0.9 },
+                new DecisionData() { FirstValue = 0.3, SecondValue = 0.5 },
+                new DecisionData() { Value = 0.1, Below = false },
+                new DecisionData() { FirstValue = 0.2, SecondValue = 0.35 },
+                new DecisionData() { Title = "Збільшення"},
+                new DecisionData() { FirstValue = 0.7, SecondValue = 1.0 },
+                new DecisionData() { Value = 1.0, Below = true },
+                new DecisionData() { Value = 0.1, Below = false },
+                new DecisionData() { Title = "Збільшення"},
+                new DecisionData() { Title = "Збільшення"},
+                new DecisionData() { Title = "Збільшення"},
+                new DecisionData() { Title = "Збільшення"},
+                new DecisionData() { Title = "Збільшення"},
+                new DecisionData() { Title = "Збільшення"},
+                new DecisionData() { Title = "Збільшення"},
+                new DecisionData() { Title = "Збільшення"},
+                new DecisionData() { Title = "Збільшення"},
+                new DecisionData() { Title = "Збільшення"},
+        };
+
+        private class DecisionData
+        {
+            public double? Value { get; set; }
+            public bool? Below { get; set; }
+            public double? FirstValue { get; set; }
+            public double? SecondValue { get; set; }
+            public string Title { get; set; }
+        }
+
+        public void DecisionMakingReflection(EnterpriseIndicator entity)
+        {
+            // var properties = typeof(DecisionData).GetProperties();
+            
+            foreach (var obj in decisionData)
+            {
+                var properties = (obj.GetType()).GetProperties();
+
+                foreach (var prop in properties)
+                {
+                    var a = obj.GetType().GetProperty(prop.Name).GetValue(obj, null);
+
+                    if (true)
+                    {
+
+                    }
+                }
+            }
+
+
+
+            var props = decisionData[entity.IndicatorID].GetType().GetProperties();
+
+            if (props[0].GetValue(decisionData[entity.IndicatorID]) != null && props[1].GetValue(decisionData[entity.IndicatorID]) != null)
+            {
+                //TypeA actions
+            }
+            else if (props[2].GetValue(decisionData[entity.IndicatorID]) != null && props[3].GetValue(decisionData[entity.IndicatorID]) != null)
+            {
+                //TypeB actions
+            }
+            else if (props[4].GetValue(decisionData[entity.IndicatorID]) != null)
+            {
+                //TypeC actions
+            }
+
+
+            //var propValue = decisionData[entity.IndicatorID].GetType().GetProperty("Value");
+            //var propBelow = decisionData[entity.IndicatorID].GetType().GetProperty("Below");
+            //var propFirstValue = decisionData[entity.IndicatorID].GetType().GetProperty("Value");
+            //var propSecondValue = decisionData[entity.IndicatorID].GetType().GetProperty("Below");
+            //var propTitle = decisionData[entity.IndicatorID].GetType().GetProperty("Below");
+
+
+
+            //if (propValue.GetValue(decisionData[entity.IndicatorID], null) != null && propBelow.GetValue(decisionData[entity.IndicatorID], null) != null)
+            //{
+            //    //TypeA actions
+            //}
         }
     }
+
+
+
+
+
+
+            
+
+    
 }

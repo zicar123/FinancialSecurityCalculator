@@ -12,6 +12,7 @@ namespace FinancialSecurityCalculator.Entities
         [Key, Required]
         public int EnterpriseIndicatorId { get; set; }
 
+        public int IndicatorID { get; set; }
         public string IndicatorName { get; set; }
         public double IndicatorValue { get; set; }
 

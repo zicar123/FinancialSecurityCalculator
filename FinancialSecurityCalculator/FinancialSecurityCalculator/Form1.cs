@@ -23,6 +23,7 @@ namespace FinancialSecurityCalculator
             dataModel = new DataModel();
             services = new Services.Services();
             this.Init();
+            services.DecisionMakingReflection();
         }
 
         private void Init()
