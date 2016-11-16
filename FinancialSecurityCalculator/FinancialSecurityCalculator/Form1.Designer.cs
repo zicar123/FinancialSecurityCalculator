@@ -29,50 +29,50 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Коефіцієнт фінансової незалежності");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Коефіцієнт фінансової стабільності");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Коефіцієнт фінансової стійкості");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Коефіцієнт маневреності власних засобів");
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Коефіцієнт забезпечення власними оборотними засобами");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Фінансова стійкість", new System.Windows.Forms.TreeNode[] {
-            treeNode25,
-            treeNode26,
-            treeNode27,
-            treeNode28,
-            treeNode29});
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Коефіцієнт грошової платоспроможності");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Коефіцієнт розрахункової платоспроможності");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Коефіцієнт критичної ліквідності");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Коефіцієнт співвідношення дебіторської та кредиторської заборгованостей");
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Коефіцієнт мобільності активів");
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Ліквідність та платоспроможність", new System.Windows.Forms.TreeNode[] {
-            treeNode31,
-            treeNode32,
-            treeNode33,
-            treeNode34,
-            treeNode35});
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності активів");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності дебіторської заборгованості ");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності кредиторської заборгованості");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності матеріальних запасів");
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності основних засобів");
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності власного капіталу");
-            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Ділова активність", new System.Windows.Forms.TreeNode[] {
-            treeNode37,
-            treeNode38,
-            treeNode39,
-            treeNode40,
-            treeNode41,
-            treeNode42});
-            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Рентабельність витрат");
-            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Рентабельність продажів");
-            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Рентабельність всіх активів");
-            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Рентабельність власного капіталу ");
-            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Прибутковість", new System.Windows.Forms.TreeNode[] {
-            treeNode44,
-            treeNode45,
-            treeNode46,
-            treeNode47});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Коефіцієнт фінансової незалежності");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Коефіцієнт фінансової стабільності");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Коефіцієнт фінансової стійкості");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Коефіцієнт маневреності власних засобів");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Коефіцієнт забезпечення власними оборотними засобами");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Фінансова стійкість", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Коефіцієнт грошової платоспроможності");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Коефіцієнт розрахункової платоспроможності");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Коефіцієнт критичної ліквідності");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Коефіцієнт співвідношення дебіторської та кредиторської заборгованостей");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Коефіцієнт мобільності активів");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Ліквідність та платоспроможність", new System.Windows.Forms.TreeNode[] {
+            treeNode7,
+            treeNode8,
+            treeNode9,
+            treeNode10,
+            treeNode11});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності активів");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності дебіторської заборгованості ");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності кредиторської заборгованості");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності матеріальних запасів");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності основних засобів");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності власного капіталу");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Ділова активність", new System.Windows.Forms.TreeNode[] {
+            treeNode13,
+            treeNode14,
+            treeNode15,
+            treeNode16,
+            treeNode17,
+            treeNode18});
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Рентабельність витрат");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Рентабельність продажів");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Рентабельність всіх активів");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Рентабельність власного капіталу ");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Прибутковість", new System.Windows.Forms.TreeNode[] {
+            treeNode20,
+            treeNode21,
+            treeNode22,
+            treeNode23});
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label160 = new System.Windows.Forms.Label();
@@ -329,6 +329,7 @@
             this.recordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recordsDataGridView = new System.Windows.Forms.DataGridView();
             this.enterpriseDataGridView = new System.Windows.Forms.DataGridView();
+            this.EnterpriseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -350,9 +351,8 @@
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeToNationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearWorkspaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enterpriseTheoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nationTheoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -360,14 +360,13 @@
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterpriseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.EnterpriseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -436,7 +435,7 @@
             // label160
             // 
             this.label160.AutoSize = true;
-            this.label160.Location = new System.Drawing.Point(727, 4);
+            this.label160.Location = new System.Drawing.Point(727, 3);
             this.label160.Name = "label160";
             this.label160.Size = new System.Drawing.Size(25, 13);
             this.label160.TabIndex = 4;
@@ -486,13 +485,13 @@
             this.x0.Padding = new System.Windows.Forms.Padding(3);
             this.x0.Size = new System.Drawing.Size(325, 285);
             this.x0.TabIndex = 0;
-            this.x0.Text = "x0";
+            this.x0.Text = "Фін. незалеж.";
             this.x0.UseVisualStyleBackColor = true;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label34.Location = new System.Drawing.Point(15, 18);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(296, 15);
@@ -586,13 +585,13 @@
             this.x1.Padding = new System.Windows.Forms.Padding(3);
             this.x1.Size = new System.Drawing.Size(325, 285);
             this.x1.TabIndex = 1;
-            this.x1.Text = "x1";
+            this.x1.Text = "Фін. стабільність";
             this.x1.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(15, 18);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(290, 15);
@@ -688,13 +687,13 @@
             this.x2.Name = "x2";
             this.x2.Size = new System.Drawing.Size(325, 285);
             this.x2.TabIndex = 2;
-            this.x2.Text = "x2";
+            this.x2.Text = "Фін. стійкість";
             this.x2.UseVisualStyleBackColor = true;
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label38.Location = new System.Drawing.Point(15, 18);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(268, 15);
@@ -815,13 +814,13 @@
             this.x3.Name = "x3";
             this.x3.Size = new System.Drawing.Size(325, 285);
             this.x3.TabIndex = 3;
-            this.x3.Text = "x3";
+            this.x3.Text = "Маневр. влас. засобів";
             this.x3.UseVisualStyleBackColor = true;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label23.Location = new System.Drawing.Point(15, 33);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(50, 15);
@@ -902,7 +901,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label41.Location = new System.Drawing.Point(15, 18);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(279, 15);
@@ -928,13 +927,13 @@
             this.x4.Name = "x4";
             this.x4.Size = new System.Drawing.Size(325, 285);
             this.x4.TabIndex = 4;
-            this.x4.Text = "x4";
+            this.x4.Text = "Забезп. влас. об. засобами";
             this.x4.UseVisualStyleBackColor = true;
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label40.Location = new System.Drawing.Point(15, 33);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(138, 15);
@@ -944,7 +943,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label39.Location = new System.Drawing.Point(15, 18);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(289, 15);
@@ -1065,13 +1064,13 @@
             this.x5.Name = "x5";
             this.x5.Size = new System.Drawing.Size(325, 285);
             this.x5.TabIndex = 5;
-            this.x5.Text = "x5";
+            this.x5.Text = "Грош. платоспромож.";
             this.x5.UseVisualStyleBackColor = true;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label29.Location = new System.Drawing.Point(15, 33);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(124, 15);
@@ -1152,7 +1151,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label45.Location = new System.Drawing.Point(15, 18);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(200, 15);
@@ -1175,13 +1174,13 @@
             this.x6.Name = "x6";
             this.x6.Size = new System.Drawing.Size(325, 285);
             this.x6.TabIndex = 6;
-            this.x6.Text = "x6";
+            this.x6.Text = "Розрах. платоспромож.";
             this.x6.UseVisualStyleBackColor = true;
             // 
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label49.Location = new System.Drawing.Point(15, 33);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(124, 15);
@@ -1262,7 +1261,7 @@
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label55.Location = new System.Drawing.Point(15, 18);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(230, 15);
@@ -1285,7 +1284,7 @@
             this.x7.Name = "x7";
             this.x7.Size = new System.Drawing.Size(325, 285);
             this.x7.TabIndex = 7;
-            this.x7.Text = "x7";
+            this.x7.Text = "Критична ліквідність";
             this.x7.UseVisualStyleBackColor = true;
             // 
             // label56
@@ -1372,7 +1371,7 @@
             // label62
             // 
             this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label62.Location = new System.Drawing.Point(15, 18);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(271, 15);
@@ -1400,7 +1399,7 @@
             this.x8.Name = "x8";
             this.x8.Size = new System.Drawing.Size(325, 285);
             this.x8.TabIndex = 8;
-            this.x8.Text = "x8";
+            this.x8.Text = "Дебют. та кредит. співвіднош.";
             this.x8.UseVisualStyleBackColor = true;
             // 
             // label73
@@ -1426,7 +1425,7 @@
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label63.Location = new System.Drawing.Point(15, 33);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(289, 15);
@@ -1436,7 +1435,7 @@
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label64.Location = new System.Drawing.Point(15, 18);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(239, 15);
@@ -1557,7 +1556,7 @@
             this.x9.Name = "x9";
             this.x9.Size = new System.Drawing.Size(325, 285);
             this.x9.TabIndex = 9;
-            this.x9.Text = "x9";
+            this.x9.Text = "Мобільність активів";
             this.x9.UseVisualStyleBackColor = true;
             // 
             // label74
@@ -1644,7 +1643,7 @@
             // label80
             // 
             this.label80.AutoSize = true;
-            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label80.Location = new System.Drawing.Point(15, 18);
             this.label80.Name = "label80";
             this.label80.Size = new System.Drawing.Size(265, 15);
@@ -1667,7 +1666,7 @@
             this.x10.Name = "x10";
             this.x10.Size = new System.Drawing.Size(325, 285);
             this.x10.TabIndex = 10;
-            this.x10.Text = "x10";
+            this.x10.Text = "Оборотність активів";
             this.x10.UseVisualStyleBackColor = true;
             // 
             // label86
@@ -1754,7 +1753,7 @@
             // label87
             // 
             this.label87.AutoSize = true;
-            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label87.Location = new System.Drawing.Point(15, 18);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(267, 15);
@@ -1779,7 +1778,7 @@
             this.x11.Name = "x11";
             this.x11.Size = new System.Drawing.Size(325, 285);
             this.x11.TabIndex = 11;
-            this.x11.Text = "x11";
+            this.x11.Text = "Об. дебют. заборг.";
             this.x11.UseVisualStyleBackColor = true;
             // 
             // label89
@@ -1822,7 +1821,7 @@
             // label123
             // 
             this.label123.AutoSize = true;
-            this.label123.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label123.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label123.Location = new System.Drawing.Point(15, 32);
             this.label123.Name = "label123";
             this.label123.Size = new System.Drawing.Size(97, 15);
@@ -1886,7 +1885,7 @@
             // label94
             // 
             this.label94.AutoSize = true;
-            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label94.Location = new System.Drawing.Point(15, 18);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(297, 15);
@@ -1911,13 +1910,13 @@
             this.x12.Name = "x12";
             this.x12.Size = new System.Drawing.Size(325, 285);
             this.x12.TabIndex = 12;
-            this.x12.Text = "x12";
+            this.x12.Text = "Об. кредит. заборг.";
             this.x12.UseVisualStyleBackColor = true;
             // 
             // label128
             // 
             this.label128.AutoSize = true;
-            this.label128.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label128.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label128.Location = new System.Drawing.Point(15, 33);
             this.label128.Name = "label128";
             this.label128.Size = new System.Drawing.Size(97, 15);
@@ -2018,7 +2017,7 @@
             // label101
             // 
             this.label101.AutoSize = true;
-            this.label101.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label101.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label101.Location = new System.Drawing.Point(15, 18);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(307, 15);
@@ -2042,13 +2041,13 @@
             this.x13.Name = "x13";
             this.x13.Size = new System.Drawing.Size(325, 285);
             this.x13.TabIndex = 13;
-            this.x13.Text = "x13";
+            this.x13.Text = "Об. матеріальних запасів";
             this.x13.UseVisualStyleBackColor = true;
             // 
             // label129
             // 
             this.label129.AutoSize = true;
-            this.label129.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label129.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label129.Location = new System.Drawing.Point(15, 33);
             this.label129.Name = "label129";
             this.label129.Size = new System.Drawing.Size(50, 15);
@@ -2139,7 +2138,7 @@
             // label108
             // 
             this.label108.AutoSize = true;
-            this.label108.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label108.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label108.Location = new System.Drawing.Point(15, 18);
             this.label108.Name = "label108";
             this.label108.Size = new System.Drawing.Size(304, 15);
@@ -2163,13 +2162,13 @@
             this.x14.Name = "x14";
             this.x14.Size = new System.Drawing.Size(325, 285);
             this.x14.TabIndex = 14;
-            this.x14.Text = "x14";
+            this.x14.Text = "Об. основних засобів";
             this.x14.UseVisualStyleBackColor = true;
             // 
             // label130
             // 
             this.label130.AutoSize = true;
-            this.label130.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label130.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label130.Location = new System.Drawing.Point(15, 33);
             this.label130.Name = "label130";
             this.label130.Size = new System.Drawing.Size(50, 15);
@@ -2260,7 +2259,7 @@
             // label115
             // 
             this.label115.AutoSize = true;
-            this.label115.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label115.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label115.Location = new System.Drawing.Point(15, 18);
             this.label115.Name = "label115";
             this.label115.Size = new System.Drawing.Size(277, 15);
@@ -2284,13 +2283,13 @@
             this.x15.Name = "x15";
             this.x15.Size = new System.Drawing.Size(325, 285);
             this.x15.TabIndex = 15;
-            this.x15.Text = "x15";
+            this.x15.Text = "Об. власного капіталу";
             this.x15.UseVisualStyleBackColor = true;
             // 
             // label114
             // 
             this.label114.AutoSize = true;
-            this.label114.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label114.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label114.Location = new System.Drawing.Point(15, 33);
             this.label114.Name = "label114";
             this.label114.Size = new System.Drawing.Size(56, 15);
@@ -2381,7 +2380,7 @@
             // label122
             // 
             this.label122.AutoSize = true;
-            this.label122.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label122.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label122.Location = new System.Drawing.Point(15, 18);
             this.label122.Name = "label122";
             this.label122.Size = new System.Drawing.Size(276, 15);
@@ -2404,7 +2403,7 @@
             this.x16.Name = "x16";
             this.x16.Size = new System.Drawing.Size(325, 285);
             this.x16.TabIndex = 16;
-            this.x16.Text = "x16";
+            this.x16.Text = "Рентаб. витрат";
             this.x16.UseVisualStyleBackColor = true;
             // 
             // label149
@@ -2491,7 +2490,7 @@
             // label155
             // 
             this.label155.AutoSize = true;
-            this.label155.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label155.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label155.Location = new System.Drawing.Point(15, 18);
             this.label155.Name = "label155";
             this.label155.Size = new System.Drawing.Size(214, 15);
@@ -2514,7 +2513,7 @@
             this.x17.Name = "x17";
             this.x17.Size = new System.Drawing.Size(325, 285);
             this.x17.TabIndex = 17;
-            this.x17.Text = "x17";
+            this.x17.Text = "Рентаб. продажів";
             this.x17.UseVisualStyleBackColor = true;
             // 
             // label121
@@ -2601,7 +2600,7 @@
             // label136
             // 
             this.label136.AutoSize = true;
-            this.label136.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label136.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label136.Location = new System.Drawing.Point(15, 18);
             this.label136.Name = "label136";
             this.label136.Size = new System.Drawing.Size(226, 15);
@@ -2623,7 +2622,7 @@
             this.x18.Name = "x18";
             this.x18.Size = new System.Drawing.Size(325, 285);
             this.x18.TabIndex = 18;
-            this.x18.Text = "x18";
+            this.x18.Text = "Рентаб. всіх активів";
             this.x18.UseVisualStyleBackColor = true;
             // 
             // label137
@@ -2700,7 +2699,7 @@
             // label143
             // 
             this.label143.AutoSize = true;
-            this.label143.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label143.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label143.Location = new System.Drawing.Point(15, 18);
             this.label143.Name = "label143";
             this.label143.Size = new System.Drawing.Size(241, 15);
@@ -2722,7 +2721,7 @@
             this.x19.Name = "x19";
             this.x19.Size = new System.Drawing.Size(325, 285);
             this.x19.TabIndex = 19;
-            this.x19.Text = "x19";
+            this.x19.Text = "Рентаб. власного капіталу";
             this.x19.UseVisualStyleBackColor = true;
             // 
             // label140
@@ -2799,7 +2798,7 @@
             // label148
             // 
             this.label148.AutoSize = true;
-            this.label148.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label148.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label148.Location = new System.Drawing.Point(15, 18);
             this.label148.Name = "label148";
             this.label148.Size = new System.Drawing.Size(277, 15);
@@ -2933,7 +2932,7 @@
             "2048",
             "2049",
             "2050"});
-            this.comboBox2.Location = new System.Drawing.Point(758, 1);
+            this.comboBox2.Location = new System.Drawing.Point(758, 0);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(72, 21);
             this.comboBox2.TabIndex = 3;
@@ -2995,59 +2994,59 @@
             this.treeView1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.treeView1.Location = new System.Drawing.Point(4, 50);
             this.treeView1.Name = "treeView1";
-            treeNode25.Name = "Node0";
-            treeNode25.Text = "Коефіцієнт фінансової незалежності";
-            treeNode26.Name = "Node1";
-            treeNode26.Text = "Коефіцієнт фінансової стабільності";
-            treeNode27.Name = "Node2";
-            treeNode27.Text = "Коефіцієнт фінансової стійкості";
-            treeNode28.Name = "Node3";
-            treeNode28.Text = "Коефіцієнт маневреності власних засобів";
-            treeNode29.Name = "Node4";
-            treeNode29.Text = "Коефіцієнт забезпечення власними оборотними засобами";
-            treeNode30.Name = "ParentNode0";
-            treeNode30.Text = "Фінансова стійкість";
-            treeNode31.Name = "Node5";
-            treeNode31.Text = "Коефіцієнт грошової платоспроможності";
-            treeNode32.Name = "Node6";
-            treeNode32.Text = "Коефіцієнт розрахункової платоспроможності";
-            treeNode33.Name = "Node7";
-            treeNode33.Text = "Коефіцієнт критичної ліквідності";
-            treeNode34.Name = "Node8";
-            treeNode34.Text = "Коефіцієнт співвідношення дебіторської та кредиторської заборгованостей";
-            treeNode35.Name = "Node9";
-            treeNode35.Text = "Коефіцієнт мобільності активів";
-            treeNode36.Name = "ParentNode1";
-            treeNode36.Text = "Ліквідність та платоспроможність";
-            treeNode37.Name = "Node10";
-            treeNode37.Text = "Коефіцієнт оборотності активів";
-            treeNode38.Name = "Node11";
-            treeNode38.Text = "Коефіцієнт оборотності дебіторської заборгованості ";
-            treeNode39.Name = "Node12";
-            treeNode39.Text = "Коефіцієнт оборотності кредиторської заборгованості";
-            treeNode40.Name = "Node13";
-            treeNode40.Text = "Коефіцієнт оборотності матеріальних запасів";
-            treeNode41.Name = "Node14";
-            treeNode41.Text = "Коефіцієнт оборотності основних засобів";
-            treeNode42.Name = "Node15";
-            treeNode42.Text = "Коефіцієнт оборотності власного капіталу";
-            treeNode43.Name = "ParentNode2";
-            treeNode43.Text = "Ділова активність";
-            treeNode44.Name = "Node16";
-            treeNode44.Text = "Рентабельність витрат";
-            treeNode45.Name = "Node17";
-            treeNode45.Text = "Рентабельність продажів";
-            treeNode46.Name = "Node18";
-            treeNode46.Text = "Рентабельність всіх активів";
-            treeNode47.Name = "Node19";
-            treeNode47.Text = "Рентабельність власного капіталу ";
-            treeNode48.Name = "ParentNode3";
-            treeNode48.Text = "Прибутковість";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "Коефіцієнт фінансової незалежності";
+            treeNode2.Name = "Node1";
+            treeNode2.Text = "Коефіцієнт фінансової стабільності";
+            treeNode3.Name = "Node2";
+            treeNode3.Text = "Коефіцієнт фінансової стійкості";
+            treeNode4.Name = "Node3";
+            treeNode4.Text = "Коефіцієнт маневреності власних засобів";
+            treeNode5.Name = "Node4";
+            treeNode5.Text = "Коефіцієнт забезпечення власними оборотними засобами";
+            treeNode6.Name = "ParentNode0";
+            treeNode6.Text = "Фінансова стійкість";
+            treeNode7.Name = "Node5";
+            treeNode7.Text = "Коефіцієнт грошової платоспроможності";
+            treeNode8.Name = "Node6";
+            treeNode8.Text = "Коефіцієнт розрахункової платоспроможності";
+            treeNode9.Name = "Node7";
+            treeNode9.Text = "Коефіцієнт критичної ліквідності";
+            treeNode10.Name = "Node8";
+            treeNode10.Text = "Коефіцієнт співвідношення дебіторської та кредиторської заборгованостей";
+            treeNode11.Name = "Node9";
+            treeNode11.Text = "Коефіцієнт мобільності активів";
+            treeNode12.Name = "ParentNode1";
+            treeNode12.Text = "Ліквідність та платоспроможність";
+            treeNode13.Name = "Node10";
+            treeNode13.Text = "Коефіцієнт оборотності активів";
+            treeNode14.Name = "Node11";
+            treeNode14.Text = "Коефіцієнт оборотності дебіторської заборгованості ";
+            treeNode15.Name = "Node12";
+            treeNode15.Text = "Коефіцієнт оборотності кредиторської заборгованості";
+            treeNode16.Name = "Node13";
+            treeNode16.Text = "Коефіцієнт оборотності матеріальних запасів";
+            treeNode17.Name = "Node14";
+            treeNode17.Text = "Коефіцієнт оборотності основних засобів";
+            treeNode18.Name = "Node15";
+            treeNode18.Text = "Коефіцієнт оборотності власного капіталу";
+            treeNode19.Name = "ParentNode2";
+            treeNode19.Text = "Ділова активність";
+            treeNode20.Name = "Node16";
+            treeNode20.Text = "Рентабельність витрат";
+            treeNode21.Name = "Node17";
+            treeNode21.Text = "Рентабельність продажів";
+            treeNode22.Name = "Node18";
+            treeNode22.Text = "Рентабельність всіх активів";
+            treeNode23.Name = "Node19";
+            treeNode23.Text = "Рентабельність власного капіталу ";
+            treeNode24.Name = "ParentNode3";
+            treeNode24.Text = "Прибутковість";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode30,
-            treeNode36,
-            treeNode43,
-            treeNode48});
+            treeNode6,
+            treeNode12,
+            treeNode19,
+            treeNode24});
             this.treeView1.Size = new System.Drawing.Size(476, 305);
             this.treeView1.TabIndex = 6;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -3065,11 +3064,6 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
-            this.tabPage2.Controls.Add(this.textBox45);
-            this.tabPage2.Controls.Add(this.label158);
-            this.tabPage2.Controls.Add(this.label157);
-            this.tabPage2.Controls.Add(this.label156);
-            this.tabPage2.Controls.Add(this.textBox42);
             this.tabPage2.Controls.Add(this.enterpriseIndicatorsDataGridView);
             this.tabPage2.Controls.Add(this.recordsDataGridView);
             this.tabPage2.Controls.Add(this.enterpriseDataGridView);
@@ -3086,7 +3080,7 @@
             // 
             // textBox45
             // 
-            this.textBox45.Location = new System.Drawing.Point(399, 256);
+            this.textBox45.Location = new System.Drawing.Point(50, 320);
             this.textBox45.Name = "textBox45";
             this.textBox45.Size = new System.Drawing.Size(100, 20);
             this.textBox45.TabIndex = 12;
@@ -3095,33 +3089,36 @@
             // label158
             // 
             this.label158.AutoSize = true;
-            this.label158.Location = new System.Drawing.Point(428, 240);
+            this.label158.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label158.Location = new System.Drawing.Point(28, 304);
             this.label158.Name = "label158";
-            this.label158.Size = new System.Drawing.Size(36, 13);
+            this.label158.Size = new System.Drawing.Size(106, 13);
             this.label158.TabIndex = 11;
-            this.label158.Text = "Via ID";
+            this.label158.Text = "За ID підприємства";
             // 
             // label157
             // 
             this.label157.AutoSize = true;
-            this.label157.Location = new System.Drawing.Point(311, 240);
+            this.label157.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label157.Location = new System.Drawing.Point(28, 260);
             this.label157.Name = "label157";
-            this.label157.Size = new System.Drawing.Size(51, 13);
+            this.label157.Size = new System.Drawing.Size(61, 13);
             this.label157.TabIndex = 10;
-            this.label157.Text = "Via name";
+            this.label157.Text = "За назвою";
             // 
             // label156
             // 
             this.label156.AutoSize = true;
-            this.label156.Location = new System.Drawing.Point(225, 259);
+            this.label156.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label156.Location = new System.Drawing.Point(11, 232);
             this.label156.Name = "label156";
-            this.label156.Size = new System.Drawing.Size(62, 13);
+            this.label156.Size = new System.Drawing.Size(128, 19);
             this.label156.TabIndex = 9;
-            this.label156.Text = "Live search";
+            this.label156.Text = "Швидкий пошук:";
             // 
             // textBox42
             // 
-            this.textBox42.Location = new System.Drawing.Point(293, 256);
+            this.textBox42.Location = new System.Drawing.Point(50, 276);
             this.textBox42.Name = "textBox42";
             this.textBox42.Size = new System.Drawing.Size(100, 20);
             this.textBox42.TabIndex = 8;
@@ -3136,8 +3133,9 @@
             this.dataGridViewTextBoxColumn14});
             this.enterpriseIndicatorsDataGridView.DataSource = this.enterpriseIndicatorsBindingSource;
             this.enterpriseIndicatorsDataGridView.Location = new System.Drawing.Point(585, 6);
+            this.enterpriseIndicatorsDataGridView.MultiSelect = false;
             this.enterpriseIndicatorsDataGridView.Name = "enterpriseIndicatorsDataGridView";
-            this.enterpriseIndicatorsDataGridView.Size = new System.Drawing.Size(245, 220);
+            this.enterpriseIndicatorsDataGridView.Size = new System.Drawing.Size(245, 326);
             this.enterpriseIndicatorsDataGridView.TabIndex = 7;
             // 
             // enterpriseIndicatorsBindingSource
@@ -3158,8 +3156,9 @@
             this.dataGridViewTextBoxColumn10});
             this.recordsDataGridView.DataSource = this.recordsBindingSource;
             this.recordsDataGridView.Location = new System.Drawing.Point(483, 6);
+            this.recordsDataGridView.MultiSelect = false;
             this.recordsDataGridView.Name = "recordsDataGridView";
-            this.recordsDataGridView.Size = new System.Drawing.Size(96, 220);
+            this.recordsDataGridView.Size = new System.Drawing.Size(96, 296);
             this.recordsDataGridView.TabIndex = 7;
             // 
             // enterpriseDataGridView
@@ -3173,35 +3172,49 @@
             this.dataGridViewTextBoxColumn8});
             this.enterpriseDataGridView.DataSource = this.enterpriseBindingSource;
             this.enterpriseDataGridView.Location = new System.Drawing.Point(199, 6);
+            this.enterpriseDataGridView.MultiSelect = false;
             this.enterpriseDataGridView.Name = "enterpriseDataGridView";
-            this.enterpriseDataGridView.Size = new System.Drawing.Size(278, 220);
+            this.enterpriseDataGridView.Size = new System.Drawing.Size(278, 262);
             this.enterpriseDataGridView.TabIndex = 7;
+            // 
+            // EnterpriseId
+            // 
+            this.EnterpriseId.DataPropertyName = "EnterpriseId";
+            this.EnterpriseId.HeaderText = "IDпідприємства";
+            this.EnterpriseId.Name = "EnterpriseId";
+            this.EnterpriseId.ReadOnly = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(548, 256);
+            this.button2.Location = new System.Drawing.Point(713, 338);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 21);
+            this.button2.Size = new System.Drawing.Size(117, 28);
             this.button2.TabIndex = 7;
-            this.button2.Text = "Details";
+            this.button2.Text = "Деталі";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(730, 332);
+            this.button1.Location = new System.Drawing.Point(338, 274);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 21);
+            this.button1.Size = new System.Drawing.Size(139, 28);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Compares";
+            this.button1.Text = "Порівняння";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.textBox45);
+            this.panel1.Controls.Add(this.label158);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label157);
             this.panel1.Controls.Add(this.checkBox3);
+            this.panel1.Controls.Add(this.textBox42);
+            this.panel1.Controls.Add(this.label156);
             this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.checkBox1);
@@ -3215,7 +3228,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(3, 64);
+            this.label11.Location = new System.Drawing.Point(11, 25);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 19);
             this.label11.TabIndex = 4;
@@ -3225,7 +3238,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 45);
+            this.label1.Location = new System.Drawing.Point(11, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 19);
             this.label1.TabIndex = 3;
@@ -3234,7 +3247,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(26, 189);
+            this.checkBox3.Location = new System.Drawing.Point(15, 101);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(106, 17);
             this.checkBox3.TabIndex = 2;
@@ -3245,7 +3258,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(26, 144);
+            this.checkBox2.Location = new System.Drawing.Point(15, 78);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(125, 17);
             this.checkBox2.TabIndex = 1;
@@ -3257,7 +3270,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(7, 301);
+            this.label2.Location = new System.Drawing.Point(11, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 19);
             this.label2.TabIndex = 5;
@@ -3266,7 +3279,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(26, 101);
+            this.checkBox1.Location = new System.Drawing.Point(15, 55);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(117, 17);
             this.checkBox1.TabIndex = 0;
@@ -3277,7 +3290,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(11, 323);
+            this.comboBox1.Location = new System.Drawing.Point(15, 176);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 21);
             this.comboBox1.TabIndex = 4;
@@ -3301,7 +3314,6 @@
             this.newEnterpriseToolStripMenuItem,
             this.exportToolStripMenuItem,
             this.importToolStripMenuItem,
-            this.changeToNationToolStripMenuItem,
             this.clearWorkspaceToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
@@ -3373,11 +3385,12 @@
             this.fromXMLToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.fromXMLToolStripMenuItem.Text = "From XML";
             // 
-            // changeToNationToolStripMenuItem
+            // clearWorkspaceToolStripMenuItem
             // 
-            this.changeToNationToolStripMenuItem.Name = "changeToNationToolStripMenuItem";
-            this.changeToNationToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.changeToNationToolStripMenuItem.Text = "Change to Nation";
+            this.clearWorkspaceToolStripMenuItem.Name = "clearWorkspaceToolStripMenuItem";
+            this.clearWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.clearWorkspaceToolStripMenuItem.Text = "Очистити роб. простір";
+            this.clearWorkspaceToolStripMenuItem.Click += new System.EventHandler(this.clearWorkspaceToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -3385,13 +3398,6 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.exitToolStripMenuItem.Text = "Вихід";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // clearWorkspaceToolStripMenuItem
-            // 
-            this.clearWorkspaceToolStripMenuItem.Name = "clearWorkspaceToolStripMenuItem";
-            this.clearWorkspaceToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.clearWorkspaceToolStripMenuItem.Text = "Очистити роб. простір";
-            this.clearWorkspaceToolStripMenuItem.Click += new System.EventHandler(this.clearWorkspaceToolStripMenuItem_Click);
             // 
             // manualToolStripMenuItem
             // 
@@ -3442,16 +3448,31 @@
             this.donationsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.donationsToolStripMenuItem.Text = "Donations";
             // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
+            this.dataGridViewTextBoxColumn13.HeaderText = "НазваПоказника";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "IndicatorValue";
+            this.dataGridViewTextBoxColumn14.HeaderText = "ЗначенняПоказника";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
             // enterpriseBindingSource
             // 
             this.enterpriseBindingSource.DataSource = typeof(FinancialSecurityCalculator.Entities.Enterprise);
             // 
-            // EnterpriseId
+            // dataGridViewTextBoxColumn10
             // 
-            this.EnterpriseId.DataPropertyName = "EnterpriseId";
-            this.EnterpriseId.HeaderText = "IDпідприємства";
-            this.EnterpriseId.Name = "EnterpriseId";
-            this.EnterpriseId.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Year";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Рік";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 50;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -3473,28 +3494,6 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Галузь";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Year";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Рік";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
-            this.dataGridViewTextBoxColumn13.HeaderText = "НазваПоказника";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "IndicatorValue";
-            this.dataGridViewTextBoxColumn14.HeaderText = "ЗначенняПоказника";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
             // Form1
             // 
@@ -3555,7 +3554,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).EndInit();
@@ -3597,7 +3595,6 @@
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fromJSONToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fromXMLToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeToNationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manualToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enterpriseTheoryToolStripMenuItem;

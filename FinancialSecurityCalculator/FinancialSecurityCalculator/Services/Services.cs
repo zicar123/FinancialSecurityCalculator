@@ -13,30 +13,6 @@ namespace FinancialSecurityCalculator.Services
 {
     public class Services : IServices
     {
-        List<Types> limitValues = new List<Types>()
-            {
-                new TypeA() { Value = 0.5, Below = false },
-                new TypeA() { Value = 0.8, Below = false },
-                new TypeB() { FirstValue = 0.75, SecondValue = 0.9 },
-                new TypeB() { FirstValue = 0.3, SecondValue = 0.5 },
-                new TypeA() { Value = 0.1, Below = false },
-                new TypeB() { FirstValue = 0.2, SecondValue = 0.35 },
-                new TypeC() { Title = "Збільшення"},
-                new TypeB() { FirstValue = 0.7, SecondValue = 1.0 },
-                new TypeA() { Value = 1.0, Below = true },
-                new TypeA() { Value = 0.1, Below = false },
-                new TypeC() { Title = "Збільшення"},
-                new TypeC() { Title = "Збільшення"},
-                new TypeC() { Title = "Збільшення"},
-                new TypeC() { Title = "Збільшення"},
-                new TypeC() { Title = "Збільшення"},
-                new TypeC() { Title = "Збільшення"},
-                new TypeC() { Title = "Збільшення"},
-                new TypeC() { Title = "Збільшення"},
-                new TypeC() { Title = "Збільшення"},
-                new TypeC() { Title = "Збільшення"},
-            };
-
         public void ResetTextBoxes(ControlCollection controls)
         {
             foreach (Control c in controls)
@@ -104,7 +80,7 @@ namespace FinancialSecurityCalculator.Services
                 {
                     if (MessageBox.Show("Дані будуть збережені в існуюче підприємство.", "Увага!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK) return;
 
-                    if (context.Record.ToList().FirstOrDefault(y => y.Year == Convert.ToInt32(dataModel.EnterpriseData["Year"])) != null) //if record with this year already exists
+                    if (context.Record.ToList().FirstOrDefault(y => y.Year == Convert.ToInt32(dataModel.EnterpriseData["Year"]) && y.Enterprise.EnterpriseId == (int)dataModel.EnterpriseData["EnterpriseID"]) != null) //if record with this year already exists
                     {
                         for (int i = 0; i < dataModel.TextBoxes.Count; ++i)
                         {
@@ -117,7 +93,9 @@ namespace FinancialSecurityCalculator.Services
                         if (MessageBox.Show("Дані про даний рік будуть перезаписані", "Увага!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK) return;
 
                         var tt = Convert.ToInt32(dataModel.EnterpriseData["Year"]);
-                        var data = context.Record.FirstOrDefault(y => y.Year == tt);
+                        var t = Convert.ToInt32(dataModel.EnterpriseData["EnterpriseID"]);
+                        var data = context.Record.FirstOrDefault(y => y.Year == tt && y.Enterprise.EnterpriseId == t);
+                        data.EnterpriseIndicators.Clear();
                         data.EnterpriseIndicators = dataModel.Indicators;
 
                         context.SaveChanges();
@@ -174,98 +152,6 @@ namespace FinancialSecurityCalculator.Services
             }
         }
 
-        public string DecisionMaking(EnterpriseIndicator entity)
-        {
-            //switch (limitValues[entity.EnterpriseIndicatorId].GetType().ToString())
-            //{
-            //    default:
-            //        break;
-            //}
-
-            if (limitValues[entity.IndicatorID].GetType() == typeof(TypeA))//TODO: fix (throws exception)
-            {
-                if ((limitValues[entity.IndicatorID] as TypeA).Below == false)
-                {
-                    if (entity.IndicatorValue > (limitValues[entity.IndicatorID] as TypeA).Value)
-                    {
-                        return "Everything is Ok!";
-                    }
-                    else return "Everything is BAD!";
-                }
-                else
-                {
-                    if (entity.IndicatorValue > (limitValues[entity.IndicatorID] as TypeA).Value)
-                    {
-                        return "Everything is BAD!";
-                    }
-                    else return "Everything is Ok!";
-                }
-
-            }
-            else if (limitValues[entity.IndicatorID].GetType() == typeof(TypeB))
-            {
-                if (entity.IndicatorValue > (limitValues[entity.IndicatorID] as TypeB).FirstValue && entity.IndicatorValue < (limitValues[entity.IndicatorID] as TypeB).SecondValue)
-                {
-                    return "Everything is Ok!";
-                }
-                else return "Everything is BAD!";
-            }
-            else if (limitValues[entity.IndicatorID].GetType() == typeof(TypeC))
-            {
-                //if (entity.IndicatorValue > с предідущего года)
-                //{
-                //    return "Everything is Ok!";
-                //}
-                //else return "Everything is BAD!";
-                return "maybe better";
-            }
-            return "lolThiswould never happen";
-        }
-
-
-        public void ShowDetails(List<EnterpriseIndicator> indicators)
-        {
-            new Details((from item in indicators                            //will not recognize this.DecisionMaking if make querry directly from context
-                         select new
-                         {
-                             indicatorID = item.EnterpriseIndicatorId,
-                             NameOfIndicator = item.IndicatorName,
-                             CurrentValue = item.IndicatorValue,
-                             Conclusion = this.DecisionMaking(item)
-                         }).ToList()).Show();
-
-            //var listAnons = (new[] { new
-            //{
-            //    indicatorID = default(int),
-            //    NameOfIndicator = default(string),
-            //    CurrentValue = default(double),
-            //    Conclusion = default(string)
-            //} }).ToList();
-
-            //listAnons.Clear();
-
-
-
-            //List < EnterpriseConclusion > conclusionsList = new List<EnterpriseConclusion>(); //old-fashioned way
-            //foreach (var item in indicators)
-            //{
-            //    conclusionsList.Add(new EnterpriseConclusion()
-            //    {
-            //        indicatorID = item.EnterpriseIndicatorId,
-            //        NameOfIndicator = item.IndicatorName,
-            //        CurrentValue = item.IndicatorValue,
-            //        Conclusion = this.DecisionMaking(item)
-            //    });
-            //}
-
-            //TODO: this doesnt work right
-
-            //dataGridView1.DataSource = querry.Select(x=> new { d = x.CurrentValue}).ToList();// рабочий вариант вывода одного столбца
-            //dataGridView1.DataSource = querry.ToList();
-
-
-        }
-
         public void Calculate(TabControl tabControl)
         {
             Formulas formulas = new Formulas();
@@ -310,62 +196,31 @@ namespace FinancialSecurityCalculator.Services
             }
         }
 
-        private abstract class Types
+        private readonly List<LimitValue> decisionData = new List<LimitValue>()
         {
-
-        } //TODO: join everything in a single Class
-
-        private class TypeA : Types
-        {
-            public double Value { get; set; }
-            public bool Below { get; set; }
-        }
-
-        private class TypeB : Types
-        {
-            public double FirstValue { get; set; }
-            public double SecondValue { get; set; }
-        }
-
-        private class TypeC : Types
-        {
-            public string Title { get; set; }
-        }
-
-        //public class EnterpriseConclusion
-        //{
-        //    public int indicatorID { get; set; }
-        //    public string NameOfIndicator { get; set; }
-        //    public double CurrentValue { get; set; }
-        //    public string Conclusion { get; set; }
-        //}
-
-
-        private List<DecisionData> decisionData = new List<DecisionData>()
-        {
-                new DecisionData() { Value = 0.5, Below = false },
-                new DecisionData() { Value = 0.8, Below = false },
-                new DecisionData() { FirstValue = 0.75, SecondValue = 0.9 },
-                new DecisionData() { FirstValue = 0.3, SecondValue = 0.5 },
-                new DecisionData() { Value = 0.1, Below = false },
-                new DecisionData() { FirstValue = 0.2, SecondValue = 0.35 },
-                new DecisionData() { Title = "Збільшення"},
-                new DecisionData() { FirstValue = 0.7, SecondValue = 1.0 },
-                new DecisionData() { Value = 1.0, Below = true },
-                new DecisionData() { Value = 0.1, Below = false },
-                new DecisionData() { Title = "Збільшення"},
-                new DecisionData() { Title = "Збільшення"},
-                new DecisionData() { Title = "Збільшення"},
-                new DecisionData() { Title = "Збільшення"},
-                new DecisionData() { Title = "Збільшення"},
-                new DecisionData() { Title = "Збільшення"},
-                new DecisionData() { Title = "Збільшення"},
-                new DecisionData() { Title = "Збільшення"},
-                new DecisionData() { Title = "Збільшення"},
-                new DecisionData() { Title = "Збільшення"},
+                new LimitValue() { Value = 0.5, Below = false },
+                new LimitValue() { Value = 0.8, Below = false },
+                new LimitValue() { FirstValue = 0.75, SecondValue = 0.9 },
+                new LimitValue() { FirstValue = 0.3, SecondValue = 0.5 },
+                new LimitValue() { Value = 0.1, Below = false },
+                new LimitValue() { FirstValue = 0.2, SecondValue = 0.35 },
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { FirstValue = 0.7, SecondValue = 1.0 },
+                new LimitValue() { Value = 1.0, Below = true },
+                new LimitValue() { Value = 0.1, Below = false },
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
         };
 
-        private class DecisionData
+        private class LimitValue
         {
             public double? Value { get; set; }
             public bool? Below { get; set; }
@@ -374,64 +229,132 @@ namespace FinancialSecurityCalculator.Services
             public string Title { get; set; }
         }
 
-        public void DecisionMakingReflection(EnterpriseIndicator entity)
+        public void ShowDetails(List<EnterpriseIndicator> indicators)
         {
-            // var properties = typeof(DecisionData).GetProperties();
-            
-            foreach (var obj in decisionData)
+            new Details((from item in indicators                            //will not recognize this.DecisionMaking if make querry directly from context
+                         select new
+                         {
+                             NameOfIndicator = item.IndicatorName,
+                             CurrentValue = item.IndicatorValue,
+                             Conclusion = this.DecisionMaking(item)
+                         }).ToList()).Show();
+
+            //var listAnons = (new[] { new
+            //{
+            //    indicatorID = default(int),
+            //    NameOfIndicator = default(string),
+            //    CurrentValue = default(double),
+            //    Conclusion = default(string)
+            //} }).ToList();
+
+            //listAnons.Clear();   //Anon collection
+
+            //dataGridView1.DataSource = querry.Select(x=> new { d = x.CurrentValue}).ToList();// рабочий вариант вывода одного столбца
+        }
+
+
+        public void Compare()
+        {
+            using (var context = new FSCContext())
             {
-                var properties = (obj.GetType()).GetProperties();
+                var modalCompare = new CompareModal((from item in context.Enterprise
+                                                     select item).ToList());
+                modalCompare.ShowDialog();
 
-                foreach (var prop in properties)
+                if (modalCompare.DialogResult == DialogResult.OK)
                 {
-                    var a = obj.GetType().GetProperty(prop.Name).GetValue(obj, null);
-
-                    if (true)
-                    {
-
-                    }
+                    new Compare((from first in modalCompare.GetSelectedEnterpriseData[0]
+                                 from second in modalCompare.GetSelectedEnterpriseData[1]
+                                 where first.IndicatorID == second.IndicatorID
+                                 select new
+                                 {
+                                     IndicatorName = first.IndicatorName,
+                                     FirstEnterprise = first.IndicatorValue,
+                                     SecondEnterprise = second.IndicatorValue
+                                 }).ToList()).Show();
                 }
             }
+        }
 
+        public void CompareMany(params EnterpriseIndicator[] item)
+        {
+
+        }
+
+        public string DecisionMaking(EnterpriseIndicator entity)
+        {
+            // var properties = typeof(DecisionData).GetProperties();
 
 
             var props = decisionData[entity.IndicatorID].GetType().GetProperties();
 
             if (props[0].GetValue(decisionData[entity.IndicatorID]) != null && props[1].GetValue(decisionData[entity.IndicatorID]) != null)
             {
-                //TypeA actions
+                if ((bool)props[1].GetValue(decisionData[entity.IndicatorID]))
+                {
+                    if (entity.IndicatorValue > (double?)props[0].GetValue(decisionData[entity.IndicatorID]))
+                    {
+                        return "Допустиме значення";
+                    }
+                    else return "Кризисний стан";
+                }
+                else
+                {
+                    if (entity.IndicatorValue > (double?)props[0].GetValue(decisionData[entity.IndicatorID]))
+                    {
+                        return "Кризисний стан";
+                    }
+                    else return "Допустиме значення";
+                }
             }
             else if (props[2].GetValue(decisionData[entity.IndicatorID]) != null && props[3].GetValue(decisionData[entity.IndicatorID]) != null)
             {
-                //TypeB actions
+                if (entity.IndicatorValue > (double?)props[2].GetValue(decisionData[entity.IndicatorID]) && entity.IndicatorValue < (double?)props[3].GetValue(decisionData[entity.IndicatorID]))
+                {
+                    return "Допустиме значення діапазону";
+                }
+                else
+                {
+                    return "За межами діапазону";
+                }
             }
             else if (props[4].GetValue(decisionData[entity.IndicatorID]) != null)
             {
-                //TypeC actions
+                using (var context = new FSCContext())
+                {
+                    var list = context.Record.OrderBy(x => x.Year).ToList();
+                    var prev = list.FirstOrDefault(x => x.RecordId == entity.Record.RecordId);
+                    var r = list.IndexOf(prev);
+                    EnterpriseIndicator previousValue;
+                    if (r == 0)
+                    {
+                        return "Немає попередніх даних";
+                    }
+                    else
+                    {
+                        previousValue = list[r - 1].EnterpriseIndicators?.FirstOrDefault(x => x.IndicatorID == entity.IndicatorID);
+
+                        if (previousValue == null)
+                        {
+                            return "Немає попередніх даних";
+                        }
+                    }
+
+                    if (previousValue.IndicatorValue < entity.IndicatorValue)
+                    {
+                        return "Збільшення";
+                    }
+                    else if (previousValue.IndicatorValue == entity.IndicatorValue)
+                    {
+                        return "На рівні попереднього";
+                    }
+                    else
+                    {
+                        return "Зменшення";
+                    }
+                }
             }
-
-
-            //var propValue = decisionData[entity.IndicatorID].GetType().GetProperty("Value");
-            //var propBelow = decisionData[entity.IndicatorID].GetType().GetProperty("Below");
-            //var propFirstValue = decisionData[entity.IndicatorID].GetType().GetProperty("Value");
-            //var propSecondValue = decisionData[entity.IndicatorID].GetType().GetProperty("Below");
-            //var propTitle = decisionData[entity.IndicatorID].GetType().GetProperty("Below");
-
-
-
-            //if (propValue.GetValue(decisionData[entity.IndicatorID], null) != null && propBelow.GetValue(decisionData[entity.IndicatorID], null) != null)
-            //{
-            //    //TypeA actions
-            //}
+            return null;
         }
     }
-
-
-
-
-
-
-            
-
-    
 }

@@ -61,17 +61,11 @@
     <Compile Include="Compare.Designer.cs">
       <DependentUpon>Compare.cs</DependentUpon>
     </Compile>
-    <Compile Include="CompareModal1.cs">
+    <Compile Include="CompareModal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CompareModal1.Designer.cs">
-      <DependentUpon>CompareModal1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CompareModal2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CompareModal2.Designer.cs">
-      <DependentUpon>CompareModal2.cs</DependentUpon>
+    <Compile Include="CompareModal.Designer.cs">
+      <DependentUpon>CompareModal.cs</DependentUpon>
     </Compile>
     <Compile Include="Context\FSCContext.cs" />
     <Compile Include="Context\FSCContextInitializer.cs" />
@@ -118,11 +112,8 @@
     <EmbeddedResource Include="Compare.resx">
       <DependentUpon>Compare.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CompareModal1.resx">
-      <DependentUpon>CompareModal1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CompareModal2.resx">
-      <DependentUpon>CompareModal2.cs</DependentUpon>
+    <EmbeddedResource Include="CompareModal.resx">
+      <DependentUpon>CompareModal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Details.resx">
       <DependentUpon>Details.cs</DependentUpon>

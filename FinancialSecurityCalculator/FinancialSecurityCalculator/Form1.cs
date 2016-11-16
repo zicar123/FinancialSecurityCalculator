@@ -23,7 +23,6 @@ namespace FinancialSecurityCalculator
             dataModel = new DataModel();
             services = new Services.Services();
             this.Init();
-            services.DecisionMakingReflection();
         }
 
         private void Init()
@@ -82,7 +81,6 @@ namespace FinancialSecurityCalculator
         {
             services.SaveToDB(dataModel);
         }
-        //TODO: add possibility to open datagridviews in Analysis on seperate windows
         private void button4_Click(object sender, EventArgs e)
         {
             services.Calculate(tabControl2);
@@ -145,11 +143,12 @@ namespace FinancialSecurityCalculator
             enterpriseIndicatorsBindingSource.ResetBindings(false);
             if (comboBox1.SelectedItem.ToString() == "Всі") enterpriseBindingSource.DataSource = dataModel.TotalList;
             else enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString());
+            //TODO: refresh datagridviews after add new record
         }
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             //if (this.context == null) context = new FSCContext();
-
+            //TODO: API for CRUD methods
             if (checkBox3.Checked)
             {
                 var querry = from c in context.Enterprise
@@ -220,10 +219,12 @@ namespace FinancialSecurityCalculator
         {
             using (var context = new FSCContext())
             {
-                services.ShowDetails(context.Enterprise.ToList().FirstOrDefault(en => en.EnterpriseId == Convert.ToInt32(enterpriseDataGridView.CurrentCell.Value)).Records.ToList().FirstOrDefault(r => r.Year == Convert.ToInt32(recordsDataGridView.CurrentCell.Value)).EnterpriseIndicators.ToList());
-            }//make it better
+                if (enterpriseIndicatorsDataGridView.SelectedCells.Count > 0)
+                    services.ShowDetails(context.Enterprise.ToList().FirstOrDefault(en => en.EnterpriseId == Convert.ToInt32(enterpriseDataGridView.CurrentRow.Cells[0].Value)).Records.ToList().FirstOrDefault(r => r.Year == Convert.ToInt32(recordsDataGridView.CurrentCell.Value)).EnterpriseIndicators.ToList());
+                //services.ShowDetails(enterpriseIndicatorsDataGridView.DataSource as List<EnterpriseIndicator>);
+            }
         }
-
+        //TODO: add info from which document(balance list or another one) find Arguments for calculating
         private void textBox42_TextChanged(object sender, EventArgs e)
         {
             if (this.context == null) context = new FSCContext();
@@ -296,6 +297,14 @@ namespace FinancialSecurityCalculator
                 dataModel.EnterpriseData.Add("Year", comboBox2.SelectedItem);
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var context = new FSCContext())
+            {
+                services.Compare();
+            }
         }
     }
 }

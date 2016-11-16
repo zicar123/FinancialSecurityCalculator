@@ -19,6 +19,10 @@ namespace FinancialSecurityCalculator
             dataGridView1.DataSource = data;
             dataGridView1.MultiSelect = false;
             dataGridView1.ReadOnly = true;
+            dataGridView1.Columns[0].HeaderText = "IDпідприємства";
+            dataGridView1.Columns[1].HeaderText = "НазваПідприємства";
+            dataGridView1.Columns[2].HeaderText = "Область";
+            dataGridView1.Columns[3].HeaderText = "Галузь";
         }
         private Enterprise enterpriseDataTemp;
 
@@ -38,7 +42,7 @@ namespace FinancialSecurityCalculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            enterpriseDataTemp = (Enterprise)dataGridView1.CurrentRow.DataBoundItem;
+            enterpriseDataTemp = (Enterprise)dataGridView1?.CurrentRow.DataBoundItem;
             this.DialogResult = DialogResult.OK;
         }
     }
