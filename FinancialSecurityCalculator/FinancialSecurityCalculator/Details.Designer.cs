@@ -38,29 +38,29 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(545, 237);
+            this.dataGridView1.Size = new System.Drawing.Size(525, 486);
             this.dataGridView1.TabIndex = 9;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(133, 256);
+            this.button1.Location = new System.Drawing.Point(12, 504);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(332, 23);
+            this.button1.Size = new System.Drawing.Size(260, 23);
             this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
+            this.button1.Text = "Сформувати кластер за рівнем загроз";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 291);
+            this.ClientSize = new System.Drawing.Size(550, 531);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Details";
-            this.Text = "Деталі";
+            this.Text = "Оцінка показників";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

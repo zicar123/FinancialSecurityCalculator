@@ -24,8 +24,6 @@ namespace FinancialSecurityCalculator
             dataGridView1.Columns[0].Width = 260;
             dataGridView1.Columns[1].Width = 100;
             dataGridView1.Columns[2].Width = 100;
-            
-
         }
     }
 }

@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(478, 266);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Compare";
-            this.Text = "Compare";
+            this.Text = "Порівняльна таблиця показників";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

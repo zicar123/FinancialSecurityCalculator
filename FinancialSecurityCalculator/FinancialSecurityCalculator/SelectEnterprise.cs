@@ -19,10 +19,11 @@ namespace FinancialSecurityCalculator
             dataGridView1.DataSource = data;
             dataGridView1.MultiSelect = false;
             dataGridView1.ReadOnly = true;
-            dataGridView1.Columns[0].HeaderText = "IDпідприємства";
-            dataGridView1.Columns[1].HeaderText = "НазваПідприємства";
-            dataGridView1.Columns[2].HeaderText = "Область";
-            dataGridView1.Columns[3].HeaderText = "Галузь";
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].HeaderText = "ID підприємства";
+            dataGridView1.Columns[2].HeaderText = "Назва Підприємства";
+            dataGridView1.Columns[3].HeaderText = "Область";
+            dataGridView1.Columns[4].HeaderText = "Галузь";
         }
         private Enterprise enterpriseDataTemp;
 

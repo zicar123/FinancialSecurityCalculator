@@ -15,7 +15,7 @@ namespace FinancialSecurityCalculator
     {
         Services.Services services;
         DataModel dataModel;
-        FSCContext context;// = new FSCContext(); //TODO: get rid of this
+        FSCContext context;
 
         public Form1()
         {
@@ -32,7 +32,7 @@ namespace FinancialSecurityCalculator
             // { TextBoxes.Add(groupBox.Controls.OfType<TextBox>().Where(box => box.ReadOnly == false).ToList<TextBox>()[0]); }
             label22.BringToFront();
             this.button4.BringToFront();
-            List<TreeNode> tempNodes = new List<TreeNode>();
+            var tempNodes = new List<TreeNode>();
             tempNodes.Add(treeView1.Nodes[0]);
             tempNodes.Add(treeView1.Nodes[1]);
             tempNodes.Add(treeView1.Nodes[2]);
@@ -87,7 +87,8 @@ namespace FinancialSecurityCalculator
         #region It works. I dont know why or how. Dont touch this.
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.context == null) context = new FSCContext();
+            context?.Dispose();
+            context = new FSCContext();
 
             if (checkBox1.Checked)
             {
@@ -112,11 +113,15 @@ namespace FinancialSecurityCalculator
             enterpriseIndicatorsBindingSource.ResetBindings(false);
             if (comboBox1.SelectedItem.ToString() == "Всі") enterpriseBindingSource.DataSource = dataModel.TotalList;
             else enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString());
+            enterpriseBindingSource.ResumeBinding(); // this one works just fine
+            recordsBindingSource.ResumeBinding();
+
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            //if (this.context == null) context = new FSCContext();
+            context?.Dispose();
+            context = new FSCContext();
 
             if (checkBox2.Checked)
             {
@@ -142,11 +147,13 @@ namespace FinancialSecurityCalculator
             enterpriseIndicatorsBindingSource.ResetBindings(false);
             if (comboBox1.SelectedItem.ToString() == "Всі") enterpriseBindingSource.DataSource = dataModel.TotalList;
             else enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString());
-            //TODO: refresh datagridviews after add new record
+            enterpriseBindingSource.ResumeBinding(); // this one works just fine
+            recordsBindingSource.ResumeBinding();
         }
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            //if (this.context == null) context = new FSCContext();
+            context?.Dispose();
+            context = new FSCContext();
             //TODO: API for CRUD methods
             if (checkBox3.Checked)
             {
@@ -171,6 +178,8 @@ namespace FinancialSecurityCalculator
             enterpriseIndicatorsBindingSource.ResetBindings(false);
             if (comboBox1.SelectedItem.ToString() == "Всі") enterpriseBindingSource.DataSource = dataModel.TotalList;
             else enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString());
+            enterpriseBindingSource.ResumeBinding();
+            recordsBindingSource.ResumeBinding();
         }
         #endregion
         private void newEnterpriseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -190,8 +199,6 @@ namespace FinancialSecurityCalculator
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.context == null) context = new FSCContext();
-
             if (comboBox1.SelectedItem.ToString() == "Всі")
             {
                 enterpriseBindingSource.ResetBindings(false);
@@ -204,13 +211,11 @@ namespace FinancialSecurityCalculator
             {
                 enterpriseBindingSource.ResetBindings(false);
                 recordsBindingSource.ResetBindings(false);
-                enterpriseIndicatorsBindingSource.ResetBindings(false);// somewhy it didnt help. MastedDetail - detail table dont refresh
+                enterpriseIndicatorsBindingSource.ResetBindings(false);
                 enterpriseBindingSource.Filter = comboBox1.SelectedItem.ToString();//dont know whether i need this line
                 enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString());
             }
             // enterpriseBindingSource.ResumeBinding(); // this one works just fine(Not tested at this line!)
-
-            //context?.Dispose();
         }
         #endregion
 
@@ -226,29 +231,26 @@ namespace FinancialSecurityCalculator
         //TODO: add info from which document(balance list or another one) find Arguments for calculating
         private void textBox42_TextChanged(object sender, EventArgs e)
         {
-            if (this.context == null) context = new FSCContext();
-
             enterpriseBindingSource.ResetBindings(false);
             recordsBindingSource.ResetBindings(false);
-            enterpriseIndicatorsBindingSource.ResetBindings(false);// somewhy it didnt help. MastedDetail - detail table dont refresh
+            enterpriseIndicatorsBindingSource.ResetBindings(false);
+
             if (!string.IsNullOrEmpty(textBox42.Text))
-                enterpriseBindingSource.DataSource = dataModel.TotalList?.Where(n => n.EnterpriseName.ToLower().Contains(textBox42.Text.ToLower()));
-            else if (string.IsNullOrEmpty(textBox42.Text))//TODO: fix(looks like fixed)
+                enterpriseBindingSource.DataSource = dataModel.TotalList?.Where(n => n.EnterpriseName.ToLower().Contains(textBox42.Text.ToLower())).ToList();
+            else if (string.IsNullOrEmpty(textBox42.Text))
             { enterpriseBindingSource.DataSource = dataModel.TotalList; }
 
-            enterpriseBindingSource.ResumeBinding(); // this one works just fine
+            enterpriseBindingSource.ResumeBinding(); 
             recordsBindingSource.ResumeBinding();
         }
 
         private void textBox45_TextChanged(object sender, EventArgs e)
         {
-            if (this.context == null) context = new FSCContext();
-
             enterpriseBindingSource.ResetBindings(false);
             recordsBindingSource.ResetBindings(false);
             enterpriseIndicatorsBindingSource.ResetBindings(false);// somewhy it didnt help. MastedDetail - detail table dont refresh. Use ResumeBindings Instead
             if (!string.IsNullOrEmpty(textBox45.Text))
-                enterpriseBindingSource.DataSource = dataModel.TotalList?.Where(n => n.EnterpriseId.ToString().Contains(textBox45.Text));
+                enterpriseBindingSource.DataSource = dataModel.TotalList?.Where(n => n.EnterpriseId.ToString().Contains(textBox45.Text)).ToList();  //отложенный вызов linq querry (!tolist)
             else
             { enterpriseBindingSource.DataSource = dataModel.TotalList; }
 
@@ -258,7 +260,7 @@ namespace FinancialSecurityCalculator
 
         private void зареєструватиНовеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegisterEnterprise dialogFormRegister = new RegisterEnterprise(dataModel.Regions, dataModel.Branches);
+            var dialogFormRegister = new RegisterEnterprise(dataModel.Regions, dataModel.Branches);
             dialogFormRegister.ShowDialog();
             if (dialogFormRegister.DialogResult == DialogResult.OK)
             {
