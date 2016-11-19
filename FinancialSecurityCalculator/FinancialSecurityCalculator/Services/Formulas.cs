@@ -15,8 +15,8 @@ namespace FinancialSecurityCalculator.Services
             {
                 return tb1.Text.Equals("0")
                     ? "0"
-                    : (double.Parse(tb2.Text.Replace('.', ','))
-                    / double.Parse(tb1.Text.Replace('.', ','))).ToString();
+                    : string.Format("{0:f3}", (double.Parse(tb2.Text.Replace('.', ','))
+                    / double.Parse(tb1.Text.Replace('.', ','))));
             }
             catch (FormatException)
             {
@@ -31,9 +31,9 @@ namespace FinancialSecurityCalculator.Services
             {
                 return tb3.Text.Equals("0")
                     ? "0"
-                    : ((double.Parse(tb1.Text.Replace('.', ','))
+                    : string.Format("{0:f3}", (((double.Parse(tb1.Text.Replace('.', ','))
                     - double.Parse(tb2.Text.Replace('.', ',')))
-                    / double.Parse(tb3.Text.Replace('.', ','))).ToString();
+                    / double.Parse(tb3.Text.Replace('.', ',')))));
             }
             catch (Exception)
             {
@@ -48,9 +48,9 @@ namespace FinancialSecurityCalculator.Services
             {
                 return tb3.Text.Equals("0")
                     ? "0" 
-                    : ((double.Parse(tb1.Text.Replace('.', ',')) 
+                    : string.Format("{0:f3}", (((double.Parse(tb1.Text.Replace('.', ',')) 
                     + double.Parse(tb2.Text.Replace('.', ',')))
-                    / double.Parse(tb3.Text.Replace('.', ','))).ToString();
+                    / double.Parse(tb3.Text.Replace('.', ',')))));
             }
             catch (Exception)
             {
@@ -63,11 +63,11 @@ namespace FinancialSecurityCalculator.Services
         {
             try
             {
-                return (double.Parse(tb2.Text)+ double.Parse(tb3.Text) == 0 
+                return double.Parse(tb2.Text)+ double.Parse(tb3.Text) == 0 
                     ? "0" 
-                    : (double.Parse(tb1.Text.Replace('.', ','))
+                    : string.Format("{0:f3}", (double.Parse(tb1.Text.Replace('.', ','))
                     / (double.Parse(tb2.Text.Replace('.', ','))
-                    + double.Parse(tb3.Text.Replace('.', ',')))).ToString());
+                    + double.Parse(tb3.Text.Replace('.', ',')))));
             }
             catch (Exception)
             {

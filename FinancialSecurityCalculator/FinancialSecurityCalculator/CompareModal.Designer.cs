@@ -58,16 +58,16 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 30);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(284, 219);
+            this.dataGridView1.Size = new System.Drawing.Size(384, 219);
             this.dataGridView1.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(199, 255);
+            this.button1.Location = new System.Drawing.Point(124, 255);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 23);
+            this.button1.Size = new System.Drawing.Size(272, 23);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Далі";
+            this.button1.Text = "Відобразити порівняльну таблицю";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -203,13 +203,13 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(106, 21);
             this.comboBox2.TabIndex = 4;
-            this.comboBox2.Text = "Виберіть рік";
+            this.comboBox2.Text = "Оберіть рік";
             // 
             // CompareModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 286);
+            this.ClientSize = new System.Drawing.Size(409, 286);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);

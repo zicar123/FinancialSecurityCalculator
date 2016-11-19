@@ -72,15 +72,15 @@ namespace FinancialSecurityCalculator.Services
                 if (!dataModel.EnterpriseData.TryGetValue("Year", out temp))
                 //if (dataModel.EnterpriseData.FirstOrDefault(x => x.Key == "Year").Value.ToString() == null)
                 {
-                    MessageBox.Show("Помилка. Перед збереженням виберіть рік.");
+                    MessageBox.Show("Помилка. Перед збереженням оберіть рік.");
                     return;
                 }
 
-                if (context.Enterprise.ToList().FirstOrDefault(x => x.EnterpriseId == (int)dataModel.EnterpriseData["EnterpriseID"]) != null) //if enterprise with this id already exists
+                if (context.Enterprise.ToList().FirstOrDefault(x => x.EnterpriseId == (int) dataModel.EnterpriseData["EnterpriseID"]) != null) //if enterprise with this id already exists
                 {
                     if (MessageBox.Show("Дані будуть збережені в існуюче підприємство.", "Увага!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK) return;
 
-                    if (context.Record.ToList().FirstOrDefault(y => y.Year == Convert.ToInt32(dataModel.EnterpriseData["Year"]) && y.Enterprise.EnterpriseId == (int)dataModel.EnterpriseData["EnterpriseID"]) != null) //if record with this year already exists
+                    if (context.Record.ToList().FirstOrDefault(y => y.Year == Convert.ToInt32(dataModel.EnterpriseData["Year"]) && y.Enterprise.EnterpriseId == (int) dataModel.EnterpriseData["EnterpriseID"]) != null) //if record with this year already exists
                     {
                         for (int i = 0; i < dataModel.TextBoxes.Count; ++i)
                         {
@@ -114,7 +114,7 @@ namespace FinancialSecurityCalculator.Services
                         }
                         context.Record.Add(new Record()
                         {
-                            Enterprise = context.Enterprise.ToList().FirstOrDefault(x => x.EnterpriseId == (int)dataModel.EnterpriseData["EnterpriseID"]),
+                            Enterprise = context.Enterprise.ToList().FirstOrDefault(x => x.EnterpriseId == (int) dataModel.EnterpriseData["EnterpriseID"]),
                             Year = Convert.ToInt32(dataModel.EnterpriseData["Year"]),
                             EnterpriseIndicators = dataModel.Indicators
                         });
@@ -139,7 +139,7 @@ namespace FinancialSecurityCalculator.Services
 
                     context.Enterprise.Add(new Enterprise()
                     {
-                        EnterpriseId = (int)dataModel.EnterpriseData["EnterpriseID"],
+                        EnterpriseId = (int) dataModel.EnterpriseData["EnterpriseID"],
                         EnterpriseName = dataModel.EnterpriseData["EnterpriseName"].ToString(),
                         Region = dataModel.EnterpriseData["Region"].ToString(),
                         Branch = dataModel.EnterpriseData["Branch"].ToString(),
@@ -271,7 +271,7 @@ namespace FinancialSecurityCalculator.Services
                                      IndicatorName = first.IndicatorName,
                                      FirstEnterprise = first.IndicatorValue,
                                      SecondEnterprise = second.IndicatorValue
-                                 }).ToList()).Show();
+                                 }).ToList(), modalCompare.GetSelectedEnterpriseData[0][0]?.Record?.Enterprise?.EnterpriseName, modalCompare.GetSelectedEnterpriseData[1][0]?.Record?.Enterprise?.EnterpriseName).Show();
                 }
             }
         }
@@ -290,9 +290,9 @@ namespace FinancialSecurityCalculator.Services
 
             if (props[0].GetValue(decisionData[entity.IndicatorID]) != null && props[1].GetValue(decisionData[entity.IndicatorID]) != null)
             {
-                if ((bool)props[1].GetValue(decisionData[entity.IndicatorID]))
+                if ((bool) props[1].GetValue(decisionData[entity.IndicatorID]))
                 {
-                    if (entity.IndicatorValue > (double?)props[0].GetValue(decisionData[entity.IndicatorID]))
+                    if (entity.IndicatorValue > (double?) props[0].GetValue(decisionData[entity.IndicatorID]))
                     {
                         return "Допустиме значення";
                     }
@@ -300,7 +300,7 @@ namespace FinancialSecurityCalculator.Services
                 }
                 else
                 {
-                    if (entity.IndicatorValue > (double?)props[0].GetValue(decisionData[entity.IndicatorID]))
+                    if (entity.IndicatorValue > (double?) props[0].GetValue(decisionData[entity.IndicatorID]))
                     {
                         return "Кризисний стан";
                     }
@@ -309,7 +309,7 @@ namespace FinancialSecurityCalculator.Services
             }
             else if (props[2].GetValue(decisionData[entity.IndicatorID]) != null && props[3].GetValue(decisionData[entity.IndicatorID]) != null)
             {
-                if (entity.IndicatorValue > (double?)props[2].GetValue(decisionData[entity.IndicatorID]) && entity.IndicatorValue < (double?)props[3].GetValue(decisionData[entity.IndicatorID]))
+                if (entity.IndicatorValue > (double?) props[2].GetValue(decisionData[entity.IndicatorID]) && entity.IndicatorValue < (double?) props[3].GetValue(decisionData[entity.IndicatorID]))
                 {
                     return "Допустиме значення діапазону";
                 }

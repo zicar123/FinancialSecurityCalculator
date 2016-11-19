@@ -21,6 +21,13 @@ namespace FinancialSecurityCalculator
             chk.FalseValue = "0";
             dataGridView1.Columns.Insert(0, chk);
             dataGridView1.DataSource = dataSourse;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[0].Width = 40;
+            dataGridView1.Columns[3].Width = 200;
+            dataGridView1.Columns[2].HeaderText = "ID підприємства";
+            dataGridView1.Columns[3].HeaderText = "Назва підприємства";
             //dataGridView1.ReadOnly = true;
 
 

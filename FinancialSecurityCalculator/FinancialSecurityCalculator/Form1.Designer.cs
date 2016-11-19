@@ -73,9 +73,9 @@
             treeNode21,
             treeNode22,
             treeNode23});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label160 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.x0 = new System.Windows.Forms.TabPage();
             this.label34 = new System.Windows.Forms.Label();
@@ -319,11 +319,6 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox45 = new System.Windows.Forms.TextBox();
-            this.label158 = new System.Windows.Forms.Label();
-            this.label157 = new System.Windows.Forms.Label();
-            this.label156 = new System.Windows.Forms.Label();
-            this.textBox42 = new System.Windows.Forms.TextBox();
             this.enterpriseIndicatorsDataGridView = new System.Windows.Forms.DataGridView();
             this.enterpriseIndicatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -333,9 +328,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox45 = new System.Windows.Forms.TextBox();
+            this.label158 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label157 = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.label156 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -360,6 +360,8 @@
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label161 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterpriseBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -416,7 +418,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label160);
+            this.tabPage1.Controls.Add(this.label161);
             this.tabPage1.Controls.Add(this.tabControl2);
             this.tabPage1.Controls.Add(this.comboBox2);
             this.tabPage1.Controls.Add(this.button4);
@@ -431,15 +433,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Обчислення";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label160
-            // 
-            this.label160.AutoSize = true;
-            this.label160.Location = new System.Drawing.Point(727, 3);
-            this.label160.Name = "label160";
-            this.label160.Size = new System.Drawing.Size(25, 13);
-            this.label160.TabIndex = 4;
-            this.label160.Text = "Рік:";
             // 
             // tabControl2
             // 
@@ -2932,10 +2925,11 @@
             "2048",
             "2049",
             "2050"});
-            this.comboBox2.Location = new System.Drawing.Point(758, 0);
+            this.comboBox2.Location = new System.Drawing.Point(752, 0);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(72, 21);
+            this.comboBox2.Size = new System.Drawing.Size(78, 21);
             this.comboBox2.TabIndex = 3;
+            this.comboBox2.Text = "Оберіть рік";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button4
@@ -2951,11 +2945,10 @@
             // 
             // label159
             // 
-            this.label159.AutoSize = true;
             this.label159.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label159.Location = new System.Drawing.Point(497, 3);
+            this.label159.Location = new System.Drawing.Point(602, 3);
             this.label159.Name = "label159";
-            this.label159.Size = new System.Drawing.Size(0, 14);
+            this.label159.Size = new System.Drawing.Size(144, 14);
             this.label159.TabIndex = 2;
             // 
             // label22
@@ -2964,9 +2957,9 @@
             this.label22.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label22.Location = new System.Drawing.Point(506, 95);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(81, 18);
+            this.label22.Size = new System.Drawing.Size(91, 18);
             this.label22.TabIndex = 18;
-            this.label22.Text = "Вхідні дані:";
+            this.label22.Text = "Введіть дані:";
             // 
             // button3
             // 
@@ -3078,52 +3071,6 @@
             this.tabPage2.Text = "Аналіз";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox45
-            // 
-            this.textBox45.Location = new System.Drawing.Point(50, 320);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(100, 20);
-            this.textBox45.TabIndex = 12;
-            this.textBox45.TextChanged += new System.EventHandler(this.textBox45_TextChanged);
-            // 
-            // label158
-            // 
-            this.label158.AutoSize = true;
-            this.label158.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label158.Location = new System.Drawing.Point(28, 304);
-            this.label158.Name = "label158";
-            this.label158.Size = new System.Drawing.Size(106, 13);
-            this.label158.TabIndex = 11;
-            this.label158.Text = "За ID підприємства";
-            // 
-            // label157
-            // 
-            this.label157.AutoSize = true;
-            this.label157.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label157.Location = new System.Drawing.Point(28, 260);
-            this.label157.Name = "label157";
-            this.label157.Size = new System.Drawing.Size(61, 13);
-            this.label157.TabIndex = 10;
-            this.label157.Text = "За назвою";
-            // 
-            // label156
-            // 
-            this.label156.AutoSize = true;
-            this.label156.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label156.Location = new System.Drawing.Point(11, 232);
-            this.label156.Name = "label156";
-            this.label156.Size = new System.Drawing.Size(128, 19);
-            this.label156.TabIndex = 9;
-            this.label156.Text = "Швидкий пошук:";
-            // 
-            // textBox42
-            // 
-            this.textBox42.Location = new System.Drawing.Point(50, 276);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(100, 20);
-            this.textBox42.TabIndex = 8;
-            this.textBox42.TextChanged += new System.EventHandler(this.textBox42_TextChanged);
-            // 
             // enterpriseIndicatorsDataGridView
             // 
             this.enterpriseIndicatorsDataGridView.AutoGenerateColumns = false;
@@ -3180,7 +3127,7 @@
             // EnterpriseId
             // 
             this.EnterpriseId.DataPropertyName = "EnterpriseId";
-            this.EnterpriseId.HeaderText = "IDпідприємства";
+            this.EnterpriseId.HeaderText = "ID підприємства";
             this.EnterpriseId.Name = "EnterpriseId";
             this.EnterpriseId.ReadOnly = true;
             // 
@@ -3190,7 +3137,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 28);
             this.button2.TabIndex = 7;
-            this.button2.Text = "Деталі";
+            this.button2.Text = "Оцінити показники";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -3200,7 +3147,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 28);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Порівняння";
+            this.button1.Text = "Порівняти показники";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -3224,6 +3171,24 @@
             this.panel1.Size = new System.Drawing.Size(187, 358);
             this.panel1.TabIndex = 1;
             // 
+            // textBox45
+            // 
+            this.textBox45.Location = new System.Drawing.Point(50, 320);
+            this.textBox45.Name = "textBox45";
+            this.textBox45.Size = new System.Drawing.Size(100, 20);
+            this.textBox45.TabIndex = 12;
+            this.textBox45.TextChanged += new System.EventHandler(this.textBox45_TextChanged);
+            // 
+            // label158
+            // 
+            this.label158.AutoSize = true;
+            this.label158.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label158.Location = new System.Drawing.Point(28, 304);
+            this.label158.Name = "label158";
+            this.label158.Size = new System.Drawing.Size(34, 13);
+            this.label158.TabIndex = 11;
+            this.label158.Text = "За ID";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -3244,6 +3209,16 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Оберіть галузь для";
             // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label157.Location = new System.Drawing.Point(28, 260);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(61, 13);
+            this.label157.TabIndex = 10;
+            this.label157.Text = "За назвою";
+            // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
@@ -3254,6 +3229,24 @@
             this.checkBox3.Text = "Галузь фінансів";
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // textBox42
+            // 
+            this.textBox42.Location = new System.Drawing.Point(50, 276);
+            this.textBox42.Name = "textBox42";
+            this.textBox42.Size = new System.Drawing.Size(100, 20);
+            this.textBox42.TabIndex = 8;
+            this.textBox42.TextChanged += new System.EventHandler(this.textBox42_TextChanged);
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Font = new System.Drawing.Font("Sitka Small", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label156.Location = new System.Drawing.Point(11, 232);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(172, 19);
+            this.label156.TabIndex = 9;
+            this.label156.Text = "Вибрати підприємство:";
             // 
             // checkBox2
             // 
@@ -3448,17 +3441,36 @@
             this.donationsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.donationsToolStripMenuItem.Text = "Donations";
             // 
+            // label161
+            // 
+            this.label161.AutoSize = true;
+            this.label161.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label161.Location = new System.Drawing.Point(501, 4);
+            this.label161.Name = "label161";
+            this.label161.Size = new System.Drawing.Size(95, 12);
+            this.label161.TabIndex = 19;
+            this.label161.Text = "Обрано для аналізу: ";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 5000;
+            this.toolTip1.InitialDelay = 1000;
+            this.toolTip1.ReshowDelay = 500;
+            this.toolTip1.ShowAlways = true;
+            // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
-            this.dataGridViewTextBoxColumn13.HeaderText = "НазваПоказника";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Назва Показника";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "IndicatorValue";
-            this.dataGridViewTextBoxColumn14.HeaderText = "ЗначенняПоказника";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn14.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn14.HeaderText = "Значення Показника";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
@@ -3477,7 +3489,7 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "EnterpriseName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "НазваПідприємства";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Назва Підприємства";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
@@ -3861,14 +3873,15 @@
         private System.Windows.Forms.ToolStripMenuItem обратиІснуючеToolStripMenuItem;
         private System.Windows.Forms.Label label159;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label160;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn EnterpriseId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Label label161;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

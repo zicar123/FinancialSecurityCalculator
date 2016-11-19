@@ -19,10 +19,13 @@ namespace FinancialSecurityCalculator
             dataGridView1.ReadOnly = true;
             dataGridView1.DataSource = conclusionsList;
             dataGridView1.Columns[0].HeaderText = "Назва показника";
-            dataGridView1.Columns[1].HeaderText = "Поточне значення";
+            dataGridView1.Columns[1].HeaderText = "Значення показника";
             dataGridView1.Columns[2].HeaderText = "Аналітичний висновок";
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView1.Columns[0].Width = 250; 
+            dataGridView1.Columns[0].Width = 250;
+            dataGridView1.Columns[1].Width = 70;
+            dataGridView1.Columns[2].Width = 150;
+            
+
         }
     }
 }

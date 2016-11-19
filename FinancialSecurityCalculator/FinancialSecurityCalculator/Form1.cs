@@ -30,7 +30,6 @@ namespace FinancialSecurityCalculator
             //var GroupBoxes = tabControl1.TabPages[0].Controls.OfType<GroupBox>().ToList<GroupBox>();
             //   foreach (var groupBox in GroupBoxes)
             // { TextBoxes.Add(groupBox.Controls.OfType<TextBox>().Where(box => box.ReadOnly == false).ToList<TextBox>()[0]); }
-
             label22.BringToFront();
             this.button4.BringToFront();
             List<TreeNode> tempNodes = new List<TreeNode>();
@@ -265,7 +264,10 @@ namespace FinancialSecurityCalculator
             {
                 dataModel.EnterpriseData = dialogFormRegister.EnterpriseData;
                 label159.Text = dataModel.EnterpriseData["EnterpriseName"].ToString();
+                toolTip1.SetToolTip(this.label159, dataModel.EnterpriseData["EnterpriseName"].ToString());
+
                 comboBox2.SelectedItem = default(ComboBox);
+                comboBox2.Text = "Оберіть рік";
             }
         }
 
@@ -281,7 +283,10 @@ namespace FinancialSecurityCalculator
             {
                 dataModel.EnterpriseData = dialogFormSelect.EnterpriseData;
                 label159.Text = dataModel.EnterpriseData["EnterpriseName"].ToString();
+                toolTip1.SetToolTip(this.label159, dataModel.EnterpriseData["EnterpriseName"].ToString());
+
                 comboBox2.SelectedItem = default(ComboBox);
+                comboBox2.Text = "Оберіть рік";
             }
         }
 
@@ -290,7 +295,7 @@ namespace FinancialSecurityCalculator
             object temp;
             if (dataModel.EnterpriseData.TryGetValue("Year", out temp))
             {
-                dataModel.EnterpriseData["Year"] = comboBox2.SelectedItem;
+                dataModel.EnterpriseData["Year"] = comboBox2.SelectedItem; //TODO: fix comboBox exception when write year, not select
             }
             else
             {
