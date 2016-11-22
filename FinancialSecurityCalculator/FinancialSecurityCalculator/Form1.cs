@@ -15,7 +15,7 @@ namespace FinancialSecurityCalculator
     {
         Services.Services services;
         DataModel dataModel;
-        FSCContext context;
+        FSCContext context = new FSCContext();
 
         public Form1()
         {
@@ -24,7 +24,7 @@ namespace FinancialSecurityCalculator
             services = new Services.Services();
             this.Init();
         }
-
+        
         private void Init()
         {
             //var GroupBoxes = tabControl1.TabPages[0].Controls.OfType<GroupBox>().ToList<GroupBox>();
@@ -87,8 +87,7 @@ namespace FinancialSecurityCalculator
         #region It works. I dont know why or how. Dont touch this.
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            context?.Dispose();
-            context = new FSCContext();
+           
 
             if (checkBox1.Checked)
             {
@@ -120,8 +119,7 @@ namespace FinancialSecurityCalculator
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            context?.Dispose();
-            context = new FSCContext();
+        
 
             if (checkBox2.Checked)
             {
@@ -152,8 +150,7 @@ namespace FinancialSecurityCalculator
         }
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            context?.Dispose();
-            context = new FSCContext();
+           
             //TODO: API for CRUD methods
             if (checkBox3.Checked)
             {
@@ -312,6 +309,19 @@ namespace FinancialSecurityCalculator
             {
                 services.Compare();
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            enterpriseBindingSource.ResetBindings(false);
+            recordsBindingSource.ResetBindings(false);
+            enterpriseIndicatorsBindingSource.ResetBindings(false);
+            context?.Dispose();
+            context = new FSCContext();
+            enterpriseBindingSource.DataSource = dataModel.TotalList;
+            enterpriseBindingSource.ResumeBinding();
+            recordsBindingSource.ResumeBinding();
+           // enterpriseIndicatorsBindingSource.ResumeBinding();
         }
     }
 }

@@ -229,30 +229,6 @@ namespace FinancialSecurityCalculator.Services
             public string Title { get; set; }
         }
 
-        public void ShowDetails(List<EnterpriseIndicator> indicators)
-        {
-            new Details((from item in indicators                            //will not recognize this.DecisionMaking if make querry directly from context
-                         select new
-                         {
-                             NameOfIndicator = item.IndicatorName,
-                             CurrentValue = item.IndicatorValue,
-                             Conclusion = this.DecisionMaking(item)
-                         }).ToList()).Show();
-
-            //var listAnons = (new[] { new
-            //{
-            //    indicatorID = default(int),
-            //    NameOfIndicator = default(string),
-            //    CurrentValue = default(double),
-            //    Conclusion = default(string)
-            //} }).ToList();
-
-            //listAnons.Clear();   //Anon collection
-
-            //dataGridView1.DataSource = querry.Select(x=> new { d = x.CurrentValue}).ToList();// рабочий вариант вывода одного столбца
-        }
-
-
         public void Compare()
         {
             using (var context = new FSCContext())
@@ -276,10 +252,24 @@ namespace FinancialSecurityCalculator.Services
             }
         }
 
-        public void CompareMany(params EnterpriseIndicator[] item)
-        {
+        //public void CompareMany(params EnterpriseIndicator[] item)
+        //{
 
+        //}
+
+
+        public void ShowDetails(List<EnterpriseIndicator> indicators)
+        {
+            new Details((from item in indicators                            //will not recognize this.DecisionMaking if make querry directly from context
+                         select new
+                         {
+                             NameOfIndicator = item.IndicatorName,
+                             CurrentValue = item.IndicatorValue,
+                             Conclusion = this.DecisionMaking(item)
+                         }).ToList()).Show();
+            //dataGridView1.DataSource = querry.Select(x=> new { d = x.CurrentValue}).ToList();// рабочий вариант вывода одного столбца
         }
+
 
         public string DecisionMaking(EnterpriseIndicator entity)
         {
