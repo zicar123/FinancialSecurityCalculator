@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clusters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clusters.Designer.cs">
+      <DependentUpon>Clusters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compare.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     <Compile Include="Sortings.Designer.cs">
       <DependentUpon>Sortings.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Clusters.resx">
+      <DependentUpon>Clusters.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compare.resx">
       <DependentUpon>Compare.cs</DependentUpon>
     </EmbeddedResource>

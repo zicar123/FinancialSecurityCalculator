@@ -62,9 +62,9 @@ namespace FinancialSecurityCalculator.Services
         {
             using (var context = new FSCContext())
             {
-                if (dataModel.EnterpriseData.Count == 0)
+                if (dataModel.EnterpriseData.Count == 0 || dataModel.EnterpriseData.Count == 1)
                 {
-                    MessageBox.Show("Помилка. Для збереження в БД спочатку створіть запис про підприємтсво (Файл - Зареєструвати підприємство)");
+                    MessageBox.Show("Помилка. Для збереження в БД спочатку створіть запис про підприємтсво (Файл - Зареєструвати підприємство), або виберіть існуюче.");
                     return;
                 }
 
@@ -258,23 +258,26 @@ namespace FinancialSecurityCalculator.Services
         //}
 
 
-        public void ShowDetails(List<EnterpriseIndicator> indicators)
+
+        public void ShowDetails(List<EnterpriseIndicator> indicators, string Title)
         {
+            var clusterId = 666;
             new Details((from item in indicators                            //will not recognize this.DecisionMaking if make querry directly from context
                          select new
                          {
                              NameOfIndicator = item.IndicatorName,
                              CurrentValue = item.IndicatorValue,
-                             Conclusion = this.DecisionMaking(item)
-                         }).ToList()).Show();
+                             Conclusion = this.DecisionMaking(item, out clusterId),
+                             ClusterID = clusterId
+                         }).ToList(), Title).Show();
+
             //dataGridView1.DataSource = querry.Select(x=> new { d = x.CurrentValue}).ToList();// рабочий вариант вывода одного столбца
         }
 
 
-        public string DecisionMaking(EnterpriseIndicator entity)
+        public string DecisionMaking(EnterpriseIndicator entity, out int clusterId)
         {
             // var properties = typeof(DecisionData).GetProperties();
-
 
             var props = decisionData[entity.IndicatorID].GetType().GetProperties();
 
@@ -284,28 +287,55 @@ namespace FinancialSecurityCalculator.Services
                 {
                     if (entity.IndicatorValue > (double?) props[0].GetValue(decisionData[entity.IndicatorID]))
                     {
+                        clusterId = 1;
                         return "Допустиме значення";
                     }
-                    else return "Кризисний стан";
+                    else if (entity.IndicatorValue <= (double?) props[0].GetValue(decisionData[entity.IndicatorID]) && entity.IndicatorValue > ((double?) props[0].GetValue(decisionData[entity.IndicatorID])-((double?) props[0].GetValue(decisionData[entity.IndicatorID]) * 0.2)))
+                    {
+                        clusterId = 2;
+                        return "Передкризовий стан";
+                    }
+                    else
+                    {
+                        clusterId = 3;
+                        return "Кризисний стан";
+                    }
                 }
                 else
                 {
-                    if (entity.IndicatorValue > (double?) props[0].GetValue(decisionData[entity.IndicatorID]))
+                    if (entity.IndicatorValue < (double?) props[0].GetValue(decisionData[entity.IndicatorID]))
                     {
+                        clusterId = 1;
+                        return "Допустиме значення";
+                    }
+                    else if (entity.IndicatorValue >= (double?) props[0].GetValue(decisionData[entity.IndicatorID]) && entity.IndicatorValue < ((double?) props[0].GetValue(decisionData[entity.IndicatorID]) + ((double?) props[0].GetValue(decisionData[entity.IndicatorID]) * 0.2)))
+                    {
+                        clusterId = 2;
+                        return "Передкризовий стан";
+                    }
+                    else
+                    {
+                        clusterId = 3;
                         return "Кризисний стан";
                     }
-                    else return "Допустиме значення";
                 }
             }
             else if (props[2].GetValue(decisionData[entity.IndicatorID]) != null && props[3].GetValue(decisionData[entity.IndicatorID]) != null)
             {
                 if (entity.IndicatorValue > (double?) props[2].GetValue(decisionData[entity.IndicatorID]) && entity.IndicatorValue < (double?) props[3].GetValue(decisionData[entity.IndicatorID]))
                 {
+                    clusterId = 1;
                     return "Допустиме значення діапазону";
+                }
+                else if ((entity.IndicatorValue > ((double?) props[2].GetValue(decisionData[entity.IndicatorID])- (double?) props[2].GetValue(decisionData[entity.IndicatorID])*0.2) && entity.IndicatorValue <= ((double?) props[2].GetValue(decisionData[entity.IndicatorID])) || (entity.IndicatorValue < ((double?) props[2].GetValue(decisionData[entity.IndicatorID]) + (double?) props[2].GetValue(decisionData[entity.IndicatorID]) * 0.2) && entity.IndicatorValue >= ((double?) props[2].GetValue(decisionData[entity.IndicatorID])))))
+                {
+                    clusterId = 2;
+                    return "Передкризовий стан";
                 }
                 else
                 {
-                    return "За межами діапазону";
+                    clusterId = 3;
+                    return "За межами допустимого діапазону";
                 }
             }
             else if (props[4].GetValue(decisionData[entity.IndicatorID]) != null)
@@ -318,6 +348,7 @@ namespace FinancialSecurityCalculator.Services
                     EnterpriseIndicator previousValue;
                     if (r == 0)
                     {
+                        clusterId = 0;
                         return "Немає попередніх даних";
                     }
                     else
@@ -326,24 +357,24 @@ namespace FinancialSecurityCalculator.Services
 
                         if (previousValue == null)
                         {
+                            clusterId = 0;
                             return "Немає попередніх даних";
                         }
                     }
 
-                    if (previousValue.IndicatorValue < entity.IndicatorValue)
+                    if (previousValue.IndicatorValue <= entity.IndicatorValue)
                     {
+                        clusterId = 1;
                         return "Збільшення";
-                    }
-                    else if (previousValue.IndicatorValue == entity.IndicatorValue)
-                    {
-                        return "На рівні попереднього";
                     }
                     else
                     {
+                        clusterId = 2;
                         return "Зменшення";
                     }
                 }
             }
+            clusterId = 666;
             return null;
         }
     }

@@ -13,8 +13,8 @@ namespace FinancialSecurityCalculator.Services
         void ResetTextBoxes(ControlCollection controls);
         void TreeToTabConformity(TreeView treeView, TabControl tabControl, int index);
         void SaveToDB(DataModel dataModel);
-        string DecisionMaking(EnterpriseIndicator entity);
+        string DecisionMaking(EnterpriseIndicator entity, out int clusterId);
         void Calculate(TabControl tabControl);
-        void ShowDetails(List<EnterpriseIndicator> indicators);
+        void ShowDetails(List<EnterpriseIndicator> indicators, string Title);
     }
 }

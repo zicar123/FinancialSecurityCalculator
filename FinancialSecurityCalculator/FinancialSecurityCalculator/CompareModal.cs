@@ -52,12 +52,26 @@ namespace FinancialSecurityCalculator
                 {
                     dataGridView1.CurrentCell = row.Cells[0];
                     //if (context.Record.ToList().FirstOrDefault(y => y.Year == Convert.ToInt32(dataModel.EnterpriseData["Year"]) && y.Enterprise.EnterpriseId == (int)dataModel.EnterpriseData["EnterpriseID"]) != null) //if record with this year already exists
-                    this.GetSelectedEnterpriseData.Add((dataGridView1.DataSource as List<Enterprise>).FirstOrDefault(x => x.EnterpriseId == (int) dataGridView1.CurrentRow.Cells[2].Value).Records?.FirstOrDefault(y => y.Year == Convert.ToInt32(comboBox2.SelectedItem)).EnterpriseIndicators);
-                }
-            }//TODO: catch exceptions, add check if year not exists in second enterprise
 
-            if (GetSelectedEnterpriseData.Any()) this.DialogResult = DialogResult.OK;
-            else this.DialogResult = DialogResult.Cancel;
+                    var selectedEnterprise = (dataGridView1.DataSource as List<Enterprise>).FirstOrDefault(x => x.EnterpriseId == (int) dataGridView1.CurrentRow.Cells[2].Value);
+                    var selectedYearOnEnterprise = selectedEnterprise.Records.FirstOrDefault(y => y.Year == Convert.ToInt32(comboBox2.SelectedItem));
+
+                    if (selectedYearOnEnterprise == null)
+                    {
+                        MessageBox.Show("Для підприємства '" + selectedEnterprise.EnterpriseName + "' не існує запису за обраний рік.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    this.GetSelectedEnterpriseData.Add(selectedYearOnEnterprise.EnterpriseIndicators);
+                }
+            }
+
+            if (GetSelectedEnterpriseData.Count != 2)
+            {
+                MessageBox.Show("Помилка. Виберіть два підприємства.");
+                this.GetSelectedEnterpriseData.Clear();
+                return;
+            }
+            this.DialogResult = DialogResult.OK;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

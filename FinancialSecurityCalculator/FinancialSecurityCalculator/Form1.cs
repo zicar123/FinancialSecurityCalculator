@@ -220,8 +220,11 @@ namespace FinancialSecurityCalculator
         {
             using (var context = new FSCContext())
             {
+                var selectedEnterprise = context.Enterprise.ToList().FirstOrDefault(en => en.EnterpriseId == Convert.ToInt32(enterpriseDataGridView.CurrentRow.Cells[0].Value));
+                var selectedRecord = selectedEnterprise.Records.ToList().FirstOrDefault(r => r.Year == Convert.ToInt32(recordsDataGridView.CurrentCell.Value));
+                
                 if (enterpriseIndicatorsDataGridView.SelectedCells.Count > 0)
-                    services.ShowDetails(context.Enterprise.ToList().FirstOrDefault(en => en.EnterpriseId == Convert.ToInt32(enterpriseDataGridView.CurrentRow.Cells[0].Value)).Records.ToList().FirstOrDefault(r => r.Year == Convert.ToInt32(recordsDataGridView.CurrentCell.Value)).EnterpriseIndicators.ToList());
+                    services.ShowDetails(selectedRecord.EnterpriseIndicators.ToList(), selectedEnterprise.EnterpriseName + ", " + selectedRecord.Year);
                 //services.ShowDetails(enterpriseIndicatorsDataGridView.DataSource as List<EnterpriseIndicator>);
             }
         }
@@ -291,6 +294,7 @@ namespace FinancialSecurityCalculator
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox2.SelectedItem == null) return;
             object temp;
             if (dataModel.EnterpriseData.TryGetValue("Year", out temp))
             {

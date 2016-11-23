@@ -321,21 +321,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.enterpriseIndicatorsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterpriseIndicatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enterpriseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recordsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterpriseDataGridView = new System.Windows.Forms.DataGridView();
             this.EnterpriseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.textBox45 = new System.Windows.Forms.TextBox();
             this.label158 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -369,7 +363,13 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button5 = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enterpriseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -398,11 +398,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -3068,6 +3068,7 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
+            this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.enterpriseIndicatorsDataGridView);
             this.tabPage2.Controls.Add(this.recordsDataGridView);
             this.tabPage2.Controls.Add(this.enterpriseDataGridView);
@@ -3096,22 +3097,6 @@
             this.enterpriseIndicatorsDataGridView.Size = new System.Drawing.Size(247, 358);
             this.enterpriseIndicatorsDataGridView.TabIndex = 7;
             // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Назва Показника";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "IndicatorValue";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn14.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn14.HeaderText = "Значення Показника";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
             // enterpriseIndicatorsBindingSource
             // 
             this.enterpriseIndicatorsBindingSource.DataMember = "EnterpriseIndicators";
@@ -3121,10 +3106,6 @@
             // 
             this.recordsBindingSource.DataMember = "Records";
             this.recordsBindingSource.DataSource = this.enterpriseBindingSource;
-            // 
-            // enterpriseBindingSource
-            // 
-            this.enterpriseBindingSource.DataSource = typeof(FinancialSecurityCalculator.Entities.Enterprise);
             // 
             // recordsDataGridView
             // 
@@ -3138,14 +3119,6 @@
             this.recordsDataGridView.Name = "recordsDataGridView";
             this.recordsDataGridView.Size = new System.Drawing.Size(96, 358);
             this.recordsDataGridView.TabIndex = 7;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Year";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Рік";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 50;
             // 
             // enterpriseDataGridView
             // 
@@ -3170,30 +3143,9 @@
             this.EnterpriseId.Name = "EnterpriseId";
             this.EnterpriseId.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "EnterpriseName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Назва Підприємства";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Region";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Область";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Branch";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Галузь";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(753, 370);
+            this.button2.Location = new System.Drawing.Point(884, 369);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 28);
             this.button2.TabIndex = 7;
@@ -3203,7 +3155,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(199, 370);
+            this.button1.Location = new System.Drawing.Point(506, 369);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 28);
             this.button1.TabIndex = 6;
@@ -3214,7 +3166,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.textBox45);
             this.panel1.Controls.Add(this.label158);
             this.panel1.Controls.Add(this.label11);
@@ -3231,6 +3182,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(187, 391);
             this.panel1.TabIndex = 1;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(199, 369);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(139, 28);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Обновити дані";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox45
             // 
@@ -3405,17 +3366,18 @@
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             this.exportToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Visible = false;
             // 
             // toJSONToolStripMenuItem
             // 
             this.toJSONToolStripMenuItem.Name = "toJSONToolStripMenuItem";
-            this.toJSONToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.toJSONToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.toJSONToolStripMenuItem.Text = "To JSON";
             // 
             // toXMLToolStripMenuItem
             // 
             this.toXMLToolStripMenuItem.Name = "toXMLToolStripMenuItem";
-            this.toXMLToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.toXMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.toXMLToolStripMenuItem.Text = "To XML";
             // 
             // importToolStripMenuItem
@@ -3426,17 +3388,18 @@
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
             this.importToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.importToolStripMenuItem.Text = "Import";
+            this.importToolStripMenuItem.Visible = false;
             // 
             // fromJSONToolStripMenuItem
             // 
             this.fromJSONToolStripMenuItem.Name = "fromJSONToolStripMenuItem";
-            this.fromJSONToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.fromJSONToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fromJSONToolStripMenuItem.Text = "From JSON";
             // 
             // fromXMLToolStripMenuItem
             // 
             this.fromXMLToolStripMenuItem.Name = "fromXMLToolStripMenuItem";
-            this.fromXMLToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.fromXMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fromXMLToolStripMenuItem.Text = "From XML";
             // 
             // clearWorkspaceToolStripMenuItem
@@ -3462,6 +3425,7 @@
             this.manualToolStripMenuItem.Name = "manualToolStripMenuItem";
             this.manualToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.manualToolStripMenuItem.Text = "Manual";
+            this.manualToolStripMenuItem.Visible = false;
             // 
             // enterpriseTheoryToolStripMenuItem
             // 
@@ -3489,17 +3453,18 @@
             this.informationToolStripMenuItem.Name = "informationToolStripMenuItem";
             this.informationToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.informationToolStripMenuItem.Text = "Information";
+            this.informationToolStripMenuItem.Visible = false;
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About ";
             // 
             // donationsToolStripMenuItem
             // 
             this.donationsToolStripMenuItem.Name = "donationsToolStripMenuItem";
-            this.donationsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.donationsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.donationsToolStripMenuItem.Text = "Donations";
             // 
             // toolTip1
@@ -3509,15 +3474,54 @@
             this.toolTip1.ReshowDelay = 500;
             this.toolTip1.ShowAlways = true;
             // 
-            // button5
+            // dataGridViewTextBoxColumn13
             // 
-            this.button5.Location = new System.Drawing.Point(46, 216);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Refresh";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Назва Показника";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "IndicatorValue";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn14.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn14.HeaderText = "Значення Показника";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // enterpriseBindingSource
+            // 
+            this.enterpriseBindingSource.DataSource = typeof(FinancialSecurityCalculator.Entities.Enterprise);
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Year";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Рік";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "EnterpriseName";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Назва Підприємства";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Region";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Область";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Branch";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Галузь";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // Form1
             // 
@@ -3581,13 +3585,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
