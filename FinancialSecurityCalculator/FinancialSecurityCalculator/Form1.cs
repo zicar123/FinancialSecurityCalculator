@@ -24,7 +24,7 @@ namespace FinancialSecurityCalculator
             services = new Services.Services();
             this.Init();
         }
-        
+
         private void Init()
         {
             //var GroupBoxes = tabControl1.TabPages[0].Controls.OfType<GroupBox>().ToList<GroupBox>();
@@ -87,7 +87,7 @@ namespace FinancialSecurityCalculator
         #region It works. I dont know why or how. Dont touch this.
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-           
+
 
             if (checkBox1.Checked)
             {
@@ -119,7 +119,7 @@ namespace FinancialSecurityCalculator
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-        
+
 
             if (checkBox2.Checked)
             {
@@ -150,7 +150,7 @@ namespace FinancialSecurityCalculator
         }
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-           
+
             //TODO: API for CRUD methods
             if (checkBox3.Checked)
             {
@@ -220,11 +220,12 @@ namespace FinancialSecurityCalculator
         {
             using (var context = new FSCContext())
             {
-                var selectedEnterprise = context.Enterprise.ToList().FirstOrDefault(en => en.EnterpriseId == Convert.ToInt32(enterpriseDataGridView.CurrentRow.Cells[0].Value));
-                var selectedRecord = selectedEnterprise.Records.ToList().FirstOrDefault(r => r.Year == Convert.ToInt32(recordsDataGridView.CurrentCell.Value));
-                
                 if (enterpriseIndicatorsDataGridView.SelectedCells.Count > 0)
+                {
+                    var selectedEnterprise = context.Enterprise.ToList().FirstOrDefault(en => en.EnterpriseId == Convert.ToInt32(enterpriseDataGridView.CurrentRow.Cells[0].Value));
+                    var selectedRecord = selectedEnterprise.Records.ToList().FirstOrDefault(r => r.Year == Convert.ToInt32(recordsDataGridView.CurrentCell.Value));
                     services.ShowDetails(selectedRecord.EnterpriseIndicators.ToList(), selectedEnterprise.EnterpriseName + ", " + selectedRecord.Year);
+                }
                 //services.ShowDetails(enterpriseIndicatorsDataGridView.DataSource as List<EnterpriseIndicator>);
             }
         }
@@ -240,7 +241,7 @@ namespace FinancialSecurityCalculator
             else if (string.IsNullOrEmpty(textBox42.Text))
             { enterpriseBindingSource.DataSource = dataModel.TotalList; }
 
-            enterpriseBindingSource.ResumeBinding(); 
+            enterpriseBindingSource.ResumeBinding();
             recordsBindingSource.ResumeBinding();
         }
 
@@ -322,10 +323,16 @@ namespace FinancialSecurityCalculator
             enterpriseIndicatorsBindingSource.ResetBindings(false);
             context?.Dispose();
             context = new FSCContext();
-            enterpriseBindingSource.DataSource = dataModel.TotalList;
-            enterpriseBindingSource.ResumeBinding();
-            recordsBindingSource.ResumeBinding();
-           // enterpriseIndicatorsBindingSource.ResumeBinding();
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            comboBox1.SelectedIndex = 0;
+            textBox42.Text = string.Empty;
+            textBox45.Text = string.Empty;
+            //enterpriseBindingSource.DataSource = dataModel.TotalList;
+            //enterpriseBindingSource.ResumeBinding();
+            //recordsBindingSource.ResumeBinding();
+            //enterpriseIndicatorsBindingSource.ResumeBinding();
         }
     }
 }

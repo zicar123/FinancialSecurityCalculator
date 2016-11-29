@@ -320,6 +320,7 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.enterpriseIndicatorsDataGridView = new System.Windows.Forms.DataGridView();
             this.enterpriseIndicatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -329,7 +330,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.textBox45 = new System.Windows.Forms.TextBox();
             this.label158 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -414,7 +414,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1031, 411);
+            this.tabControl1.Size = new System.Drawing.Size(1049, 411);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -430,7 +430,7 @@
             this.tabPage1.Location = new System.Drawing.Point(23, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1004, 403);
+            this.tabPage1.Size = new System.Drawing.Size(1016, 403);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Обчислення";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -3078,10 +3078,20 @@
             this.tabPage2.Location = new System.Drawing.Point(23, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1004, 403);
+            this.tabPage2.Size = new System.Drawing.Size(1022, 403);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Аналіз";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(199, 369);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(139, 28);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Обновити дані";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // enterpriseIndicatorsDataGridView
             // 
@@ -3094,7 +3104,7 @@
             this.enterpriseIndicatorsDataGridView.Location = new System.Drawing.Point(753, 6);
             this.enterpriseIndicatorsDataGridView.MultiSelect = false;
             this.enterpriseIndicatorsDataGridView.Name = "enterpriseIndicatorsDataGridView";
-            this.enterpriseIndicatorsDataGridView.Size = new System.Drawing.Size(247, 358);
+            this.enterpriseIndicatorsDataGridView.Size = new System.Drawing.Size(261, 358);
             this.enterpriseIndicatorsDataGridView.TabIndex = 7;
             // 
             // enterpriseIndicatorsBindingSource
@@ -3182,16 +3192,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(187, 391);
             this.panel1.TabIndex = 1;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(199, 369);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(139, 28);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Обновити дані";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox45
             // 
@@ -3319,7 +3319,7 @@
             this.informationToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1034, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1049, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -3371,13 +3371,13 @@
             // toJSONToolStripMenuItem
             // 
             this.toJSONToolStripMenuItem.Name = "toJSONToolStripMenuItem";
-            this.toJSONToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.toJSONToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.toJSONToolStripMenuItem.Text = "To JSON";
             // 
             // toXMLToolStripMenuItem
             // 
             this.toXMLToolStripMenuItem.Name = "toXMLToolStripMenuItem";
-            this.toXMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.toXMLToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.toXMLToolStripMenuItem.Text = "To XML";
             // 
             // importToolStripMenuItem
@@ -3393,13 +3393,13 @@
             // fromJSONToolStripMenuItem
             // 
             this.fromJSONToolStripMenuItem.Name = "fromJSONToolStripMenuItem";
-            this.fromJSONToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fromJSONToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.fromJSONToolStripMenuItem.Text = "From JSON";
             // 
             // fromXMLToolStripMenuItem
             // 
             this.fromXMLToolStripMenuItem.Name = "fromXMLToolStripMenuItem";
-            this.fromXMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fromXMLToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.fromXMLToolStripMenuItem.Text = "From XML";
             // 
             // clearWorkspaceToolStripMenuItem
@@ -3458,13 +3458,13 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.aboutToolStripMenuItem.Text = "About ";
             // 
             // donationsToolStripMenuItem
             // 
             this.donationsToolStripMenuItem.Name = "donationsToolStripMenuItem";
-            this.donationsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.donationsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.donationsToolStripMenuItem.Text = "Donations";
             // 
             // toolTip1
@@ -3527,7 +3527,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 438);
+            this.ClientSize = new System.Drawing.Size(1049, 438);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

@@ -75,7 +75,7 @@ namespace FinancialSecurityCalculator.Services
                     MessageBox.Show("Помилка. Перед збереженням оберіть рік.");
                     return;
                 }
-
+                //TODO: check if cant connect
                 if (context.Enterprise.ToList().FirstOrDefault(x => x.EnterpriseId == (int) dataModel.EnterpriseData["EnterpriseID"]) != null) //if enterprise with this id already exists
                 {
                     if (MessageBox.Show("Дані будуть збережені в існуюче підприємство.", "Увага!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK) return;

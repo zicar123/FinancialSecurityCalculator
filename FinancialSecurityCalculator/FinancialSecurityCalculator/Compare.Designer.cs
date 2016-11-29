@@ -37,14 +37,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(507, 242);
+            this.dataGridView1.Size = new System.Drawing.Size(561, 242);
             this.dataGridView1.TabIndex = 0;
             // 
             // Compare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 266);
+            this.ClientSize = new System.Drawing.Size(583, 266);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Compare";
             this.Text = "Порівняльна таблиця показників";
