@@ -316,7 +316,7 @@ namespace FinancialSecurityCalculator
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void RefreshData()
         {
             enterpriseBindingSource.ResetBindings(false);
             recordsBindingSource.ResetBindings(false);
@@ -333,6 +333,47 @@ namespace FinancialSecurityCalculator
             //enterpriseBindingSource.ResumeBinding();
             //recordsBindingSource.ResumeBinding();
             //enterpriseIndicatorsBindingSource.ResumeBinding();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.RefreshData();
+        }
+
+        private void підприємствоToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //context.EnterpriseIndicator.Remove(enterpriseIndicatorsDataGridView.CurrentRow.DataBoundItem as EnterpriseIndicator);
+            var entity = enterpriseDataGridView.CurrentRow.DataBoundItem as Enterprise;
+            context.Enterprise.Attach(entity);
+            context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
+            context.SaveChanges();
+            this.RefreshData();
+        }
+
+        private void рікToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var entity = recordsDataGridView.CurrentRow.DataBoundItem as Record;
+            context.Record.Attach(entity);
+            context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
+            context.SaveChanges();
+            this.RefreshData();
+        }
+
+        private void показникToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var entity = enterpriseIndicatorsDataGridView.CurrentRow.DataBoundItem as EnterpriseIndicator;
+            context.EnterpriseIndicator.Attach(entity);
+            context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
+            context.SaveChanges();
+            this.RefreshData();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (enterpriseDataGridView.CurrentRow == null) return;
+            Enterprise chartsData = dataModel.TotalList.FirstOrDefault(x => x.EnterpriseId == (int) enterpriseDataGridView.CurrentRow.Cells[0].Value);
+            var chartsForm = new ChartsMain(chartsData.Records, chartsData.EnterpriseName, tabControl2);
+            chartsForm.Show();
         }
     }
 }

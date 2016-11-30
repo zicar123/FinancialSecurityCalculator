@@ -322,8 +322,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.enterpriseIndicatorsDataGridView = new System.Windows.Forms.DataGridView();
-            this.enterpriseIndicatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.recordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recordsDataGridView = new System.Windows.Forms.DataGridView();
             this.enterpriseDataGridView = new System.Windows.Forms.DataGridView();
             this.EnterpriseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -363,6 +361,12 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.видалитиЗБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.підприємствоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.рікToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.показникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enterpriseIndicatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterpriseBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -370,6 +374,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -396,12 +401,12 @@
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -430,7 +435,7 @@
             this.tabPage1.Location = new System.Drawing.Point(23, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1016, 403);
+            this.tabPage1.Size = new System.Drawing.Size(1022, 403);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Обчислення";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -3068,6 +3073,7 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
+            this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.enterpriseIndicatorsDataGridView);
             this.tabPage2.Controls.Add(this.recordsDataGridView);
@@ -3106,16 +3112,6 @@
             this.enterpriseIndicatorsDataGridView.Name = "enterpriseIndicatorsDataGridView";
             this.enterpriseIndicatorsDataGridView.Size = new System.Drawing.Size(261, 358);
             this.enterpriseIndicatorsDataGridView.TabIndex = 7;
-            // 
-            // enterpriseIndicatorsBindingSource
-            // 
-            this.enterpriseIndicatorsBindingSource.DataMember = "EnterpriseIndicators";
-            this.enterpriseIndicatorsBindingSource.DataSource = this.recordsBindingSource;
-            // 
-            // recordsBindingSource
-            // 
-            this.recordsBindingSource.DataMember = "Records";
-            this.recordsBindingSource.DataSource = this.enterpriseBindingSource;
             // 
             // recordsDataGridView
             // 
@@ -3330,7 +3326,8 @@
             this.exportToolStripMenuItem,
             this.importToolStripMenuItem,
             this.clearWorkspaceToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.видалитиЗБДToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
@@ -3474,6 +3471,47 @@
             this.toolTip1.ReshowDelay = 500;
             this.toolTip1.ShowAlways = true;
             // 
+            // видалитиЗБДToolStripMenuItem
+            // 
+            this.видалитиЗБДToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.підприємствоToolStripMenuItem,
+            this.рікToolStripMenuItem,
+            this.показникToolStripMenuItem});
+            this.видалитиЗБДToolStripMenuItem.Name = "видалитиЗБДToolStripMenuItem";
+            this.видалитиЗБДToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.видалитиЗБДToolStripMenuItem.Text = "Видалити з БД";
+            // 
+            // підприємствоToolStripMenuItem
+            // 
+            this.підприємствоToolStripMenuItem.Name = "підприємствоToolStripMenuItem";
+            this.підприємствоToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.підприємствоToolStripMenuItem.Text = "Підприємство";
+            this.підприємствоToolStripMenuItem.Click += new System.EventHandler(this.підприємствоToolStripMenuItem_Click);
+            // 
+            // рікToolStripMenuItem
+            // 
+            this.рікToolStripMenuItem.Name = "рікToolStripMenuItem";
+            this.рікToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.рікToolStripMenuItem.Text = "Рік";
+            this.рікToolStripMenuItem.Click += new System.EventHandler(this.рікToolStripMenuItem_Click);
+            // 
+            // показникToolStripMenuItem
+            // 
+            this.показникToolStripMenuItem.Name = "показникToolStripMenuItem";
+            this.показникToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.показникToolStripMenuItem.Text = "Показник";
+            this.показникToolStripMenuItem.Click += new System.EventHandler(this.показникToolStripMenuItem_Click);
+            // 
+            // enterpriseIndicatorsBindingSource
+            // 
+            this.enterpriseIndicatorsBindingSource.DataMember = "EnterpriseIndicators";
+            this.enterpriseIndicatorsBindingSource.DataSource = this.recordsBindingSource;
+            // 
+            // recordsBindingSource
+            // 
+            this.recordsBindingSource.DataMember = "Records";
+            this.recordsBindingSource.DataSource = this.enterpriseBindingSource;
+            // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
@@ -3522,6 +3560,16 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Галузь";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(672, 369);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 28);
+            this.button6.TabIndex = 14;
+            this.button6.Text = "Графік";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form1
             // 
@@ -3583,14 +3631,14 @@
             this.panel2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -3899,6 +3947,11 @@
         private System.Windows.Forms.Label label161;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ToolStripMenuItem видалитиЗБДToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem підприємствоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem рікToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem показникToolStripMenuItem;
+        private System.Windows.Forms.Button button6;
     }
 }
 

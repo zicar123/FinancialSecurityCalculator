@@ -8,6 +8,10 @@ using FinancialSecurityCalculator.Entities;
 using System.Linq;
 using System.Collections;
 using System.Reflection;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+using FinancialSecurityCalculator.SLExcelUtility; 
 
 namespace FinancialSecurityCalculator.Services
 {
@@ -15,7 +19,7 @@ namespace FinancialSecurityCalculator.Services
     {
         public void ResetTextBoxes(ControlCollection controls)
         {
-            foreach (Control c in controls)
+            foreach (System.Windows.Forms.Control c in controls)
             {
                 TextBox tb = c as TextBox;
                 if (tb != null)
