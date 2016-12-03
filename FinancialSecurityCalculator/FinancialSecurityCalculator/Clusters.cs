@@ -16,7 +16,7 @@ namespace FinancialSecurityCalculator
         {
             InitializeComponent();
 
-            this.Text = "Підприємство:  " + Title;
+            this.Text = Title;
 
             dataGridView1.ReadOnly = true;
             dataGridView2.ReadOnly = true;

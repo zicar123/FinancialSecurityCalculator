@@ -224,7 +224,7 @@ namespace FinancialSecurityCalculator
                 {
                     var selectedEnterprise = context.Enterprise.ToList().FirstOrDefault(en => en.EnterpriseId == Convert.ToInt32(enterpriseDataGridView.CurrentRow.Cells[0].Value));
                     var selectedRecord = selectedEnterprise.Records.ToList().FirstOrDefault(r => r.Year == Convert.ToInt32(recordsDataGridView.CurrentCell.Value));
-                    services.ShowDetails(selectedRecord.EnterpriseIndicators.ToList(), selectedEnterprise.EnterpriseName + ", " + selectedRecord.Year);
+                    services.ShowDetails(selectedRecord.EnterpriseIndicators.ToList(), selectedEnterprise.EnterpriseName, selectedRecord.Year.ToString());
                 }
                 //services.ShowDetails(enterpriseIndicatorsDataGridView.DataSource as List<EnterpriseIndicator>);
             }

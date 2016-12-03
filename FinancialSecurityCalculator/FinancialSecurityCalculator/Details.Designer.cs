@@ -57,17 +57,17 @@
             // 
             this.button2.Location = new System.Drawing.Point(231, 504);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 23);
+            this.button2.Size = new System.Drawing.Size(183, 23);
             this.button2.TabIndex = 11;
-            this.button2.Text = "У вигляді діаграми";
+            this.button2.Text = "Відобразити у вигляді діаграми";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(387, 504);
+            this.button3.Location = new System.Drawing.Point(420, 504);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 23);
+            this.button3.Size = new System.Drawing.Size(117, 23);
             this.button3.TabIndex = 12;
             this.button3.Text = "Експорт у XLS";
             this.button3.UseVisualStyleBackColor = true;

@@ -15,11 +15,14 @@ namespace FinancialSecurityCalculator
     public partial class Details : Form
     {
         private IEnumerable<object> conclusionsList;
+        private string enterpriseName;
+        private string year;
 
-        public Details(IEnumerable<object> conclusionsList, string Title)
+        public Details(IEnumerable<object> conclusionsList, string enterpriseName, string year)
         {
             InitializeComponent();
-            this.Text = "Підприємство:  " + Title;
+            this.enterpriseName = enterpriseName;
+            this.year = year;
             this.conclusionsList = conclusionsList;
             dataGridView1.ReadOnly = true;
             dataGridView1.DataSource = conclusionsList;
@@ -30,6 +33,8 @@ namespace FinancialSecurityCalculator
             dataGridView1.Columns[1].Width = 70;
             dataGridView1.Columns[2].Width = 150;
             dataGridView1.Columns[3].Visible = false;
+            this.Text = "Підприємство:  " + enterpriseName + ", " + year;
+
         }
 
         private static T CastType<T>(object obj, T type)
@@ -145,11 +150,14 @@ namespace FinancialSecurityCalculator
             data.Headers.Add(dataGridView1.Columns[1].HeaderText);
             data.Headers.Add(dataGridView1.Columns[2].HeaderText);
 
+            data.SheetName = this.Text;
+
             foreach (var item in anonList)
                 data.DataRows.Add(new List<string>() { item.NameOfIndicator, item.CurrentValue.ToString(), item.Conclusion });
 
             byte[] binaryArray = (new SLExcelWriter()).GenerateExcel(data);
-            System.IO.File.WriteAllBytes(AppDomain.CurrentDomain.BaseDirectory + "Деталі" + ".xls", binaryArray);
+            System.IO.File.WriteAllBytes(AppDomain.CurrentDomain.BaseDirectory + year + " - " + enterpriseName + ".xls", binaryArray);
+            MessageBox.Show("Файл збережено у " + AppDomain.CurrentDomain.BaseDirectory);
         }
     }
 }

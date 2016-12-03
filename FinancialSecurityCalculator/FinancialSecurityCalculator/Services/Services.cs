@@ -250,8 +250,9 @@ namespace FinancialSecurityCalculator.Services
                                  {
                                      IndicatorName = first.IndicatorName,
                                      FirstEnterprise = first.IndicatorValue,
-                                     SecondEnterprise = second.IndicatorValue
-                                 }).ToList(), modalCompare.GetSelectedEnterpriseData[0][0]?.Record?.Enterprise?.EnterpriseName, modalCompare.GetSelectedEnterpriseData[1][0]?.Record?.Enterprise?.EnterpriseName).Show();
+                                     SecondEnterprise = second.IndicatorValue,
+                                     IndicatorID = first.IndicatorID
+                                 }).ToList(), modalCompare.GetSelectedEnterpriseData[0][0]?.Record?.Enterprise?.EnterpriseName, modalCompare.GetSelectedEnterpriseData[1][0]?.Record?.Enterprise?.EnterpriseName, modalCompare.GetSelectedEnterpriseData[0][0].Record.Year.ToString()).Show();
                 }
             }
         }
@@ -263,7 +264,7 @@ namespace FinancialSecurityCalculator.Services
 
 
 
-        public void ShowDetails(List<EnterpriseIndicator> indicators, string Title)
+        public void ShowDetails(List<EnterpriseIndicator> indicators, string enterpriseName, string year)
         {
             var clusterId = 666;
             new Details((from item in indicators                            //will not recognize this.DecisionMaking if make querry directly from context
@@ -273,7 +274,7 @@ namespace FinancialSecurityCalculator.Services
                              CurrentValue = item.IndicatorValue,
                              Conclusion = this.DecisionMaking(item, out clusterId),
                              ClusterID = clusterId
-                         }).ToList(), Title).Show();
+                         }).ToList(), enterpriseName, year).Show();
 
             //dataGridView1.DataSource = querry.Select(x=> new { d = x.CurrentValue}).ToList();// рабочий вариант вывода одного столбца
         }

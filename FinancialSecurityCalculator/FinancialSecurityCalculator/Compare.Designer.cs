@@ -48,7 +48,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(270, 23);
             this.button2.TabIndex = 12;
-            this.button2.Text = "У вигляді діаграми";
+            this.button2.Text = "Відобразити у вигляді діаграми";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -70,6 +70,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Compare";
             this.Text = "Порівняльна таблиця показників";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
