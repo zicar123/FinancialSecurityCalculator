@@ -53,12 +53,16 @@ namespace FinancialSecurityCalculator
                     dataGridView1.CurrentCell = row.Cells[0];
                     //if (context.Record.ToList().FirstOrDefault(y => y.Year == Convert.ToInt32(dataModel.EnterpriseData["Year"]) && y.Enterprise.EnterpriseId == (int)dataModel.EnterpriseData["EnterpriseID"]) != null) //if record with this year already exists
 
-                    var selectedEnterprise = (dataGridView1.DataSource as List<Enterprise>).FirstOrDefault(x => x.EnterpriseId == (int) dataGridView1.CurrentRow.Cells[2].Value);
+                   // var selectedEnterprise = (dataGridView1.DataSource as List<Enterprise>).FirstOrDefault(x => x.EnterpriseId == (int) dataGridView1.CurrentRow.Cells[2].Value); //this is poor crutch
+
+                    var selectedEnterprise = (Enterprise) dataGridView1.CurrentRow.DataBoundItem;
+
                     var selectedYearOnEnterprise = selectedEnterprise.Records.FirstOrDefault(y => y.Year == Convert.ToInt32(comboBox2.SelectedItem));
 
                     if (selectedYearOnEnterprise == null)
                     {
                         MessageBox.Show("Для підприємства '" + selectedEnterprise.EnterpriseName + "' не існує запису за обраний рік.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        this.GetSelectedEnterpriseData.Clear();
                         return;
                     }
                     this.GetSelectedEnterpriseData.Add(selectedYearOnEnterprise.EnterpriseIndicators);

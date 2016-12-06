@@ -21,7 +21,7 @@ namespace FinancialSecurityCalculator.Services
         {
             foreach (System.Windows.Forms.Control c in controls)
             {
-                TextBox tb = c as TextBox;
+                var tb = c as TextBox;
                 if (tb != null)
                 {
                     tb.Text = string.Empty;
@@ -96,9 +96,9 @@ namespace FinancialSecurityCalculator.Services
                         }
                         if (MessageBox.Show("Дані про даний рік будуть перезаписані", "Увага!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK) return;
 
-                        var tt = Convert.ToInt32(dataModel.EnterpriseData["Year"]);
-                        var t = Convert.ToInt32(dataModel.EnterpriseData["EnterpriseID"]);
-                        var data = context.Record.FirstOrDefault(y => y.Year == tt && y.Enterprise.EnterpriseId == t);
+                        int tt = Convert.ToInt32(dataModel.EnterpriseData["Year"]);
+                        int t = Convert.ToInt32(dataModel.EnterpriseData["EnterpriseID"]);
+                        Record data = context.Record.FirstOrDefault(y => y.Year == tt && y.Enterprise.EnterpriseId == t);
                         data.EnterpriseIndicators.Clear();
                         data.EnterpriseIndicators = dataModel.Indicators;
 
@@ -158,8 +158,8 @@ namespace FinancialSecurityCalculator.Services
 
         public void Calculate(TabControl tabControl)
         {
-            Formulas formulas = new Formulas();
-            List<TextBox> arguments = new List<TextBox>();
+            var formulas = new Formulas();
+            var arguments = new List<TextBox>();
             foreach (var elem in tabControl.SelectedTab.Controls)
             {
                 if (elem is TextBox)
@@ -266,7 +266,7 @@ namespace FinancialSecurityCalculator.Services
 
         public void ShowDetails(List<EnterpriseIndicator> indicators, string enterpriseName, string year)
         {
-            var clusterId = 666;
+            int clusterId = default(int);
             new Details((from item in indicators                            //will not recognize this.DecisionMaking if make querry directly from context
                          select new
                          {
@@ -284,7 +284,7 @@ namespace FinancialSecurityCalculator.Services
         {
             // var properties = typeof(DecisionData).GetProperties();
 
-            var props = decisionData[entity.IndicatorID].GetType().GetProperties();
+            PropertyInfo[] props = decisionData[entity.IndicatorID].GetType().GetProperties();
 
             if (props[0].GetValue(decisionData[entity.IndicatorID]) != null && props[1].GetValue(decisionData[entity.IndicatorID]) != null)
             {
@@ -347,9 +347,9 @@ namespace FinancialSecurityCalculator.Services
             {
                 using (var context = new FSCContext())
                 {
-                    var list = context.Record.OrderBy(x => x.Year).ToList();
-                    var prev = list.FirstOrDefault(x => x.RecordId == entity.Record.RecordId);
-                    var r = list.IndexOf(prev);
+                    List<Record> list = context.Record.OrderBy(x => x.Year).ToList();
+                    Record prev = list.FirstOrDefault(x => x.RecordId == entity.Record.RecordId);
+                    int r = list.IndexOf(prev);
                     EnterpriseIndicator previousValue;
                     if (r == 0)
                     {

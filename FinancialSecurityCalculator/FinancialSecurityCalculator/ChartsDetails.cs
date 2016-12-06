@@ -33,6 +33,7 @@ namespace FinancialSecurityCalculator
                 chart1.Series.Add(data.Keys.ToList()[i]);
                 chart1.Series[i].ChartType = SeriesChartType.RangeColumn;
                 chart1.Series[i].Points.AddXY("Діаграма значень показників", data.Values.ToList()[i]);
+                chart1.Series[i].Points[0].ToolTip = data.Values.ToList()[i].ToString();
             }
         }
     }

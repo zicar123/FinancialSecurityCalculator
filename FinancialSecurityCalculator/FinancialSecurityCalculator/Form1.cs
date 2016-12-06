@@ -108,13 +108,8 @@ namespace FinancialSecurityCalculator
                 dataModel.TotalList.AddRange(dataModel.chb3);
             }
             enterpriseBindingSource.ResetBindings(false);
-            recordsBindingSource.ResetBindings(false);
-            enterpriseIndicatorsBindingSource.ResetBindings(false);
             if (comboBox1.SelectedItem.ToString() == "Всі") enterpriseBindingSource.DataSource = dataModel.TotalList;
-            else enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString());
-            enterpriseBindingSource.ResumeBinding(); // this one works just fine
-            recordsBindingSource.ResumeBinding();
-
+            else enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString()).ToList();
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -141,12 +136,10 @@ namespace FinancialSecurityCalculator
                 dataModel.TotalList.AddRange(dataModel.chb3);
             }
             enterpriseBindingSource.ResetBindings(false);
-            recordsBindingSource.ResetBindings(false);
-            enterpriseIndicatorsBindingSource.ResetBindings(false);
+     
             if (comboBox1.SelectedItem.ToString() == "Всі") enterpriseBindingSource.DataSource = dataModel.TotalList;
-            else enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString());
-            enterpriseBindingSource.ResumeBinding(); // this one works just fine
-            recordsBindingSource.ResumeBinding();
+            else enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString()).ToList();
+
         }
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
@@ -171,12 +164,10 @@ namespace FinancialSecurityCalculator
                 dataModel.TotalList.AddRange(dataModel.chb3);
             }
             enterpriseBindingSource.ResetBindings(false);
-            recordsBindingSource.ResetBindings(false);
-            enterpriseIndicatorsBindingSource.ResetBindings(false);
+
             if (comboBox1.SelectedItem.ToString() == "Всі") enterpriseBindingSource.DataSource = dataModel.TotalList;
-            else enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString());
-            enterpriseBindingSource.ResumeBinding();
-            recordsBindingSource.ResumeBinding();
+            else enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString()).ToList();
+
         }
         #endregion
         private void newEnterpriseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -197,66 +188,37 @@ namespace FinancialSecurityCalculator
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem.ToString() == "Всі")
-            {
-                enterpriseBindingSource.ResetBindings(false);
-                recordsBindingSource.ResetBindings(false);
-                enterpriseIndicatorsBindingSource.ResetBindings(false);
-                enterpriseBindingSource.Filter = comboBox1.SelectedItem.ToString();
                 enterpriseBindingSource.DataSource = dataModel.TotalList;
-            }
             else
-            {
-                enterpriseBindingSource.ResetBindings(false);
-                recordsBindingSource.ResetBindings(false);
-                enterpriseIndicatorsBindingSource.ResetBindings(false);
-                enterpriseBindingSource.Filter = comboBox1.SelectedItem.ToString();//dont know whether i need this line
-                enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString());
-            }
-            // enterpriseBindingSource.ResumeBinding(); // this one works just fine(Not tested at this line!)
+                enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString()).ToList();
         }
         #endregion
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (var context = new FSCContext())
+            if (enterpriseDataGridView.CurrentRow != null)
             {
-                if (enterpriseIndicatorsDataGridView.SelectedCells.Count > 0)
-                {
-                    var selectedEnterprise = context.Enterprise.ToList().FirstOrDefault(en => en.EnterpriseId == Convert.ToInt32(enterpriseDataGridView.CurrentRow.Cells[0].Value));
-                    var selectedRecord = selectedEnterprise.Records.ToList().FirstOrDefault(r => r.Year == Convert.ToInt32(recordsDataGridView.CurrentCell.Value));
-                    services.ShowDetails(selectedRecord.EnterpriseIndicators.ToList(), selectedEnterprise.EnterpriseName, selectedRecord.Year.ToString());
-                }
-                //services.ShowDetails(enterpriseIndicatorsDataGridView.DataSource as List<EnterpriseIndicator>);
+                var selectedEnterprise = (Enterprise) enterpriseDataGridView.CurrentRow.DataBoundItem;
+                Record selectedRecord = selectedEnterprise.Records.ToList().FirstOrDefault(r => r.Year == Convert.ToInt32(recordsDataGridView.CurrentCell.Value));
+                services.ShowDetails(selectedRecord.EnterpriseIndicators.ToList(), selectedEnterprise.EnterpriseName, selectedRecord.Year.ToString());
             }
-        }
+        } //TODO: check all linq Where (must be ToList) 
+        //TODO: delete all 'using (var context). Use DataBoundItem instead
         //TODO: add info from which document(balance list or another one) find Arguments for calculating
         private void textBox42_TextChanged(object sender, EventArgs e)
         {
-            enterpriseBindingSource.ResetBindings(false);
-            recordsBindingSource.ResetBindings(false);
-            enterpriseIndicatorsBindingSource.ResetBindings(false);
-
             if (!string.IsNullOrEmpty(textBox42.Text))
                 enterpriseBindingSource.DataSource = dataModel.TotalList?.Where(n => n.EnterpriseName.ToLower().Contains(textBox42.Text.ToLower())).ToList();
             else if (string.IsNullOrEmpty(textBox42.Text))
-            { enterpriseBindingSource.DataSource = dataModel.TotalList; }
-
-            enterpriseBindingSource.ResumeBinding();
-            recordsBindingSource.ResumeBinding();
+                enterpriseBindingSource.DataSource = dataModel.TotalList;
         }
 
         private void textBox45_TextChanged(object sender, EventArgs e)
         {
-            enterpriseBindingSource.ResetBindings(false);
-            recordsBindingSource.ResetBindings(false);
-            enterpriseIndicatorsBindingSource.ResetBindings(false);// somewhy it didnt help. MastedDetail - detail table dont refresh. Use ResumeBindings Instead
             if (!string.IsNullOrEmpty(textBox45.Text))
                 enterpriseBindingSource.DataSource = dataModel.TotalList?.Where(n => n.EnterpriseId.ToString().Contains(textBox45.Text)).ToList();  //отложенный вызов linq querry (!tolist)
             else
-            { enterpriseBindingSource.DataSource = dataModel.TotalList; }
-
-            enterpriseBindingSource.ResumeBinding(); // this one works just fine
-            recordsBindingSource.ResumeBinding();
+                enterpriseBindingSource.DataSource = dataModel.TotalList;
         }
 
         private void зареєструватиНовеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -318,9 +280,7 @@ namespace FinancialSecurityCalculator
 
         private void RefreshData()
         {
-            enterpriseBindingSource.ResetBindings(false);
-            recordsBindingSource.ResetBindings(false);
-            enterpriseIndicatorsBindingSource.ResetBindings(false);
+            
             context?.Dispose();
             context = new FSCContext();
             checkBox1.Checked = false;
@@ -329,10 +289,7 @@ namespace FinancialSecurityCalculator
             comboBox1.SelectedIndex = 0;
             textBox42.Text = string.Empty;
             textBox45.Text = string.Empty;
-            //enterpriseBindingSource.DataSource = dataModel.TotalList;
-            //enterpriseBindingSource.ResumeBinding();
-            //recordsBindingSource.ResumeBinding();
-            //enterpriseIndicatorsBindingSource.ResumeBinding();
+         
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -342,7 +299,7 @@ namespace FinancialSecurityCalculator
 
         private void підприємствоToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //context.EnterpriseIndicator.Remove(enterpriseIndicatorsDataGridView.CurrentRow.DataBoundItem as EnterpriseIndicator);
+            if (enterpriseDataGridView.CurrentRow == null) return;
             var entity = enterpriseDataGridView.CurrentRow.DataBoundItem as Enterprise;
             context.Enterprise.Attach(entity);
             context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
@@ -352,6 +309,7 @@ namespace FinancialSecurityCalculator
 
         private void рікToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (recordsDataGridView.CurrentRow == null) return;
             var entity = recordsDataGridView.CurrentRow.DataBoundItem as Record;
             context.Record.Attach(entity);
             context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
@@ -361,6 +319,7 @@ namespace FinancialSecurityCalculator
 
         private void показникToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (enterpriseIndicatorsDataGridView.CurrentRow == null) return;
             var entity = enterpriseIndicatorsDataGridView.CurrentRow.DataBoundItem as EnterpriseIndicator;
             context.EnterpriseIndicator.Attach(entity);
             context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
@@ -371,7 +330,7 @@ namespace FinancialSecurityCalculator
         private void button6_Click(object sender, EventArgs e)
         {
             if (enterpriseDataGridView.CurrentRow == null) return;
-            Enterprise chartsData = dataModel.TotalList.FirstOrDefault(x => x.EnterpriseId == (int) enterpriseDataGridView.CurrentRow.Cells[0].Value);
+            var chartsData = enterpriseDataGridView.CurrentRow.DataBoundItem as Enterprise;
             var chartsForm = new ChartsMain(chartsData.Records, chartsData.EnterpriseName, tabControl2);
             chartsForm.Show();
         }

@@ -320,8 +320,11 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.enterpriseIndicatorsDataGridView = new System.Windows.Forms.DataGridView();
+            this.enterpriseIndicatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recordsDataGridView = new System.Windows.Forms.DataGridView();
             this.enterpriseDataGridView = new System.Windows.Forms.DataGridView();
             this.EnterpriseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -345,14 +348,12 @@
             this.newEnterpriseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.зареєструватиНовеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.обратиІснуючеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearWorkspaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.видалитиЗБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.підприємствоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.рікToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.показникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enterpriseTheoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nationTheoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -361,12 +362,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.видалитиЗБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.підприємствоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.рікToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.показникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.enterpriseIndicatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.recordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterpriseBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -374,7 +369,6 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button6 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -401,12 +395,12 @@
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -3089,13 +3083,23 @@
             this.tabPage2.Text = "Аналіз";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(672, 369);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 28);
+            this.button6.TabIndex = 14;
+            this.button6.Text = "Графік";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(199, 369);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(139, 28);
             this.button5.TabIndex = 13;
-            this.button5.Text = "Обновити дані";
+            this.button5.Text = "Оновити дані";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -3112,6 +3116,16 @@
             this.enterpriseIndicatorsDataGridView.Name = "enterpriseIndicatorsDataGridView";
             this.enterpriseIndicatorsDataGridView.Size = new System.Drawing.Size(261, 358);
             this.enterpriseIndicatorsDataGridView.TabIndex = 7;
+            // 
+            // enterpriseIndicatorsBindingSource
+            // 
+            this.enterpriseIndicatorsBindingSource.DataMember = "EnterpriseIndicators";
+            this.enterpriseIndicatorsBindingSource.DataSource = this.recordsBindingSource;
+            // 
+            // recordsBindingSource
+            // 
+            this.recordsBindingSource.DataMember = "Records";
+            this.recordsBindingSource.DataSource = this.enterpriseBindingSource;
             // 
             // recordsDataGridView
             // 
@@ -3323,11 +3337,9 @@
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newEnterpriseToolStripMenuItem,
-            this.exportToolStripMenuItem,
-            this.importToolStripMenuItem,
             this.clearWorkspaceToolStripMenuItem,
-            this.exitToolStripMenuItem,
-            this.видалитиЗБДToolStripMenuItem});
+            this.видалитиЗБДToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
@@ -3355,50 +3367,6 @@
             this.обратиІснуючеToolStripMenuItem.Text = "Обрати існуюче";
             this.обратиІснуючеToolStripMenuItem.Click += new System.EventHandler(this.обратиІснуючеToolStripMenuItem_Click);
             // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toJSONToolStripMenuItem,
-            this.toXMLToolStripMenuItem});
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.exportToolStripMenuItem.Text = "Export";
-            this.exportToolStripMenuItem.Visible = false;
-            // 
-            // toJSONToolStripMenuItem
-            // 
-            this.toJSONToolStripMenuItem.Name = "toJSONToolStripMenuItem";
-            this.toJSONToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.toJSONToolStripMenuItem.Text = "To JSON";
-            // 
-            // toXMLToolStripMenuItem
-            // 
-            this.toXMLToolStripMenuItem.Name = "toXMLToolStripMenuItem";
-            this.toXMLToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.toXMLToolStripMenuItem.Text = "To XML";
-            // 
-            // importToolStripMenuItem
-            // 
-            this.importToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fromJSONToolStripMenuItem,
-            this.fromXMLToolStripMenuItem});
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.importToolStripMenuItem.Text = "Import";
-            this.importToolStripMenuItem.Visible = false;
-            // 
-            // fromJSONToolStripMenuItem
-            // 
-            this.fromJSONToolStripMenuItem.Name = "fromJSONToolStripMenuItem";
-            this.fromJSONToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.fromJSONToolStripMenuItem.Text = "From JSON";
-            // 
-            // fromXMLToolStripMenuItem
-            // 
-            this.fromXMLToolStripMenuItem.Name = "fromXMLToolStripMenuItem";
-            this.fromXMLToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.fromXMLToolStripMenuItem.Text = "From XML";
-            // 
             // clearWorkspaceToolStripMenuItem
             // 
             this.clearWorkspaceToolStripMenuItem.Name = "clearWorkspaceToolStripMenuItem";
@@ -3412,6 +3380,37 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.exitToolStripMenuItem.Text = "Вихід";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // видалитиЗБДToolStripMenuItem
+            // 
+            this.видалитиЗБДToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.підприємствоToolStripMenuItem,
+            this.рікToolStripMenuItem,
+            this.показникToolStripMenuItem});
+            this.видалитиЗБДToolStripMenuItem.Name = "видалитиЗБДToolStripMenuItem";
+            this.видалитиЗБДToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.видалитиЗБДToolStripMenuItem.Text = "Видалити з БД";
+            // 
+            // підприємствоToolStripMenuItem
+            // 
+            this.підприємствоToolStripMenuItem.Name = "підприємствоToolStripMenuItem";
+            this.підприємствоToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.підприємствоToolStripMenuItem.Text = "Підприємство";
+            this.підприємствоToolStripMenuItem.Click += new System.EventHandler(this.підприємствоToolStripMenuItem_Click);
+            // 
+            // рікToolStripMenuItem
+            // 
+            this.рікToolStripMenuItem.Name = "рікToolStripMenuItem";
+            this.рікToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.рікToolStripMenuItem.Text = "Рік";
+            this.рікToolStripMenuItem.Click += new System.EventHandler(this.рікToolStripMenuItem_Click);
+            // 
+            // показникToolStripMenuItem
+            // 
+            this.показникToolStripMenuItem.Name = "показникToolStripMenuItem";
+            this.показникToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.показникToolStripMenuItem.Text = "Показник";
+            this.показникToolStripMenuItem.Click += new System.EventHandler(this.показникToolStripMenuItem_Click);
             // 
             // manualToolStripMenuItem
             // 
@@ -3471,47 +3470,6 @@
             this.toolTip1.ReshowDelay = 500;
             this.toolTip1.ShowAlways = true;
             // 
-            // видалитиЗБДToolStripMenuItem
-            // 
-            this.видалитиЗБДToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.підприємствоToolStripMenuItem,
-            this.рікToolStripMenuItem,
-            this.показникToolStripMenuItem});
-            this.видалитиЗБДToolStripMenuItem.Name = "видалитиЗБДToolStripMenuItem";
-            this.видалитиЗБДToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.видалитиЗБДToolStripMenuItem.Text = "Видалити з БД";
-            // 
-            // підприємствоToolStripMenuItem
-            // 
-            this.підприємствоToolStripMenuItem.Name = "підприємствоToolStripMenuItem";
-            this.підприємствоToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.підприємствоToolStripMenuItem.Text = "Підприємство";
-            this.підприємствоToolStripMenuItem.Click += new System.EventHandler(this.підприємствоToolStripMenuItem_Click);
-            // 
-            // рікToolStripMenuItem
-            // 
-            this.рікToolStripMenuItem.Name = "рікToolStripMenuItem";
-            this.рікToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.рікToolStripMenuItem.Text = "Рік";
-            this.рікToolStripMenuItem.Click += new System.EventHandler(this.рікToolStripMenuItem_Click);
-            // 
-            // показникToolStripMenuItem
-            // 
-            this.показникToolStripMenuItem.Name = "показникToolStripMenuItem";
-            this.показникToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.показникToolStripMenuItem.Text = "Показник";
-            this.показникToolStripMenuItem.Click += new System.EventHandler(this.показникToolStripMenuItem_Click);
-            // 
-            // enterpriseIndicatorsBindingSource
-            // 
-            this.enterpriseIndicatorsBindingSource.DataMember = "EnterpriseIndicators";
-            this.enterpriseIndicatorsBindingSource.DataSource = this.recordsBindingSource;
-            // 
-            // recordsBindingSource
-            // 
-            this.recordsBindingSource.DataMember = "Records";
-            this.recordsBindingSource.DataSource = this.enterpriseBindingSource;
-            // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
@@ -3560,16 +3518,6 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Галузь";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(672, 369);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 28);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "Графік";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form1
             // 
@@ -3631,14 +3579,14 @@
             this.panel2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -3665,12 +3613,6 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toJSONToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toXMLToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fromJSONToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fromXMLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manualToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enterpriseTheoryToolStripMenuItem;
