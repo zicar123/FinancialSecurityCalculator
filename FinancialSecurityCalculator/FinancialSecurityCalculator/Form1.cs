@@ -327,10 +327,10 @@ namespace FinancialSecurityCalculator
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {
+        {   
             if (enterpriseDataGridView.CurrentRow == null) return;
             var chartsData = enterpriseDataGridView.CurrentRow.DataBoundItem as Enterprise;
-            var chartsForm = new ChartsMain(chartsData.Records, chartsData.EnterpriseName, tabControl2);
+            var chartsForm = new ChartsMain(chartsData.Records, chartsData.EnterpriseName, tabControl2, services);
             chartsForm.Show();
         }
     }

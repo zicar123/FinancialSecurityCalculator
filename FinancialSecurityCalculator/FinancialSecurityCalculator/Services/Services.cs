@@ -11,7 +11,7 @@ using System.Reflection;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
-using FinancialSecurityCalculator.SLExcelUtility; 
+using FinancialSecurityCalculator.SLExcelUtility;
 
 namespace FinancialSecurityCalculator.Services
 {
@@ -202,16 +202,16 @@ namespace FinancialSecurityCalculator.Services
 
         private readonly List<LimitValue> decisionData = new List<LimitValue>()
         {
-                new LimitValue() { Value = 0.5, Below = false },
-                new LimitValue() { Value = 0.8, Below = false },
+                new LimitValue() { Value = 0.5, Below = true },
+                new LimitValue() { Value = 0.8, Below = true },
                 new LimitValue() { FirstValue = 0.75, SecondValue = 0.9 },
                 new LimitValue() { FirstValue = 0.3, SecondValue = 0.5 },
-                new LimitValue() { Value = 0.1, Below = false },
+                new LimitValue() { Value = 0.1, Below = true },
                 new LimitValue() { FirstValue = 0.2, SecondValue = 0.35 },
                 new LimitValue() { Title = "Збільшення"},
                 new LimitValue() { FirstValue = 0.7, SecondValue = 1.0 },
-                new LimitValue() { Value = 1.0, Below = true },
-                new LimitValue() { Value = 0.1, Below = false },
+                new LimitValue() { Value = 1.0, Below = false },
+                new LimitValue() { Value = 0.1, Below = true },
                 new LimitValue() { Title = "Збільшення"},
                 new LimitValue() { Title = "Збільшення"},
                 new LimitValue() { Title = "Збільшення"},
@@ -226,31 +226,32 @@ namespace FinancialSecurityCalculator.Services
 
         private class LimitValue
         {
-            public double? Value { get; set; }
             public bool? Below { get; set; }
             public double? FirstValue { get; set; }
             public double? SecondValue { get; set; }
             public string Title { get; set; }
+            public double? Value { get; set; }
+
         }
 
         public void Compare(List<Enterprise> enterpriseList)
         {
-                var modalCompare = new CompareModal(enterpriseList);
-                modalCompare.ShowDialog();
+            var modalCompare = new CompareModal(enterpriseList);
+            modalCompare.ShowDialog();
 
-                if (modalCompare.DialogResult == DialogResult.OK)
-                {
-                    new Compare((from first in modalCompare.GetSelectedEnterpriseData[0]
-                                 from second in modalCompare.GetSelectedEnterpriseData[1]
-                                 where first.IndicatorID == second.IndicatorID
-                                 select new
-                                 {
-                                     IndicatorName = first.IndicatorName,
-                                     FirstEnterprise = first.IndicatorValue,
-                                     SecondEnterprise = second.IndicatorValue,
-                                     IndicatorID = first.IndicatorID
-                                 }).ToList(), modalCompare.GetSelectedEnterpriseData[0][0]?.Record?.Enterprise?.EnterpriseName, modalCompare.GetSelectedEnterpriseData[1][0]?.Record?.Enterprise?.EnterpriseName, modalCompare.GetSelectedEnterpriseData[0][0].Record.Year.ToString()).Show();
-                }
+            if (modalCompare.DialogResult == DialogResult.OK)
+            {
+                new Compare((from first in modalCompare.GetSelectedEnterpriseData[0]
+                             from second in modalCompare.GetSelectedEnterpriseData[1]
+                             where first.IndicatorID == second.IndicatorID
+                             select new
+                             {
+                                 IndicatorName = first.IndicatorName,
+                                 FirstEnterprise = first.IndicatorValue,
+                                 SecondEnterprise = second.IndicatorValue,
+                                 IndicatorID = first.IndicatorID
+                             }).ToList(), modalCompare.GetSelectedEnterpriseData[0][0]?.Record?.Enterprise?.EnterpriseName, modalCompare.GetSelectedEnterpriseData[1][0]?.Record?.Enterprise?.EnterpriseName, modalCompare.GetSelectedEnterpriseData[0][0].Record.Year.ToString()).Show();
+            }
         }
 
         //public void CompareMany(params EnterpriseIndicator[] item)
@@ -275,23 +276,22 @@ namespace FinancialSecurityCalculator.Services
             //dataGridView1.DataSource = querry.Select(x=> new { d = x.CurrentValue}).ToList();// рабочий вариант вывода одного столбца
         }
 
-
         public string DecisionMaking(EnterpriseIndicator entity, out int clusterId)
         {
             // var properties = typeof(DecisionData).GetProperties();
 
             PropertyInfo[] props = decisionData[entity.IndicatorID].GetType().GetProperties();
 
-            if (props[0].GetValue(decisionData[entity.IndicatorID]) != null && props[1].GetValue(decisionData[entity.IndicatorID]) != null)
+            if (props[0].GetValue(decisionData[entity.IndicatorID]) != null && props[4].GetValue(decisionData[entity.IndicatorID]) != null)
             {
-                if ((bool) props[1].GetValue(decisionData[entity.IndicatorID]))
+                if ((bool) props[0].GetValue(decisionData[entity.IndicatorID]))
                 {
-                    if (entity.IndicatorValue > (double?) props[0].GetValue(decisionData[entity.IndicatorID]))
+                    if (entity.IndicatorValue > (double?) props[4].GetValue(decisionData[entity.IndicatorID]))
                     {
                         clusterId = 1;
                         return "Допустиме значення";
                     }
-                    else if (entity.IndicatorValue <= (double?) props[0].GetValue(decisionData[entity.IndicatorID]) && entity.IndicatorValue > ((double?) props[0].GetValue(decisionData[entity.IndicatorID])-((double?) props[0].GetValue(decisionData[entity.IndicatorID]) * 0.2)))
+                    else if (entity.IndicatorValue <= (double?) props[4].GetValue(decisionData[entity.IndicatorID]) && entity.IndicatorValue > ((double?) props[4].GetValue(decisionData[entity.IndicatorID]) - ((double?) props[4].GetValue(decisionData[entity.IndicatorID]) * 0.2)))
                     {
                         clusterId = 2;
                         return "Передкризовий стан";
@@ -304,12 +304,12 @@ namespace FinancialSecurityCalculator.Services
                 }
                 else
                 {
-                    if (entity.IndicatorValue < (double?) props[0].GetValue(decisionData[entity.IndicatorID]))
+                    if (entity.IndicatorValue < (double?) props[4].GetValue(decisionData[entity.IndicatorID]))
                     {
                         clusterId = 1;
                         return "Допустиме значення";
                     }
-                    else if (entity.IndicatorValue >= (double?) props[0].GetValue(decisionData[entity.IndicatorID]) && entity.IndicatorValue < ((double?) props[0].GetValue(decisionData[entity.IndicatorID]) + ((double?) props[0].GetValue(decisionData[entity.IndicatorID]) * 0.2)))
+                    else if (entity.IndicatorValue >= (double?) props[4].GetValue(decisionData[entity.IndicatorID]) && entity.IndicatorValue < ((double?) props[4].GetValue(decisionData[entity.IndicatorID]) + ((double?) props[4].GetValue(decisionData[entity.IndicatorID]) * 0.2)))
                     {
                         clusterId = 2;
                         return "Передкризовий стан";
@@ -321,14 +321,14 @@ namespace FinancialSecurityCalculator.Services
                     }
                 }
             }
-            else if (props[2].GetValue(decisionData[entity.IndicatorID]) != null && props[3].GetValue(decisionData[entity.IndicatorID]) != null)
+            else if (props[1].GetValue(decisionData[entity.IndicatorID]) != null && props[2].GetValue(decisionData[entity.IndicatorID]) != null)
             {
-                if (entity.IndicatorValue > (double?) props[2].GetValue(decisionData[entity.IndicatorID]) && entity.IndicatorValue < (double?) props[3].GetValue(decisionData[entity.IndicatorID]))
+                if (entity.IndicatorValue > (double?) props[1].GetValue(decisionData[entity.IndicatorID]) && entity.IndicatorValue < (double?) props[2].GetValue(decisionData[entity.IndicatorID]))
                 {
                     clusterId = 1;
                     return "Допустиме значення діапазону";
                 }
-                else if ((entity.IndicatorValue > ((double?) props[2].GetValue(decisionData[entity.IndicatorID])- (double?) props[2].GetValue(decisionData[entity.IndicatorID])*0.2) && entity.IndicatorValue <= ((double?) props[2].GetValue(decisionData[entity.IndicatorID])) || (entity.IndicatorValue < ((double?) props[2].GetValue(decisionData[entity.IndicatorID]) + (double?) props[2].GetValue(decisionData[entity.IndicatorID]) * 0.2) && entity.IndicatorValue >= ((double?) props[2].GetValue(decisionData[entity.IndicatorID])))))
+                else if ((entity.IndicatorValue > ((double?) props[1].GetValue(decisionData[entity.IndicatorID]) - (double?) props[1].GetValue(decisionData[entity.IndicatorID]) * 0.2) && entity.IndicatorValue <= ((double?) props[1].GetValue(decisionData[entity.IndicatorID])) || (entity.IndicatorValue < ((double?) props[1].GetValue(decisionData[entity.IndicatorID]) + (double?) props[1].GetValue(decisionData[entity.IndicatorID]) * 0.2) && entity.IndicatorValue >= ((double?) props[1].GetValue(decisionData[entity.IndicatorID])))))
                 {
                     clusterId = 2;
                     return "Передкризовий стан";
@@ -339,7 +339,7 @@ namespace FinancialSecurityCalculator.Services
                     return "За межами допустимого діапазону";
                 }
             }
-            else if (props[4].GetValue(decisionData[entity.IndicatorID]) != null)
+            else if (props[3].GetValue(decisionData[entity.IndicatorID]) != null)
             {
                 using (var context = new FSCContext())
                 {
