@@ -61,7 +61,7 @@ namespace FinancialSecurityCalculator
 
                     if (selectedYearOnEnterprise == null)
                     {
-                        MessageBox.Show("Для підприємства '" + selectedEnterprise.EnterpriseName + "' не існує запису за обраний рік.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Для підприємства '" + selectedEnterprise.EnterpriseName + "' не існує запису за обраний рік. Оберіть інше підприємство", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         this.GetSelectedEnterpriseData.Clear();
                         return;
                     }

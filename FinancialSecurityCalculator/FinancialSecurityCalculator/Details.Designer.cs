@@ -47,17 +47,17 @@
             // 
             this.button1.Location = new System.Drawing.Point(12, 504);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(213, 23);
+            this.button1.Size = new System.Drawing.Size(223, 23);
             this.button1.TabIndex = 10;
-            this.button1.Text = "Сформувати кластер за рівнем загроз";
+            this.button1.Text = "Сформувати кластери за рівнем загроз";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(231, 504);
+            this.button2.Location = new System.Drawing.Point(241, 504);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 23);
+            this.button2.Size = new System.Drawing.Size(173, 23);
             this.button2.TabIndex = 11;
             this.button2.Text = "Відобразити у вигляді діаграми";
             this.button2.UseVisualStyleBackColor = true;
