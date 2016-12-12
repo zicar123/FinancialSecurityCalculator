@@ -81,7 +81,7 @@ namespace FinancialSecurityCalculator
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(textBox1.Text))
-                dataGridView1.DataSource = gridViewData?.Where(n => n.EnterpriseId.ToString().Contains(textBox1.Text)).ToList();
+                dataGridView1.DataSource = gridViewData?.Where(n => n.EnterpriseId.Contains(textBox1.Text)).ToList();
             else dataGridView1.DataSource = gridViewData;
         }
     }

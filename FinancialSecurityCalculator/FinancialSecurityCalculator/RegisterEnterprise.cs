@@ -13,8 +13,6 @@ namespace FinancialSecurityCalculator
 {
     public partial class RegisterEnterprise : Form
     {
-        private int enterpriseIdTemp;
-
         public RegisterEnterprise(List<string> regions, List<string> branches)
         {
             InitializeComponent();
@@ -36,7 +34,7 @@ namespace FinancialSecurityCalculator
             {
                 return new Dictionary<string, object>
                 {
-                    { "EnterpriseID", enterpriseIdTemp },
+                    { "EnterpriseID", textBox2.Text },
                     { "EnterpriseName", textBox1.Text },
                     { "Region", comboBox1.SelectedItem },
                     { "Branch", comboBox2.SelectedItem },
@@ -57,7 +55,7 @@ namespace FinancialSecurityCalculator
                 {
                     if (comboBox2.SelectedItem != null)
                     {
-                        if (int.TryParse(textBox2.Text, out enterpriseIdTemp))
+                        if (!string.IsNullOrEmpty(textBox2.Text))
                         {
                             this.DialogResult = DialogResult.OK;
                         }

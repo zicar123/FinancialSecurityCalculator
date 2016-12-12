@@ -80,11 +80,11 @@ namespace FinancialSecurityCalculator.Services
                     return;
                 }
                 //TODO: check if cant connect
-                if (context.Enterprise.ToList().FirstOrDefault(x => x.EnterpriseId == (int) dataModel.EnterpriseData["EnterpriseID"]) != null) //if enterprise with this id already exists
+                if (context.Enterprise.ToList().FirstOrDefault(x => x.EnterpriseId.Equals(dataModel.EnterpriseData["EnterpriseID"].ToString())) != null) //if enterprise with this id already exists
                 {
                     if (MessageBox.Show("Дані будуть збережені в існуюче підприємство.", "Увага!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK) return;
 
-                    if (context.Record.ToList().FirstOrDefault(y => y.Year == Convert.ToInt32(dataModel.EnterpriseData["Year"]) && y.Enterprise.EnterpriseId == (int) dataModel.EnterpriseData["EnterpriseID"]) != null) //if record with this year already exists
+                    if (context.Record.ToList().FirstOrDefault(y => y.Year == Convert.ToInt32(dataModel.EnterpriseData["Year"]) && y.Enterprise.EnterpriseId.Equals(dataModel.EnterpriseData["EnterpriseID"].ToString())) != null) //if record with this year already exists
                     {
                         for (int i = 0; i < dataModel.TextBoxes.Count; ++i)
                         {
@@ -97,8 +97,8 @@ namespace FinancialSecurityCalculator.Services
                         if (MessageBox.Show("Дані про даний рік будуть перезаписані", "Увага!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK) return;
 
                         int tt = Convert.ToInt32(dataModel.EnterpriseData["Year"]);
-                        int t = Convert.ToInt32(dataModel.EnterpriseData["EnterpriseID"]);
-                        Record data = context.Record.FirstOrDefault(y => y.Year == tt && y.Enterprise.EnterpriseId == t);
+                        string t = dataModel.EnterpriseData["EnterpriseID"].ToString();
+                        Record data = context.Record.FirstOrDefault(y => y.Year == tt && y.Enterprise.EnterpriseId.Equals(t));
                         data.EnterpriseIndicators.Clear();
                         data.EnterpriseIndicators = dataModel.Indicators;
 
@@ -118,7 +118,7 @@ namespace FinancialSecurityCalculator.Services
                         }
                         context.Record.Add(new Record()
                         {
-                            Enterprise = context.Enterprise.ToList().FirstOrDefault(x => x.EnterpriseId == (int) dataModel.EnterpriseData["EnterpriseID"]),
+                            Enterprise = context.Enterprise.ToList().FirstOrDefault(x => x.EnterpriseId.Equals(dataModel.EnterpriseData["EnterpriseID"].ToString())),
                             Year = Convert.ToInt32(dataModel.EnterpriseData["Year"]),
                             EnterpriseIndicators = dataModel.Indicators
                         });
@@ -143,7 +143,7 @@ namespace FinancialSecurityCalculator.Services
 
                     context.Enterprise.Add(new Enterprise()
                     {
-                        EnterpriseId = (int) dataModel.EnterpriseData["EnterpriseID"],
+                        EnterpriseId = dataModel.EnterpriseData["EnterpriseID"].ToString(),
                         EnterpriseName = dataModel.EnterpriseData["EnterpriseName"].ToString(),
                         Region = dataModel.EnterpriseData["Region"].ToString(),
                         Branch = dataModel.EnterpriseData["Branch"].ToString(),

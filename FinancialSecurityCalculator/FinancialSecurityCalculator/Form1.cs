@@ -216,7 +216,7 @@ namespace FinancialSecurityCalculator
         private void textBox45_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(textBox45.Text))
-                enterpriseBindingSource.DataSource = dataModel.TotalList?.Where(n => n.EnterpriseId.ToString().Contains(textBox45.Text)).ToList();  //отложенный вызов linq querry (!tolist)
+                enterpriseBindingSource.DataSource = dataModel.TotalList?.Where(n => n.EnterpriseId.Contains(textBox45.Text)).ToList();  //отложенный вызов linq querry (!tolist)
             else
                 enterpriseBindingSource.DataSource = dataModel.TotalList;
         }
