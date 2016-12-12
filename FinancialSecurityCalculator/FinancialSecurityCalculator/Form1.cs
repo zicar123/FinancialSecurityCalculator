@@ -136,7 +136,7 @@ namespace FinancialSecurityCalculator
                 dataModel.TotalList.AddRange(dataModel.chb3);
             }
             enterpriseBindingSource.ResetBindings(false);
-     
+
             if (comboBox1.SelectedItem.ToString() == "Всі") enterpriseBindingSource.DataSource = dataModel.TotalList;
             else enterpriseBindingSource.DataSource = dataModel.TotalList.Where(elem => elem.Region == comboBox1.SelectedItem.ToString()).ToList();
 
@@ -183,6 +183,9 @@ namespace FinancialSecurityCalculator
         private void clearWorkspaceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.services.ResetTextBoxes(this.Controls);
+            comboBox2.SelectedItem = default(ComboBox);
+            comboBox2.Text = "Оберіть рік";
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -265,22 +268,18 @@ namespace FinancialSecurityCalculator
             }
             else
             {
-                dataModel.EnterpriseData.Add("Year", comboBox2.SelectedItem);
+                dataModel.EnterpriseData.Add("Year", comboBox2.SelectedItem); //TODO: get rid of event. Single use method
             }
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (var context = new FSCContext())
-            {
-                services.Compare();
-            }
+            services.Compare((List<Enterprise>)enterpriseBindingSource.DataSource);
         }
 
         private void RefreshData()
         {
-            
             context?.Dispose();
             context = new FSCContext();
             checkBox1.Checked = false;
@@ -289,7 +288,7 @@ namespace FinancialSecurityCalculator
             comboBox1.SelectedIndex = 0;
             textBox42.Text = string.Empty;
             textBox45.Text = string.Empty;
-         
+
         }
 
         private void button5_Click(object sender, EventArgs e)

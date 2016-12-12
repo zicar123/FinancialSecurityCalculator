@@ -233,12 +233,9 @@ namespace FinancialSecurityCalculator.Services
             public string Title { get; set; }
         }
 
-        public void Compare()
+        public void Compare(List<Enterprise> enterpriseList)
         {
-            using (var context = new FSCContext())
-            {
-                var modalCompare = new CompareModal((from item in context.Enterprise
-                                                     select item).ToList());
+                var modalCompare = new CompareModal(enterpriseList);
                 modalCompare.ShowDialog();
 
                 if (modalCompare.DialogResult == DialogResult.OK)
@@ -254,7 +251,6 @@ namespace FinancialSecurityCalculator.Services
                                      IndicatorID = first.IndicatorID
                                  }).ToList(), modalCompare.GetSelectedEnterpriseData[0][0]?.Record?.Enterprise?.EnterpriseName, modalCompare.GetSelectedEnterpriseData[1][0]?.Record?.Enterprise?.EnterpriseName, modalCompare.GetSelectedEnterpriseData[0][0].Record.Year.ToString()).Show();
                 }
-            }
         }
 
         //public void CompareMany(params EnterpriseIndicator[] item)

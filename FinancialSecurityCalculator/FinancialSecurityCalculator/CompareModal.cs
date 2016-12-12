@@ -57,7 +57,7 @@ namespace FinancialSecurityCalculator
 
                     var selectedEnterprise = (Enterprise) dataGridView1.CurrentRow.DataBoundItem;
 
-                    var selectedYearOnEnterprise = selectedEnterprise.Records.FirstOrDefault(y => y.Year == Convert.ToInt32(comboBox2.SelectedItem));
+                    Record selectedYearOnEnterprise = selectedEnterprise.Records.FirstOrDefault(y => y.Year == Convert.ToInt32(comboBox2.SelectedItem));
 
                     if (selectedYearOnEnterprise == null)
                     {
