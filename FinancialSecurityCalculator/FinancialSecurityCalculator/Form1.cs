@@ -19,21 +19,12 @@ namespace FinancialSecurityCalculator
 
         public Form1()
         {
-            InitializeComponent();
-            using (var context = new FSCContext())
-            {
-                var enteprise = context.Enterprise.FirstOrDefault(x => x.EnterpriseName.Equals("ПАТ ДТЕК ДНІПРОЕНЕРГО"));
-                foreach (var item in enteprise.Records)
-                {
-                    item.EnterpriseIndicators.FirstOrDefault(x => x.IndicatorID == 11).IndicatorName = "Коефіцієнт оборотності дебіторської заборгованості";
-                     item.EnterpriseIndicators.FirstOrDefault(x => x.IndicatorID == 19).IndicatorName = "Рентабельність власного капіталу";
-
-                }
-                context.SaveChanges();
-            }
-                dataModel = new DataModel();
+            InitializeComponent();            
+            dataModel = new DataModel();
             services = new Services.Services();
             this.Init();
+            foreach (var item in dataModel.TextBoxes)
+                item.ReadOnly = false;
         }
 
         private void Init()

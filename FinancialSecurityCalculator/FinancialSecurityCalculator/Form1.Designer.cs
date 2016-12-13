@@ -438,7 +438,7 @@
             // 
             this.label161.AutoSize = true;
             this.label161.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label161.Location = new System.Drawing.Point(641, 11);
+            this.label161.Location = new System.Drawing.Point(551, 11);
             this.label161.Name = "label161";
             this.label161.Size = new System.Drawing.Size(95, 12);
             this.label161.TabIndex = 19;
@@ -2866,9 +2866,9 @@
             // label159
             // 
             this.label159.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label159.Location = new System.Drawing.Point(742, 10);
+            this.label159.Location = new System.Drawing.Point(643, 10);
             this.label159.Name = "label159";
-            this.label159.Size = new System.Drawing.Size(144, 14);
+            this.label159.Size = new System.Drawing.Size(247, 14);
             this.label159.TabIndex = 2;
             // 
             // label22

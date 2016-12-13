@@ -343,7 +343,8 @@ namespace FinancialSecurityCalculator.Services
             {
                 using (var context = new FSCContext())
                 {
-                    List<Record> list = context.Record.OrderBy(x => x.Year).ToList();
+                    //List<Record> list = context.Record.OrderBy(x => x.Year).ToList();
+                    List<Record> list = entity.Record.Enterprise.Records.OrderBy(x => x.Year).ToList();
                     Record prev = list.FirstOrDefault(x => x.RecordId == entity.Record.RecordId);
                     int r = list.IndexOf(prev);
                     EnterpriseIndicator previousValue;
