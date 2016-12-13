@@ -362,13 +362,13 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterpriseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -438,11 +438,11 @@
             // 
             this.label161.AutoSize = true;
             this.label161.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label161.Location = new System.Drawing.Point(551, 11);
+            this.label161.Location = new System.Drawing.Point(542, 11);
             this.label161.Name = "label161";
-            this.label161.Size = new System.Drawing.Size(95, 12);
+            this.label161.Size = new System.Drawing.Size(113, 12);
             this.label161.TabIndex = 19;
-            this.label161.Text = "Обрано для аналізу: ";
+            this.label161.Text = "Обрано для обчислення: ";
             // 
             // tabControl2
             // 
@@ -2866,9 +2866,9 @@
             // label159
             // 
             this.label159.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label159.Location = new System.Drawing.Point(643, 10);
+            this.label159.Location = new System.Drawing.Point(651, 10);
             this.label159.Name = "label159";
-            this.label159.Size = new System.Drawing.Size(247, 14);
+            this.label159.Size = new System.Drawing.Size(239, 14);
             this.label159.TabIndex = 2;
             // 
             // label22
@@ -3381,22 +3381,6 @@
             this.toolTip1.ReshowDelay = 500;
             this.toolTip1.ShowAlways = true;
             // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Назва Показника";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "IndicatorValue";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn14.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn14.HeaderText = "Значення Показника";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
             // enterpriseBindingSource
             // 
             this.enterpriseBindingSource.DataSource = typeof(FinancialSecurityCalculator.Entities.Enterprise);
@@ -3429,6 +3413,24 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Галузь";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Назва Показника";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 135;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "IndicatorValue";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn14.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn14.HeaderText = "Значення Показника";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 65;
             // 
             // Form1
             // 
@@ -3791,8 +3793,6 @@
         private System.Windows.Forms.Label label159;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn EnterpriseId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
@@ -3805,6 +3805,8 @@
         private System.Windows.Forms.ToolStripMenuItem рікToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem показникToolStripMenuItem;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
     }
 }
 

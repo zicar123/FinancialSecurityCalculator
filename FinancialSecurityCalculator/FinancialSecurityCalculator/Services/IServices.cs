@@ -16,5 +16,6 @@ namespace FinancialSecurityCalculator.Services
         string DecisionMaking(EnterpriseIndicator entity, out int clusterId);
         void Calculate(TabControl tabControl);
         void ShowDetails(List<EnterpriseIndicator> indicators, string enterpriseName, string year);
+        void Compare(List<Enterprise> enterpriseList);
     }
 }

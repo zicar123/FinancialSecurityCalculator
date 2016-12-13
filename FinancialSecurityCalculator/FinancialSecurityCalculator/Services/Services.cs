@@ -17,6 +17,30 @@ namespace FinancialSecurityCalculator.Services
 {
     public class Services : IServices
     {
+        private readonly List<LimitValue> decisionData = new List<LimitValue>()
+        {
+                new LimitValue() { Value = 0.5, Below = true },
+                new LimitValue() { Value = 0.8, Below = true },
+                new LimitValue() { FirstValue = 0.75, SecondValue = 0.9 },
+                new LimitValue() { FirstValue = 0.3, SecondValue = 0.5 },
+                new LimitValue() { Value = 0.1, Below = true },
+                new LimitValue() { FirstValue = 0.2, SecondValue = 0.35 },
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { FirstValue = 0.7, SecondValue = 1.0 },
+                new LimitValue() { Value = 1.0, Below = false },
+                new LimitValue() { Value = 0.1, Below = true },
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+                new LimitValue() { Title = "Збільшення"},
+        };
+
         public void ResetTextBoxes(ControlCollection controls)
         {
             foreach (System.Windows.Forms.Control c in controls)
@@ -200,40 +224,6 @@ namespace FinancialSecurityCalculator.Services
             }
         }
 
-        private readonly List<LimitValue> decisionData = new List<LimitValue>()
-        {
-                new LimitValue() { Value = 0.5, Below = true },
-                new LimitValue() { Value = 0.8, Below = true },
-                new LimitValue() { FirstValue = 0.75, SecondValue = 0.9 },
-                new LimitValue() { FirstValue = 0.3, SecondValue = 0.5 },
-                new LimitValue() { Value = 0.1, Below = true },
-                new LimitValue() { FirstValue = 0.2, SecondValue = 0.35 },
-                new LimitValue() { Title = "Збільшення"},
-                new LimitValue() { FirstValue = 0.7, SecondValue = 1.0 },
-                new LimitValue() { Value = 1.0, Below = false },
-                new LimitValue() { Value = 0.1, Below = true },
-                new LimitValue() { Title = "Збільшення"},
-                new LimitValue() { Title = "Збільшення"},
-                new LimitValue() { Title = "Збільшення"},
-                new LimitValue() { Title = "Збільшення"},
-                new LimitValue() { Title = "Збільшення"},
-                new LimitValue() { Title = "Збільшення"},
-                new LimitValue() { Title = "Збільшення"},
-                new LimitValue() { Title = "Збільшення"},
-                new LimitValue() { Title = "Збільшення"},
-                new LimitValue() { Title = "Збільшення"},
-        };
-
-        private class LimitValue
-        {
-            public bool? Below { get; set; }
-            public double? FirstValue { get; set; }
-            public double? SecondValue { get; set; }
-            public string Title { get; set; }
-            public double? Value { get; set; }
-
-        }
-
         public void Compare(List<Enterprise> enterpriseList)
         {
             var modalCompare = new CompareModal(enterpriseList);
@@ -253,13 +243,6 @@ namespace FinancialSecurityCalculator.Services
                              }).ToList(), modalCompare.GetSelectedEnterpriseData[0][0]?.Record?.Enterprise?.EnterpriseName, modalCompare.GetSelectedEnterpriseData[1][0]?.Record?.Enterprise?.EnterpriseName, modalCompare.GetSelectedEnterpriseData[0][0].Record.Year.ToString()).Show();
             }
         }
-
-        //public void CompareMany(params EnterpriseIndicator[] item)
-        //{
-
-        //}
-
-
 
         public void ShowDetails(List<EnterpriseIndicator> indicators, string enterpriseName, string year)
         {
@@ -378,6 +361,15 @@ namespace FinancialSecurityCalculator.Services
             }
             clusterId = 666;
             return null;
+        }
+
+        private class LimitValue
+        {
+            public bool? Below { get; set; }
+            public double? FirstValue { get; set; }
+            public double? SecondValue { get; set; }
+            public string Title { get; set; }
+            public double? Value { get; set; }
         }
     }
 }

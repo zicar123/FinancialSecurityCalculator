@@ -137,12 +137,6 @@
     <Compile Include="SLExcelUtility\SLExcelData.cs" />
     <Compile Include="SLExcelUtility\SLExcelReader.cs" />
     <Compile Include="SLExcelUtility\SLExcelWriter.cs" />
-    <Compile Include="Sortings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sortings.Designer.cs">
-      <DependentUpon>Sortings.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="ChartsCompares.resx">
       <DependentUpon>ChartsCompares.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,9 +176,6 @@
     <EmbeddedResource Include="SelectEnterprise.resx">
       <DependentUpon>SelectEnterprise.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sortings.resx">
-      <DependentUpon>Sortings.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\FinancialSecurityCalculator.Entities.Enterprise.datasource" />
     <None Include="Properties\DataSources\FinancialSecurityCalculator.Entities.EnterpriseLimitIndicator.datasource" />
@@ -201,9 +192,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
