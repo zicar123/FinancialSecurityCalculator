@@ -52,7 +52,7 @@
             treeNode10,
             treeNode11});
             System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності активів");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності дебіторської заборгованості ");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності дебіторської заборгованості");
             System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності кредиторської заборгованості");
             System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності матеріальних запасів");
             System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Коефіцієнт оборотності основних засобів");
@@ -67,7 +67,7 @@
             System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Рентабельність витрат");
             System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Рентабельність продажів");
             System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Рентабельність всіх активів");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Рентабельність власного капіталу ");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Рентабельність власного капіталу");
             System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Прибутковість", new System.Windows.Forms.TreeNode[] {
             treeNode20,
             treeNode21,
@@ -323,18 +323,11 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.enterpriseIndicatorsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterpriseIndicatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enterpriseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recordsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enterpriseDataGridView = new System.Windows.Forms.DataGridView();
             this.EnterpriseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -369,6 +362,13 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enterpriseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -397,11 +397,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -2935,7 +2935,7 @@
             treeNode13.Name = "Node10";
             treeNode13.Text = "Коефіцієнт оборотності активів";
             treeNode14.Name = "Node11";
-            treeNode14.Text = "Коефіцієнт оборотності дебіторської заборгованості ";
+            treeNode14.Text = "Коефіцієнт оборотності дебіторської заборгованості";
             treeNode15.Name = "Node12";
             treeNode15.Text = "Коефіцієнт оборотності кредиторської заборгованості";
             treeNode16.Name = "Node13";
@@ -2953,7 +2953,7 @@
             treeNode22.Name = "Node18";
             treeNode22.Text = "Рентабельність всіх активів";
             treeNode23.Name = "Node19";
-            treeNode23.Text = "Рентабельність власного капіталу ";
+            treeNode23.Text = "Рентабельність власного капіталу";
             treeNode24.Name = "ParentNode3";
             treeNode24.Text = "Прибутковість";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
@@ -3028,22 +3028,6 @@
             this.enterpriseIndicatorsDataGridView.Size = new System.Drawing.Size(261, 358);
             this.enterpriseIndicatorsDataGridView.TabIndex = 7;
             // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Назва Показника";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "IndicatorValue";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn14.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn14.HeaderText = "Значення Показника";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
             // enterpriseIndicatorsBindingSource
             // 
             this.enterpriseIndicatorsBindingSource.DataMember = "EnterpriseIndicators";
@@ -3053,10 +3037,6 @@
             // 
             this.recordsBindingSource.DataMember = "Records";
             this.recordsBindingSource.DataSource = this.enterpriseBindingSource;
-            // 
-            // enterpriseBindingSource
-            // 
-            this.enterpriseBindingSource.DataSource = typeof(FinancialSecurityCalculator.Entities.Enterprise);
             // 
             // recordsDataGridView
             // 
@@ -3070,14 +3050,6 @@
             this.recordsDataGridView.Name = "recordsDataGridView";
             this.recordsDataGridView.Size = new System.Drawing.Size(96, 358);
             this.recordsDataGridView.TabIndex = 7;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Year";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Рік";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 50;
             // 
             // enterpriseDataGridView
             // 
@@ -3101,27 +3073,6 @@
             this.EnterpriseId.HeaderText = "ID підприємства";
             this.EnterpriseId.Name = "EnterpriseId";
             this.EnterpriseId.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "EnterpriseName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Назва Підприємства";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Region";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Область";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Branch";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Галузь";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // button2
             // 
@@ -3430,6 +3381,55 @@
             this.toolTip1.ReshowDelay = 500;
             this.toolTip1.ShowAlways = true;
             // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "IndicatorName";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Назва Показника";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "IndicatorValue";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn14.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn14.HeaderText = "Значення Показника";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // enterpriseBindingSource
+            // 
+            this.enterpriseBindingSource.DataSource = typeof(FinancialSecurityCalculator.Entities.Enterprise);
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Year";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Рік";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "EnterpriseName";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Назва Підприємства";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Region";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Область";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Branch";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Галузь";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3492,13 +3492,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseIndicatorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recordsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enterpriseDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.enterpriseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

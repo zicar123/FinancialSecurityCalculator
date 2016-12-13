@@ -20,7 +20,18 @@ namespace FinancialSecurityCalculator
         public Form1()
         {
             InitializeComponent();
-            dataModel = new DataModel();
+            using (var context = new FSCContext())
+            {
+                var enteprise = context.Enterprise.FirstOrDefault(x => x.EnterpriseName.Equals("ПАТ ДТЕК ДНІПРОЕНЕРГО"));
+                foreach (var item in enteprise.Records)
+                {
+                    item.EnterpriseIndicators.FirstOrDefault(x => x.IndicatorID == 11).IndicatorName = "Коефіцієнт оборотності дебіторської заборгованості";
+                     item.EnterpriseIndicators.FirstOrDefault(x => x.IndicatorID == 19).IndicatorName = "Рентабельність власного капіталу";
+
+                }
+                context.SaveChanges();
+            }
+                dataModel = new DataModel();
             services = new Services.Services();
             this.Init();
         }
@@ -299,6 +310,7 @@ namespace FinancialSecurityCalculator
         private void підприємствоToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (enterpriseDataGridView.CurrentRow == null) return;
+            MessageBox.Show("Видалити запис про підприємство? (Будуть видалені також всі дані про показники)", "Увага", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             var entity = enterpriseDataGridView.CurrentRow.DataBoundItem as Enterprise;
             context.Enterprise.Attach(entity);
             context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
@@ -309,6 +321,7 @@ namespace FinancialSecurityCalculator
         private void рікToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (recordsDataGridView.CurrentRow == null) return;
+            MessageBox.Show("Видалити дані за рік?", "Увага", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             var entity = recordsDataGridView.CurrentRow.DataBoundItem as Record;
             context.Record.Attach(entity);
             context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
@@ -319,6 +332,7 @@ namespace FinancialSecurityCalculator
         private void показникToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (enterpriseIndicatorsDataGridView.CurrentRow == null) return;
+            MessageBox.Show("Видалити показник?", "Увага", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             var entity = enterpriseIndicatorsDataGridView.CurrentRow.DataBoundItem as EnterpriseIndicator;
             context.EnterpriseIndicator.Attach(entity);
             context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;

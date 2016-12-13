@@ -336,7 +336,7 @@ namespace FinancialSecurityCalculator.Services
                 else
                 {
                     clusterId = 3;
-                    return "За межами допустимого діапазону";
+                    return "Кризовий стан";
                 }
             }
             else if (props[3].GetValue(decisionData[entity.IndicatorID]) != null)

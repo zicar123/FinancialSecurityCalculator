@@ -20,7 +20,7 @@ namespace FinancialSecurityCalculator.Context
             context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт грошової платоспроможності", EnterpriseLimitIndicatorValue = "0.2-0.35" });
             context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт розрахункової платоспроможності", EnterpriseLimitIndicatorValue = "збільшення" });
             context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт критичної ліквідності", EnterpriseLimitIndicatorValue = "0.7-1" });
-            context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт співвідношення", EnterpriseLimitIndicatorValue = "<1" });
+            context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт співвідношення дебіторської та кредиторської заборгованостей", EnterpriseLimitIndicatorValue = "<1" });
             context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт мобільності активів", EnterpriseLimitIndicatorValue = ">0.1" });
             context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт оборотності активів", EnterpriseLimitIndicatorValue = "збільшення" });
             context.EnterpriseLimitIndicators.Add(new EnterpriseLimitIndicator() { EnterpriseLimitIndicatorName = "Коефіцієнт оборотності дебіторської заборгованості", EnterpriseLimitIndicatorValue = "збільшення" });
